@@ -2,7 +2,9 @@
 .Rhistory
 .RData
 .Ruserdata
-.env.R
+.env
 .DS_Store
 data/
 glittr_stats_files/
+
+/.quarto/

@@ -1,0 +1,18 @@
+project:
+  type: website
+
+website:
+  title: "Glittr.org statistics"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Stats
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

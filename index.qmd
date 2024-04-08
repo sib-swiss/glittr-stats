@@ -14,18 +14,25 @@ library(ggbreak)
 library(cowplot)
 ```
 
-Create a file named `.env.R` and add your GitHub PAT (named `pat` ) and google api key (named `google_api_key`) in there, e.g.:
+Create a file named `.env.sh` and add your GitHub PAT (variable named `PAT` ) and google api key (named `GOOGLE_API_KEY`) in there, e.g.:
 
-```{r, eval=FALSE}
+```{bash, eval=FALSE}
 # this is an example, store it as .env.R:
-pat <- "ghp_aRSRESCTZII20Lklser3H"
-google_api_key <- "AjKSLE5SklxuRsxwPP8s0"
+export AT="ghp_aRSRESCTZII20Lklser3H"
+export GOOGLE_API_KEY="AjKSLE5SklxuRsxwPP8s0"
 ```
 
 Now source this file to get the keys as objects:
 
+```{bash, eval=FALSE}
+source .env
+```
+
+Get environment variables as R objects:
+
 ```{r}
-source(".env.R")
+pat <- Sys.getenv("PAT")
+google_api_key <- Sys.getenv("GOOGLE_API_KEY")
 ```
 
 ## Set colors
