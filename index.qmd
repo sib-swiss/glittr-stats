@@ -138,6 +138,8 @@ repo_info_gh$contributors <- n_contributors[repo_info_gh$repo]
 
 ```{r}
 #| echo: false
+#| warning: false
+#| output: false
 
 # check whether author info exists for caching
 if(file.exists("data/author_info.rds")) {
