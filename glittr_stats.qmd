@@ -1,0 +1,436 @@
+---
+title: "Glittr stats"
+format: 
+  html:
+    code-fold: true
+---
+
+```{r}
+#| output: false
+library(httr2)
+library(ggplot2)
+library(dplyr)
+library(ggbreak)
+library(cowplot)
+```
+
+Create a file named `.env.R` and add your GitHub PAT (named `pat` ) and google api key (named `google_api_key`) in there, e.g.:
+
+```{r, eval=FALSE}
+# this is an example, store it as .env.R:
+pat <- "ghp_aRSRESCTZII20Lklser3H"
+google_api_key <- "AjKSLE5SklxuRsxwPP8s0"
+```
+
+Now source this file to get the keys as objects:
+
+```{r}
+source(".env.R")
+```
+
+## Set colors
+
+These are the same colors as on glittr.org
+
+```{r}
+glittr_cols <- c(
+  "Scripting and languages" = "#3a86ff",
+  "Computational methods and pipelines" = "#fb5607",
+  "Omics analysis" = "#ff006e",
+  "Reproducibility and data management" = "#ffbe0b",
+  "Statistics and machine learning" = "#8338ec",
+  "Others" = "#000000")
+```
+
+## Parse repository data
+
+```{r}
+# get all repositories content as nested list
+parsed <- request("https://glittr.org/api/repositories") |>
+  req_perform() |> resp_body_json()
+
+# extract relevant items as dataframe
+repo_info_list <- lapply(parsed$data, function(x) data.frame(
+  repo = x$name,
+  author_name = x$author$name,
+  stargazers = x$stargazers,
+  recency = x$days_since_last_push,
+  url = x$url,
+  license = ifelse(is.null(x$license), "none", x$license),
+  main_tag = x$tags[[1]]$name,
+  main_category = x$tags[[1]]$category
+))
+
+repo_info <- do.call(rbind, repo_info_list)
+
+# create a column with provider (either github or gitlab)
+repo_info$provider <- ifelse(grepl("github", repo_info$url), "github", "gitlab")
+
+# create a factor for categories for sorting
+repo_info$main_category <- factor(repo_info$main_category,
+                                  levels = names(glittr_cols))
+
+# category table to keep order the same in the plots
+cat_table <- table(category = repo_info$main_category)
+cat_table <- sort(cat_table)
+```
+
+Number of repositories: `r nrow(repo_info)`
+
+## Get contributors info
+
+```{r}
+# take long time to run, so try to use cache results if no repos have been 
+# added in the meantime
+
+# check if data/n_contributors.rds exists
+if(file.exists("data/n_contributors.rds")) {
+  n_contributors <- readRDS("data/n_contributors.rds")
+}
+
+# get contributors info only from github repos
+repo_info_gh <- repo_info[repo_info$provider == "github", ]
+
+# get contributor info from github api if update is needed
+if(!identical(sort(repo_info_gh$repo), sort(names(n_contributors)))) {
+  dir.create("data", showWarnings = FALSE)
+  n_contributors <- sapply(repo_info_gh$repo, function(x) {
+    
+    # get repo contributors
+    resp <- request("https://api.github.com/repos/") |>
+      req_url_path_append(x) |>
+      req_url_path_append("contributors") |>
+      req_url_query(per_page = 1) |>
+      req_headers(
+        Accept = "application/vnd.github+json",
+        Authorization = paste("Bearer", pat),
+        `X-GitHub-Api-Version` = "2022-11-28",
+      ) |>
+      req_perform() 
+    
+    link_url <- resp_link_url(resp, "last")
+    if(is.null(link_url)) {
+      return(1)
+    } else {
+      npages <- strsplit(link_url, "&page=")[[1]][2] |> as.numeric()
+      return(npages)
+    }
+  })
+  
+  # overwrite rds file
+  saveRDS(n_contributors, "data/n_contributors.rds")
+}
+
+repo_info_gh$contributors <- n_contributors[repo_info_gh$repo]
+
+```
+
+## Get country information
+
+```{r}
+#| echo: false
+
+# check whether author info exists for caching
+if(file.exists("data/author_info.rds")) {
+  author_info <- readRDS("data/author_info.rds")
+  author_info_authors <- unique(author_info$author) |> sort()
+} else {
+  author_info_authors <- NULL
+}
+
+gh_authors <- repo_info$author_name[repo_info$provider == "github"] |>
+  unique() |>
+  sort()
+
+# if the author info is out of date, update it
+if(!identical(gh_authors, author_info_authors)) {
+  author_info_list <- list()
+  for(author in gh_authors) {
+    
+    parsed <- request("https://api.github.com/users/") |>
+      req_url_path_append(author) |>
+      req_headers(
+        Accept = "application/vnd.github+json",
+        Authorization = paste("Bearer", pat),
+        `X-GitHub-Api-Version` = "2022-11-28",
+      ) |>
+      req_perform() |> resp_body_json()
+    author_info_list[[author]] <- data.frame(
+      author = parsed$login,
+      type = parsed$type,
+      name = ifelse(is.null(parsed$name), NA, parsed$name),
+      location = ifelse(is.null(parsed$location), NA, parsed$location)
+    )
+  }
+  
+  author_info <- do.call(rbind, author_info_list)
+  
+  author_info_loc <- author_info[!is.na(author_info$location), ]
+  
+  author_loc <- author_info_loc$location
+  names(author_loc) <- author_info_loc$author
+  
+  ggmap::register_google(key = google_api_key)
+  loc_info <- ggmap::geocode(author_loc,
+                             output = 'all')
+  
+  get_country <- function(loc_results) {
+    if("results" %in% names(loc_results)) {
+      for(results in loc_results$results) {
+        address_info <- results$address_components |> 
+          lapply(unlist) |> 
+          do.call(rbind, args = _) |>
+          as.data.frame()
+        country <- address_info$long_name[address_info$types1 == "country"]
+        if (length(country) == 0) next
+      }
+      if (length(country) == 0) return(NA)
+      return(country)
+    } else {
+      return(NA)
+    }
+  }
+  
+  countries <- sapply(loc_info, get_country)
+  names(countries) <- names(author_loc)
+  
+  author_info$country <- countries[author_info$author]
+  
+  saveRDS(author_info, "data/author_info.rds")
+}
+
+repo_info <- merge(repo_info, author_info, by.x = "author_name",
+                   by.y = "author")
+repo_info$country[is.na(repo_info$country)] <- "undefined"
+```
+
+- Number of authors: `r nrow(author_info)`
+- Number of countries: `r unique(repo_info$country) |> length()`
+
+## Parse tag data
+
+```{r}
+parsed <- request("https://glittr.org/api/tags") |>
+  req_perform() |> resp_body_json()
+
+tag_dfs <- list()
+for(i in seq_along(parsed)) {
+  category <- parsed[[i]]$category
+  name <- sapply(parsed[[i]]$tags, function(x) x$name)
+  repositories <- sapply(parsed[[i]]$tags, function(x) x$repositories)
+  tag_dfs[[category]] <- data.frame(name, category, repositories)
+}
+
+tag_df <- do.call(rbind, tag_dfs) |> arrange(repositories)
+```
+
+Number of tags/topics: `r nrow(tag_df)`
+
+## Categories
+
+```{r}
+cat_count_plot <- table(category = repo_info$main_category) |>
+  as.data.frame() |>
+  ggplot(aes(x = reorder(category, Freq), y = Freq, fill = category)) +
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values = glittr_cols) +
+  coord_flip() +
+  theme_classic() +
+  ggtitle("Categories") +
+  theme(legend.position = "none",
+        axis.title.y = element_blank()) +
+  ylab("Number of repositories")
+
+print(cat_count_plot)
+```
+
+```{r}
+category_count <- table(category = repo_info$main_category) |> as.data.frame()
+knitr::kable(category_count)
+```
+
+## Licensing
+
+```{r}
+lic_freq_data <- table(license = repo_info$license,
+                       main_category = repo_info$main_category) |>
+  as.data.frame()
+
+lic_freq_data$main_category <- factor(lic_freq_data$main_category,
+                                     levels = names(cat_table))
+
+lic_freq_plot <- lic_freq_data |>
+  ggplot(aes(x = reorder(license, Freq), y = Freq, fill = main_category)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  scale_fill_manual(values = glittr_cols) +
+  theme_classic() +
+  ggtitle("License type") +
+  ylab("Number of repositories") +
+  theme(legend.position = "none",
+        axis.title.y = element_blank())
+
+print(lic_freq_plot)
+```
+
+```{r}
+repo_info$license |>
+  table() |>
+  as.data.frame() |>
+  mutate(perc = round(Freq/nrow(repo_info)*100, 1)) |>
+  arrange(desc(Freq)) |>
+  knitr::kable()
+```
+
+## Authors
+
+```{r}
+author_freq <- table(author_name = repo_info$author_name, 
+                     main_category = repo_info$main_category) |>
+  as.data.frame()
+
+author_freq$main_category <- factor(author_freq$main_category,
+                                     levels = names(cat_table))
+
+repos_per_author <- table(repo_info$author_name)
+
+lf_authors <- names(repos_per_author)[repos_per_author < 5]
+
+author_freq_plot <- author_freq |>
+  filter(!author_name %in% lf_authors) |>
+  arrange(Freq) |>
+  ggplot(aes(x = reorder(author_name, Freq), y = Freq, fill = main_category)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  ggtitle("Author or organization") +
+  ylab("Number of repositories") +
+  scale_fill_manual(values = glittr_cols) +
+  annotate(geom = "text", x = 2, y = 30,
+           label = paste("Authors with < 5 repos: ",
+                         length(lf_authors)),
+           color="black") +
+  theme_classic() +
+  theme(legend.position = "none",
+        axis.title.y = element_blank())
+
+print(author_freq_plot)
+```
+
+## Tags
+
+```{r}
+tag_freq_plot <- tag_df |>
+  filter(repositories > 10) |>
+  ggplot(aes(x = reorder(name, repositories),
+             y = repositories, fill = category)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  scale_fill_manual(values = glittr_cols) +
+  ggtitle("Tags with > 10 repositories") +
+  ylab("Number of repositories") +
+  annotate(geom = "text", x = 2, y = 150,
+           label = paste("Total number of tags: ",
+                         nrow(tag_df)),
+           color="black") +
+  theme_classic() +
+  theme(legend.position = "none",
+        axis.title.y = element_blank())
+
+print(tag_freq_plot)
+```
+
+```{r}
+tag_df |>
+  filter(repositories > 10) |>
+  arrange(desc(repositories)) |>
+  knitr::kable(row.names = FALSE)
+```
+
+## Contributors boxplot
+
+```{r}
+repo_info_gh$main_category <- factor(repo_info_gh$main_category,
+                                     levels = names(cat_table))
+
+contributors_plot <- repo_info_gh |>
+  ggplot(aes(x = main_category, y = contributors, fill = main_category)) +
+  geom_violin(scale = "width") +
+  geom_boxplot(width = 0.1, col = "darkgrey") +
+  coord_flip() +
+  ggtitle("Contributors") +
+  ylab("Number of contributors") +
+  scale_y_sqrt() +
+  scale_fill_manual(values = glittr_cols) +
+  theme_bw() +
+  theme(legend.position = "none",
+        axis.title.y = element_blank(),
+        plot.margin = margin(t = 5, r = 10, b = 5, l = 10))
+
+print(contributors_plot)
+```
+
+```{r}
+nna_contr <- repo_info_gh$contributors
+param1 <- sum(nna_contr > 10)/length(nna_contr)
+# 27.3% have more than 10 contributors
+param2 <- sum(nna_contr > 1)/length(nna_contr)
+# 78.6% have more than one contributor
+# 115 repos with only one contributor
+param3 <- sum(nna_contr <= 5)/length(nna_contr)
+```
+
+- More than 10 contributors: `r signif(param1*100, digits = 3) `%
+- More than 1 contributor: `r signif(param2*100, digits = 3) `%
+- Between 1 and 5 contributors: `r signif(param3*100, digits = 3) `%
+
+## Countries
+
+```{r}
+country_freq <- table(country = repo_info$country, 
+                      main_category = repo_info$main_category) |>
+  as.data.frame()
+
+country_freq$main_category <- factor(country_freq$main_category,
+                                     levels = names(cat_table))
+
+country_freq_plot <- country_freq |>
+  filter(country != "undefined") |>
+  ggplot(aes(x = reorder(country, Freq), y = Freq, fill = main_category)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  ggtitle("Country") +
+  ylab("Number of repositories") +
+  scale_fill_manual(values = glittr_cols) +
+  annotate(geom = "text", x = 2, y = 70,
+           label = paste("Repos with undefined country: ",
+                         sum(repo_info$country == "undefined")),
+           color="black") +
+  theme_classic() +
+  theme(legend.position = "none",
+        axis.title.y = element_blank())
+
+print(country_freq_plot)
+```
+
+```{r}
+repo_info$country |> table() |> as.data.frame() |> arrange(desc(Freq)) |> knitr::kable()
+```
+
+
+## Summary plot
+
+```{r}
+pdf("grid_plot_fig1.pdf", width = 10, height = 10)
+plot_grid(cat_count_plot, contributors_plot, 
+          tag_freq_plot, author_freq_plot,  
+          lic_freq_plot, country_freq_plot,
+          ncol = 2, labels = LETTERS[1:6],
+          rel_heights = c(2,3,3))
+dev.off()
+```
+
+
+
+
+
+
