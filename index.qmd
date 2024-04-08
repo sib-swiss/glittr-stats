@@ -93,6 +93,8 @@ Number of repositories: `r nrow(repo_info)`
 # check if data/n_contributors.rds exists
 if(file.exists("data/n_contributors.rds")) {
   n_contributors <- readRDS("data/n_contributors.rds")
+} else {
+  n_contributors <- NULL
 }
 
 # get contributors info only from github repos
