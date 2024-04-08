@@ -6,5 +6,5 @@
 .DS_Store
 data/
 glittr_stats_files/
-
+_freeze/
 /.quarto/
