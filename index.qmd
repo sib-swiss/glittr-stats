@@ -17,10 +17,10 @@ library(ggbreak)
 library(cowplot)
 ```
 
-Create a file named `.env.sh` and add your GitHub PAT (variable named `PAT` ) and google api key (named `GOOGLE_API_KEY`) in there, e.g.:
+Create a file named `.env` and add your GitHub PAT (variable named `PAT` ) and google api key (named `GOOGLE_API_KEY`) in there, e.g.:
 
 ```{bash, eval=FALSE}
-# this is an example, store it as .env.R:
+# this is an example, store it as .env:
 export AT="ghp_aRSRESCTZII20Lklser3H"
 export GOOGLE_API_KEY="AjKSLE5SklxuRsxwPP8s0"
 ```
