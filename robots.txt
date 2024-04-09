@@ -1,1 +1,1 @@
-Sitemap: https://GeertvanGeest.github.io/glittr-stats/sitemap.xml
+Sitemap: https://sib-swiss.github.io/glittr-stats/sitemap.xml
