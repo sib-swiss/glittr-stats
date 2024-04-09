@@ -1,9 +1,12 @@
 ---
 title: "Glittr stats"
 format: 
-  html:
-    code-fold: true
+  html
 ---
+
+## Set up the environment
+
+Loading required packages.
 
 ```{r}
 #| output: false
@@ -35,23 +38,25 @@ pat <- Sys.getenv("PAT")
 google_api_key <- Sys.getenv("GOOGLE_API_KEY")
 ```
 
-## Set colors
-
-These are the same colors as on glittr.org
+Setting colors. These are the same colors as on glittr.org. 
 
 ```{r}
 glittr_cols <- c(
-  "Scripting and languages" = "#3a86ff",
+  "Scripting and languages" =             "#3a86ff",
   "Computational methods and pipelines" = "#fb5607",
-  "Omics analysis" = "#ff006e",
+  "Omics analysis" =                      "#ff006e",
   "Reproducibility and data management" = "#ffbe0b",
-  "Statistics and machine learning" = "#8338ec",
-  "Others" = "#000000")
+  "Statistics and machine learning" =     "#8338ec",
+  "Others" =                              "#000000")
 ```
 
 ## Parse repository data
 
+Using the glittr.org REST API to get repository metadata, among which the stargazers, recency, category, license and tags. 
+
 ```{r}
+#| code-fold: true
+
 # get all repositories content as nested list
 parsed <- request("https://glittr.org/api/repositories") |>
   req_perform() |> resp_body_json()
@@ -86,7 +91,11 @@ Number of repositories: `r nrow(repo_info)`
 
 ## Get contributors info
 
+Using the GitHub REST API to get the number of contributors for each repository on glittr.org. This takes a few minutes, so if the contributors haven't changed, it will use a cached version. 
+
 ```{r}
+#| code-fold: true
+
 # take long time to run, so try to use cache results if no repos have been 
 # added in the meantime
 
@@ -136,10 +145,12 @@ repo_info_gh$contributors <- n_contributors[repo_info_gh$repo]
 
 ## Get country information
 
+Here we get country information for all authors and organizations. It uses the free text specified at 'location'. Since this can be anything, we use the google REST API to translate that into country. 
+
 ```{r}
-#| echo: false
 #| warning: false
 #| output: false
+#| code-fold: true
 
 # check whether author info exists for caching
 if(file.exists("data/author_info.rds")) {
@@ -220,6 +231,8 @@ repo_info$country[is.na(repo_info$country)] <- "undefined"
 
 ## Parse tag data
 
+Here, we create `tag_df` that contains information for each tag by using the glittr.org API. 
+
 ```{r}
 parsed <- request("https://glittr.org/api/tags") |>
   req_perform() |> resp_body_json()
@@ -237,9 +250,14 @@ tag_df <- do.call(rbind, tag_dfs) |> arrange(repositories)
 
 Number of tags/topics: `r nrow(tag_df)`
 
-## Categories
+## Number of repositories by category
+
+This is figure 2A in the manuscript. 
 
 ```{r}
+#| label: fig-categories
+#| fig-cap: Number of repositories per category
+
 cat_count_plot <- table(category = repo_info$main_category) |>
   as.data.frame() |>
   ggplot(aes(x = reorder(category, Freq), y = Freq, fill = category)) +
@@ -255,47 +273,105 @@ cat_count_plot <- table(category = repo_info$main_category) |>
 print(cat_count_plot)
 ```
 
+And a table with the actual numbers 
+
 ```{r}
+#| label: tbl-categories
+#| tbl-cap: Number of repositories per category
+
 category_count <- table(category = repo_info$main_category) |> as.data.frame()
 knitr::kable(category_count)
 ```
 
-## Licensing
+## Number of contributors per repository separated by category
+
+This is figure 2B in the manuscript. 
 
 ```{r}
-lic_freq_data <- table(license = repo_info$license,
-                       main_category = repo_info$main_category) |>
-  as.data.frame()
+#| label: fig-contributors
+#| fig-cap: Number of contributors per repository separated by category
 
-lic_freq_data$main_category <- factor(lic_freq_data$main_category,
+repo_info_gh$main_category <- factor(repo_info_gh$main_category,
                                      levels = names(cat_table))
 
-lic_freq_plot <- lic_freq_data |>
-  ggplot(aes(x = reorder(license, Freq), y = Freq, fill = main_category)) +
+contributors_plot <- repo_info_gh |>
+  ggplot(aes(x = main_category, y = contributors, fill = main_category)) +
+  geom_violin(scale = "width") +
+  geom_boxplot(width = 0.1, col = "darkgrey") +
+  coord_flip() +
+  ggtitle("Contributors") +
+  ylab("Number of contributors") +
+  scale_y_sqrt() +
+  scale_fill_manual(values = glittr_cols) +
+  theme_bw() +
+  theme(legend.position = "none",
+        axis.title.y = element_blank(),
+        plot.margin = margin(t = 5, r = 10, b = 5, l = 10))
+
+print(contributors_plot)
+```
+
+And some statistics of contributors. 
+
+```{r}
+nna_contr <- repo_info_gh$contributors
+param1 <- sum(nna_contr > 10)/length(nna_contr)
+param2 <- sum(nna_contr > 1)/length(nna_contr)
+param3 <- sum(nna_contr <= 5)/length(nna_contr)
+```
+
+- More than 10 contributors: `r signif(param1*100, digits = 3) `%
+- More than 1 contributor: `r signif(param2*100, digits = 3) `%
+- Between 1 and 5 contributors: `r signif(param3*100, digits = 3) `%
+
+## Number of repositories per tag
+
+This is figure 2C in the manuscript.
+
+```{r}
+#| label: fig-tags
+#| fig-cap: Number of repostories per tag, colored by category.
+
+tag_freq_plot <- tag_df |>
+  filter(repositories > 10) |>
+  ggplot(aes(x = reorder(name, repositories),
+             y = repositories, fill = category)) +
   geom_bar(stat = "identity") +
   coord_flip() +
   scale_fill_manual(values = glittr_cols) +
-  theme_classic() +
-  ggtitle("License type") +
+  ggtitle("Tags with > 10 repositories") +
   ylab("Number of repositories") +
+  annotate(geom = "text", x = 2, y = 150,
+           label = paste("Total number of tags: ",
+                         nrow(tag_df)),
+           color="black") +
+  theme_classic() +
   theme(legend.position = "none",
         axis.title.y = element_blank())
 
-print(lic_freq_plot)
+print(tag_freq_plot)
 ```
 
+And a table with the actual numbers.
+
 ```{r}
-repo_info$license |>
-  table() |>
-  as.data.frame() |>
-  mutate(perc = round(Freq/nrow(repo_info)*100, 1)) |>
-  arrange(desc(Freq)) |>
-  knitr::kable()
+#| label: tbl-tags
+#| tbl-cap: Number of repositories per tag
+
+tag_df |>
+  filter(repositories > 10) |>
+  arrange(desc(repositories)) |>
+  knitr::kable(row.names = FALSE)
 ```
 
-## Authors
+## Number of repositories by author
+
+This is figure 2D in the manuscript.
 
 ```{r}
+#| label: fig-author
+#| fig-cap: Number of repositories per author colored by category
+
 author_freq <- table(author_name = repo_info$author_name, 
                      main_category = repo_info$main_category) |>
   as.data.frame()
@@ -327,76 +403,72 @@ author_freq_plot <- author_freq |>
 print(author_freq_plot)
 ```
 
-## Tags
+And a table with the actual numbers.
 
 ```{r}
-tag_freq_plot <- tag_df |>
-  filter(repositories > 10) |>
-  ggplot(aes(x = reorder(name, repositories),
-             y = repositories, fill = category)) +
+#| label: tbl-author
+#| tbl-cap: Number of repositories per author
+
+table(repo_info$author_name) |>
+  as.data.frame() |>
+  filter(Freq >= 5) |>
+  arrange(desc(Freq)) |>
+  knitr::kable()
+
+```
+
+## Number of repositories per license
+
+This is figure 2E in the manuscript.
+
+```{r}
+#| label: fig-license
+#| fig-cap: Number of repositories per license
+
+lic_freq_data <- table(license = repo_info$license,
+                       main_category = repo_info$main_category) |>
+  as.data.frame()
+
+lic_freq_data$main_category <- factor(lic_freq_data$main_category,
+                                     levels = names(cat_table))
+
+lic_freq_plot <- lic_freq_data |>
+  ggplot(aes(x = reorder(license, Freq), y = Freq, fill = main_category)) +
   geom_bar(stat = "identity") +
   coord_flip() +
   scale_fill_manual(values = glittr_cols) +
-  ggtitle("Tags with > 10 repositories") +
-  ylab("Number of repositories") +
-  annotate(geom = "text", x = 2, y = 150,
-           label = paste("Total number of tags: ",
-                         nrow(tag_df)),
-           color="black") +
   theme_classic() +
+  ggtitle("License type") +
+  ylab("Number of repositories") +
   theme(legend.position = "none",
         axis.title.y = element_blank())
 
-print(tag_freq_plot)
+print(lic_freq_plot)
 ```
 
+And a table with the actual numbers.
+
 ```{r}
-tag_df |>
-  filter(repositories > 10) |>
-  arrange(desc(repositories)) |>
-  knitr::kable(row.names = FALSE)
+#| label: tbl-license
+#| tbl-cap: Number of repositories per license
+
+repo_info$license |>
+  table() |>
+  as.data.frame() |>
+  mutate(perc = round(Freq/nrow(repo_info)*100, 1)) |>
+  arrange(desc(Freq)) |>
+  knitr::kable()
 ```
 
-## Contributors boxplot
+
+## Number of repositories per country
+
+This is figure 2F in the mansucript. 
 
 ```{r}
-repo_info_gh$main_category <- factor(repo_info_gh$main_category,
-                                     levels = names(cat_table))
-
-contributors_plot <- repo_info_gh |>
-  ggplot(aes(x = main_category, y = contributors, fill = main_category)) +
-  geom_violin(scale = "width") +
-  geom_boxplot(width = 0.1, col = "darkgrey") +
-  coord_flip() +
-  ggtitle("Contributors") +
-  ylab("Number of contributors") +
-  scale_y_sqrt() +
-  scale_fill_manual(values = glittr_cols) +
-  theme_bw() +
-  theme(legend.position = "none",
-        axis.title.y = element_blank(),
-        plot.margin = margin(t = 5, r = 10, b = 5, l = 10))
-
-print(contributors_plot)
-```
-
-```{r}
-nna_contr <- repo_info_gh$contributors
-param1 <- sum(nna_contr > 10)/length(nna_contr)
-# 27.3% have more than 10 contributors
-param2 <- sum(nna_contr > 1)/length(nna_contr)
-# 78.6% have more than one contributor
-# 115 repos with only one contributor
-param3 <- sum(nna_contr <= 5)/length(nna_contr)
-```
-
-- More than 10 contributors: `r signif(param1*100, digits = 3) `%
-- More than 1 contributor: `r signif(param2*100, digits = 3) `%
-- Between 1 and 5 contributors: `r signif(param3*100, digits = 3) `%
-
-## Countries
-
-```{r}
+#| label: fig-country
+#| fig-cap: Number of repositories per country colored by category
+#| 
 country_freq <- table(country = repo_info$country, 
                       main_category = repo_info$main_category) |>
   as.data.frame()
@@ -423,12 +495,23 @@ country_freq_plot <- country_freq |>
 print(country_freq_plot)
 ```
 
+And a table with the actual numbers.
+
 ```{r}
-repo_info$country |> table() |> as.data.frame() |> arrange(desc(Freq)) |> knitr::kable()
+#| label: tbl-country
+#| tbl-cap: Number of repositories per country
+
+repo_info$country |> 
+  table() |> 
+  as.data.frame() |> 
+  arrange(desc(Freq)) |> 
+  knitr::kable()
 ```
 
 
 ## Summary plot
+
+A pdf that containing figure 2 in the manuscript. 
 
 ```{r}
 pdf("grid_plot_fig1.pdf", width = 10, height = 10)
