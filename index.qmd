@@ -21,7 +21,7 @@ Create a file named `.env` and add your GitHub PAT (variable named `PAT` ) and g
 
 ```{bash, eval=FALSE}
 # this is an example, store it as .env:
-export AT="ghp_aRSRESCTZII20Lklser3H"
+export PAT="ghp_aRSRESCTZII20Lklser3H"
 export GOOGLE_API_KEY="AjKSLE5SklxuRsxwPP8s0"
 ```
 
