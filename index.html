@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.553">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>Glittr.org statistics - Glittr stats</title>
 <style>
 code{white-space: pre-wrap;}
@@ -56,7 +53,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -72,8 +68,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -99,18 +94,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
-<link rel="stylesheet" href="styles.css">
+}</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
 </head>
-
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Glittr.org statistics</span>
@@ -122,34 +111,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/sib-swiss/glittr-stats/"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#set-up-the-environment" id="toc-set-up-the-environment" class="nav-link active" data-scroll-target="#set-up-the-environment">Set up the environment</a></li>
+<li><a href="#set-up-the-environment" id="toc-set-up-the-environment" class="nav-link active" data-scroll-target="#set-up-the-environment">Set up the environment</a></li>
   <li><a href="#parse-repository-data" id="toc-parse-repository-data" class="nav-link" data-scroll-target="#parse-repository-data">Parse repository data</a></li>
   <li><a href="#get-contributors-info" id="toc-get-contributors-info" class="nav-link" data-scroll-target="#get-contributors-info">Get contributors info</a></li>
   <li><a href="#get-country-information" id="toc-get-country-information" class="nav-link" data-scroll-target="#get-country-information">Get country information</a></li>
@@ -161,14 +146,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#number-of-repositories-per-license" id="toc-number-of-repositories-per-license" class="nav-link" data-scroll-target="#number-of-repositories-per-license">Number of repositories per license</a></li>
   <li><a href="#number-of-repositories-per-country" id="toc-number-of-repositories-per-country" class="nav-link" data-scroll-target="#number-of-repositories-per-country">Number of repositories per country</a></li>
   <li><a href="#summary-plot" id="toc-summary-plot" class="nav-link" data-scroll-target="#summary-plot">Summary plot</a></li>
-  </ul>
-</nav>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Glittr stats</h1>
 </div>
 
@@ -183,18 +164,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<section id="set-up-the-environment" class="level2">
-<h2 class="anchored" data-anchor-id="set-up-the-environment">Set up the environment</h2>
+</header><section id="set-up-the-environment" class="level2"><h2 class="anchored" data-anchor-id="set-up-the-environment">Set up the environment</h2>
 <p>Loading required packages.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(httr2)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggbreak)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cowplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://httr2.r-lib.org">httr2</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/YuLab-SMU/ggbreak">ggbreak</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://wilkelab.org/cowplot/">cowplot</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://downlit.r-lib.org/">downlit</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://xml2.r-lib.org/">xml2</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Create a file named <code>.env</code> and add your GitHub PAT (variable named <code>PAT</code> ) and google api key (named <code>GOOGLE_API_KEY</code>) in there, e.g.:</p>
 <div class="cell">
@@ -208,263 +187,240 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Get environment variables as R objects:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pat <span class="ot">&lt;-</span> <span class="fu">Sys.getenv</span>(<span class="st">"PAT"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>google_api_key <span class="ot">&lt;-</span> <span class="fu">Sys.getenv</span>(<span class="st">"GOOGLE_API_KEY"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"PAT"</span><span class="op">)</span></span>
+<span><span class="va">google_api_key</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"GOOGLE_API_KEY"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Setting colors. These are the same colors as on glittr.org.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>glittr_cols <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Scripting and languages"</span> <span class="ot">=</span>             <span class="st">"#3a86ff"</span>,</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Computational methods and pipelines"</span> <span class="ot">=</span> <span class="st">"#fb5607"</span>,</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Omics analysis"</span> <span class="ot">=</span>                      <span class="st">"#ff006e"</span>,</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Reproducibility and data management"</span> <span class="ot">=</span> <span class="st">"#ffbe0b"</span>,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Statistics and machine learning"</span> <span class="ot">=</span>     <span class="st">"#8338ec"</span>,</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Others"</span> <span class="ot">=</span>                              <span class="st">"#000000"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">glittr_cols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
+<span>  <span class="st">"Scripting and languages"</span> <span class="op">=</span>             <span class="st">"#3a86ff"</span>,</span>
+<span>  <span class="st">"Computational methods and pipelines"</span> <span class="op">=</span> <span class="st">"#fb5607"</span>,</span>
+<span>  <span class="st">"Omics analysis"</span> <span class="op">=</span>                      <span class="st">"#ff006e"</span>,</span>
+<span>  <span class="st">"Reproducibility and data management"</span> <span class="op">=</span> <span class="st">"#ffbe0b"</span>,</span>
+<span>  <span class="st">"Statistics and machine learning"</span> <span class="op">=</span>     <span class="st">"#8338ec"</span>,</span>
+<span>  <span class="st">"Others"</span> <span class="op">=</span>                              <span class="st">"#000000"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="parse-repository-data" class="level2">
-<h2 class="anchored" data-anchor-id="parse-repository-data">Parse repository data</h2>
+</section><section id="parse-repository-data" class="level2"><h2 class="anchored" data-anchor-id="parse-repository-data">Parse repository data</h2>
 <p>Using the glittr.org REST API to get repository metadata, among which the stargazers, recency, category, license and tags.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get all repositories content as nested list</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>parsed <span class="ot">&lt;-</span> <span class="fu">request</span>(<span class="st">"https://glittr.org/api/repositories"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">req_perform</span>() <span class="sc">|&gt;</span> <span class="fu">resp_body_json</span>()</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># extract relevant items as dataframe</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>repo_info_list <span class="ot">&lt;-</span> <span class="fu">lapply</span>(parsed<span class="sc">$</span>data, <span class="cf">function</span>(x) <span class="fu">data.frame</span>(</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">repo =</span> x<span class="sc">$</span>name,</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">author_name =</span> x<span class="sc">$</span>author<span class="sc">$</span>name,</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">stargazers =</span> x<span class="sc">$</span>stargazers,</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">recency =</span> x<span class="sc">$</span>days_since_last_push,</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">url =</span> x<span class="sc">$</span>url,</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">license =</span> <span class="fu">ifelse</span>(<span class="fu">is.null</span>(x<span class="sc">$</span>license), <span class="st">"none"</span>, x<span class="sc">$</span>license),</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">main_tag =</span> x<span class="sc">$</span>tags[[<span class="dv">1</span>]]<span class="sc">$</span>name,</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">main_category =</span> x<span class="sc">$</span>tags[[<span class="dv">1</span>]]<span class="sc">$</span>category</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>))</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>repo_info <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, repo_info_list)</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co"># create a column with provider (either github or gitlab)</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>repo_info<span class="sc">$</span>provider <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">grepl</span>(<span class="st">"github"</span>, repo_info<span class="sc">$</span>url), <span class="st">"github"</span>, <span class="st">"gitlab"</span>)</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co"># create a factor for categories for sorting</span></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>repo_info<span class="sc">$</span>main_category <span class="ot">&lt;-</span> <span class="fu">factor</span>(repo_info<span class="sc">$</span>main_category,</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">levels =</span> <span class="fu">names</span>(glittr_cols))</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="co"># category table to keep order the same in the plots</span></span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>cat_table <span class="ot">&lt;-</span> <span class="fu">table</span>(<span class="at">category =</span> repo_info<span class="sc">$</span>main_category)</span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>cat_table <span class="ot">&lt;-</span> <span class="fu">sort</span>(cat_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># get all repositories content as nested list</span></span>
+<span><span class="va">parsed</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="st">"https://glittr.org/api/repositories"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/req_perform.html">req_perform</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/resp_body_raw.html">resp_body_json</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># extract relevant items as dataframe</span></span>
+<span><span class="va">repo_info_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">parsed</span><span class="op">$</span><span class="va">data</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
+<span>  repo <span class="op">=</span> <span class="va">x</span><span class="op">$</span><span class="va">name</span>,</span>
+<span>  author_name <span class="op">=</span> <span class="va">x</span><span class="op">$</span><span class="va">author</span><span class="op">$</span><span class="va">name</span>,</span>
+<span>  stargazers <span class="op">=</span> <span class="va">x</span><span class="op">$</span><span class="va">stargazers</span>,</span>
+<span>  recency <span class="op">=</span> <span class="va">x</span><span class="op">$</span><span class="va">days_since_last_push</span>,</span>
+<span>  url <span class="op">=</span> <span class="va">x</span><span class="op">$</span><span class="va">url</span>,</span>
+<span>  license <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html">is.null</a></span><span class="op">(</span><span class="va">x</span><span class="op">$</span><span class="va">license</span><span class="op">)</span>, <span class="st">"none"</span>, <span class="va">x</span><span class="op">$</span><span class="va">license</span><span class="op">)</span>,</span>
+<span>  main_tag <span class="op">=</span> <span class="va">x</span><span class="op">$</span><span class="va">tags</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">name</span>,</span>
+<span>  main_category <span class="op">=</span> <span class="va">x</span><span class="op">$</span><span class="va">tags</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">category</span></span>
+<span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">repo_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/do.call.html">do.call</a></span><span class="op">(</span><span class="va">rbind</span>, <span class="va">repo_info_list</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># create a column with provider (either github or gitlab)</span></span>
+<span><span class="va">repo_info</span><span class="op">$</span><span class="va">provider</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"github"</span>, <span class="va">repo_info</span><span class="op">$</span><span class="va">url</span><span class="op">)</span>, <span class="st">"github"</span>, <span class="st">"gitlab"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># create a factor for categories for sorting</span></span>
+<span><span class="va">repo_info</span><span class="op">$</span><span class="va">main_category</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">repo_info</span><span class="op">$</span><span class="va">main_category</span>,</span>
+<span>                                  levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">glittr_cols</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># category table to keep order the same in the plots</span></span>
+<span><span class="va">cat_table</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span>category <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">main_category</span><span class="op">)</span></span>
+<span><span class="va">cat_table</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span><span class="va">cat_table</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Number of repositories: 568</p>
-</section>
-<section id="get-contributors-info" class="level2">
-<h2 class="anchored" data-anchor-id="get-contributors-info">Get contributors info</h2>
+</section><section id="get-contributors-info" class="level2"><h2 class="anchored" data-anchor-id="get-contributors-info">Get contributors info</h2>
 <p>Using the GitHub REST API to get the number of contributors for each repository on glittr.org. This takes a few minutes, so if the contributors haven’t changed, it will use a cached version.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># take long time to run, so try to use cache results if no repos have been </span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># added in the meantime</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># check if data/n_contributors.rds exists</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">file.exists</span>(<span class="st">"data/n_contributors.rds"</span>)) {</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  n_contributors <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/n_contributors.rds"</span>)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  n_contributors <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># get contributors info only from github repos</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>repo_info_gh <span class="ot">&lt;-</span> repo_info[repo_info<span class="sc">$</span>provider <span class="sc">==</span> <span class="st">"github"</span>, ]</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># get contributor info from github api if update is needed</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">identical</span>(<span class="fu">sort</span>(repo_info_gh<span class="sc">$</span>repo), <span class="fu">sort</span>(<span class="fu">names</span>(n_contributors)))) {</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dir.create</span>(<span class="st">"data"</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  n_contributors <span class="ot">&lt;-</span> <span class="fu">sapply</span>(repo_info_gh<span class="sc">$</span>repo, <span class="cf">function</span>(x) {</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># get repo contributors</span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    resp <span class="ot">&lt;-</span> <span class="fu">request</span>(<span class="st">"https://api.github.com/repos/"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>      <span class="fu">req_url_path_append</span>(x) <span class="sc">|&gt;</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>      <span class="fu">req_url_path_append</span>(<span class="st">"contributors"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>      <span class="fu">req_url_query</span>(<span class="at">per_page =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>      <span class="fu">req_headers</span>(</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">Accept =</span> <span class="st">"application/vnd.github+json"</span>,</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>        <span class="at">Authorization =</span> <span class="fu">paste</span>(<span class="st">"Bearer"</span>, pat),</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">X-GitHub-Api-Version</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"2022-11-28"</span>,</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">|&gt;</span></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>      <span class="fu">req_perform</span>() </span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>    link_url <span class="ot">&lt;-</span> <span class="fu">resp_link_url</span>(resp, <span class="st">"last"</span>)</span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">is.null</span>(link_url)) {</span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>      <span class="fu">return</span>(<span class="dv">1</span>)</span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>      npages <span class="ot">&lt;-</span> <span class="fu">strsplit</span>(link_url, <span class="st">"&amp;page="</span>)[[<span class="dv">1</span>]][<span class="dv">2</span>] <span class="sc">|&gt;</span> <span class="fu">as.numeric</span>()</span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>      <span class="fu">return</span>(npages)</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>  <span class="co"># overwrite rds file</span></span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">saveRDS</span>(n_contributors, <span class="st">"data/n_contributors.rds"</span>)</span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>repo_info_gh<span class="sc">$</span>contributors <span class="ot">&lt;-</span> n_contributors[repo_info_gh<span class="sc">$</span>repo]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># take long time to run, so try to use cache results if no repos have been </span></span>
+<span><span class="co"># added in the meantime</span></span>
+<span></span>
+<span><span class="co"># check if data/n_contributors.rds exists</span></span>
+<span><span class="kw">if</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/files.html">file.exists</a></span><span class="op">(</span><span class="st">"data/n_contributors.rds"</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">n_contributors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="st">"data/n_contributors.rds"</span><span class="op">)</span></span>
+<span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
+<span>  <span class="va">n_contributors</span> <span class="op">&lt;-</span> <span class="cn">NULL</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co"># get contributors info only from github repos</span></span>
+<span><span class="va">repo_info_gh</span> <span class="op">&lt;-</span> <span class="va">repo_info</span><span class="op">[</span><span class="va">repo_info</span><span class="op">$</span><span class="va">provider</span> <span class="op">==</span> <span class="st">"github"</span>, <span class="op">]</span></span>
+<span></span>
+<span><span class="co"># get contributor info from github api if update is needed</span></span>
+<span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/identical.html">identical</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span><span class="va">repo_info_gh</span><span class="op">$</span><span class="va">repo</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">n_contributors</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/files2.html">dir.create</a></span><span class="op">(</span><span class="st">"data"</span>, showWarnings <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span>  <span class="va">n_contributors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">repo_info_gh</span><span class="op">$</span><span class="va">repo</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    </span>
+<span>    <span class="co"># get repo contributors</span></span>
+<span>    <span class="va">resp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="st">"https://api.github.com/repos/"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>      <span class="fu"><a href="https://httr2.r-lib.org/reference/req_url.html">req_url_path_append</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>      <span class="fu"><a href="https://httr2.r-lib.org/reference/req_url.html">req_url_path_append</a></span><span class="op">(</span><span class="st">"contributors"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>      <span class="fu"><a href="https://httr2.r-lib.org/reference/req_url.html">req_url_query</a></span><span class="op">(</span>per_page <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>      <span class="fu"><a href="https://httr2.r-lib.org/reference/req_headers.html">req_headers</a></span><span class="op">(</span></span>
+<span>        Accept <span class="op">=</span> <span class="st">"application/vnd.github+json"</span>,</span>
+<span>        Authorization <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Bearer"</span>, <span class="va">pat</span><span class="op">)</span>,</span>
+<span>        `X-GitHub-Api-Version` <span class="op">=</span> <span class="st">"2022-11-28"</span>,</span>
+<span>      <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>      <span class="fu"><a href="https://httr2.r-lib.org/reference/req_perform.html">req_perform</a></span><span class="op">(</span><span class="op">)</span> </span>
+<span>    </span>
+<span>    <span class="va">link_url</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/resp_link_url.html">resp_link_url</a></span><span class="op">(</span><span class="va">resp</span>, <span class="st">"last"</span><span class="op">)</span></span>
+<span>    <span class="kw">if</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html">is.null</a></span><span class="op">(</span><span class="va">link_url</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
+<span>    <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
+<span>      <span class="va">npages</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/strsplit.html">strsplit</a></span><span class="op">(</span><span class="va">link_url</span>, <span class="st">"&amp;page="</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>      <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">npages</span><span class="op">)</span></span>
+<span>    <span class="op">}</span></span>
+<span>  <span class="op">}</span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="co"># overwrite rds file</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">saveRDS</a></span><span class="op">(</span><span class="va">n_contributors</span>, <span class="st">"data/n_contributors.rds"</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="va">repo_info_gh</span><span class="op">$</span><span class="va">contributors</span> <span class="op">&lt;-</span> <span class="va">n_contributors</span><span class="op">[</span><span class="va">repo_info_gh</span><span class="op">$</span><span class="va">repo</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
-<section id="get-country-information" class="level2">
-<h2 class="anchored" data-anchor-id="get-country-information">Get country information</h2>
+</section><section id="get-country-information" class="level2"><h2 class="anchored" data-anchor-id="get-country-information">Get country information</h2>
 <p>Here we get country information for all authors and organizations. It uses the free text specified at ‘location’. Since this can be anything, we use the google REST API to translate that into country.</p>
 <div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check whether author info exists for caching</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">file.exists</span>(<span class="st">"data/author_info.rds"</span>)) {</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  author_info <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"data/author_info.rds"</span>)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  author_info_authors <span class="ot">&lt;-</span> <span class="fu">unique</span>(author_info<span class="sc">$</span>author) <span class="sc">|&gt;</span> <span class="fu">sort</span>()</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  author_info_authors <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>gh_authors <span class="ot">&lt;-</span> repo_info<span class="sc">$</span>author_name[repo_info<span class="sc">$</span>provider <span class="sc">==</span> <span class="st">"github"</span>] <span class="sc">|&gt;</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unique</span>() <span class="sc">|&gt;</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sort</span>()</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co"># if the author info is out of date, update it</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">identical</span>(gh_authors, author_info_authors)) {</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  author_info_list <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(author <span class="cf">in</span> gh_authors) {</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    parsed <span class="ot">&lt;-</span> <span class="fu">request</span>(<span class="st">"https://api.github.com/users/"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>      <span class="fu">req_url_path_append</span>(author) <span class="sc">|&gt;</span></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">req_headers</span>(</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">Accept =</span> <span class="st">"application/vnd.github+json"</span>,</span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">Authorization =</span> <span class="fu">paste</span>(<span class="st">"Bearer"</span>, pat),</span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">`</span><span class="at">X-GitHub-Api-Version</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"2022-11-28"</span>,</span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">|&gt;</span></span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>      <span class="fu">req_perform</span>() <span class="sc">|&gt;</span> <span class="fu">resp_body_json</span>()</span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    author_info_list[[author]] <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>      <span class="at">author =</span> parsed<span class="sc">$</span>login,</span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>      <span class="at">type =</span> parsed<span class="sc">$</span>type,</span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>      <span class="at">name =</span> <span class="fu">ifelse</span>(<span class="fu">is.null</span>(parsed<span class="sc">$</span>name), <span class="cn">NA</span>, parsed<span class="sc">$</span>name),</span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">location =</span> <span class="fu">ifelse</span>(<span class="fu">is.null</span>(parsed<span class="sc">$</span>location), <span class="cn">NA</span>, parsed<span class="sc">$</span>location)</span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>  author_info <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, author_info_list)</span>
-<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>  author_info_loc <span class="ot">&lt;-</span> author_info[<span class="sc">!</span><span class="fu">is.na</span>(author_info<span class="sc">$</span>location), ]</span>
-<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>  author_loc <span class="ot">&lt;-</span> author_info_loc<span class="sc">$</span>location</span>
-<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(author_loc) <span class="ot">&lt;-</span> author_info_loc<span class="sc">$</span>author</span>
-<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>  ggmap<span class="sc">::</span><span class="fu">register_google</span>(<span class="at">key =</span> google_api_key)</span>
-<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>  loc_info <span class="ot">&lt;-</span> ggmap<span class="sc">::</span><span class="fu">geocode</span>(author_loc,</span>
-<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>                             <span class="at">output =</span> <span class="st">'all'</span>)</span>
-<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>  get_country <span class="ot">&lt;-</span> <span class="cf">function</span>(loc_results) {</span>
-<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="st">"results"</span> <span class="sc">%in%</span> <span class="fu">names</span>(loc_results)) {</span>
-<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span>(results <span class="cf">in</span> loc_results<span class="sc">$</span>results) {</span>
-<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>        address_info <span class="ot">&lt;-</span> results<span class="sc">$</span>address_components <span class="sc">|&gt;</span> </span>
-<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>          <span class="fu">lapply</span>(unlist) <span class="sc">|&gt;</span> </span>
-<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>          <span class="fu">do.call</span>(rbind, <span class="at">args =</span> _) <span class="sc">|&gt;</span></span>
-<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>          <span class="fu">as.data.frame</span>()</span>
-<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a>        country <span class="ot">&lt;-</span> address_info<span class="sc">$</span>long_name[address_info<span class="sc">$</span>types1 <span class="sc">==</span> <span class="st">"country"</span>]</span>
-<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (<span class="fu">length</span>(country) <span class="sc">==</span> <span class="dv">0</span>) <span class="cf">next</span></span>
-<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="fu">length</span>(country) <span class="sc">==</span> <span class="dv">0</span>) <span class="fu">return</span>(<span class="cn">NA</span>)</span>
-<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a>      <span class="fu">return</span>(country)</span>
-<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a>      <span class="fu">return</span>(<span class="cn">NA</span>)</span>
-<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a>  countries <span class="ot">&lt;-</span> <span class="fu">sapply</span>(loc_info, get_country)</span>
-<span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(countries) <span class="ot">&lt;-</span> <span class="fu">names</span>(author_loc)</span>
-<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a>  author_info<span class="sc">$</span>country <span class="ot">&lt;-</span> countries[author_info<span class="sc">$</span>author]</span>
-<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">saveRDS</span>(author_info, <span class="st">"data/author_info.rds"</span>)</span>
-<span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a>repo_info <span class="ot">&lt;-</span> <span class="fu">merge</span>(repo_info, author_info, <span class="at">by.x =</span> <span class="st">"author_name"</span>,</span>
-<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a>                   <span class="at">by.y =</span> <span class="st">"author"</span>)</span>
-<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a>repo_info<span class="sc">$</span>country[<span class="fu">is.na</span>(repo_info<span class="sc">$</span>country)] <span class="ot">&lt;-</span> <span class="st">"undefined"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># check whether author info exists for caching</span></span>
+<span><span class="kw">if</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/files.html">file.exists</a></span><span class="op">(</span><span class="st">"data/author_info.rds"</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">author_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="st">"data/author_info.rds"</span><span class="op">)</span></span>
+<span>  <span class="va">author_info_authors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">author_info</span><span class="op">$</span><span class="va">author</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
+<span>  <span class="va">author_info_authors</span> <span class="op">&lt;-</span> <span class="cn">NULL</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="va">gh_authors</span> <span class="op">&lt;-</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">author_name</span><span class="op">[</span><span class="va">repo_info</span><span class="op">$</span><span class="va">provider</span> <span class="op">==</span> <span class="st">"github"</span><span class="op">]</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># if the author info is out of date, update it</span></span>
+<span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/identical.html">identical</a></span><span class="op">(</span><span class="va">gh_authors</span>, <span class="va">author_info_authors</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">author_info_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="kw">for</span><span class="op">(</span><span class="va">author</span> <span class="kw">in</span> <span class="va">gh_authors</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    </span>
+<span>    <span class="va">parsed</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="st">"https://api.github.com/users/"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>      <span class="fu"><a href="https://httr2.r-lib.org/reference/req_url.html">req_url_path_append</a></span><span class="op">(</span><span class="va">author</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>      <span class="fu"><a href="https://httr2.r-lib.org/reference/req_headers.html">req_headers</a></span><span class="op">(</span></span>
+<span>        Accept <span class="op">=</span> <span class="st">"application/vnd.github+json"</span>,</span>
+<span>        Authorization <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Bearer"</span>, <span class="va">pat</span><span class="op">)</span>,</span>
+<span>        `X-GitHub-Api-Version` <span class="op">=</span> <span class="st">"2022-11-28"</span>,</span>
+<span>      <span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>      <span class="fu"><a href="https://httr2.r-lib.org/reference/req_perform.html">req_perform</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/resp_body_raw.html">resp_body_json</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="va">author_info_list</span><span class="op">[[</span><span class="va">author</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
+<span>      author <span class="op">=</span> <span class="va">parsed</span><span class="op">$</span><span class="va">login</span>,</span>
+<span>      type <span class="op">=</span> <span class="va">parsed</span><span class="op">$</span><span class="va">type</span>,</span>
+<span>      name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html">is.null</a></span><span class="op">(</span><span class="va">parsed</span><span class="op">$</span><span class="va">name</span><span class="op">)</span>, <span class="cn">NA</span>, <span class="va">parsed</span><span class="op">$</span><span class="va">name</span><span class="op">)</span>,</span>
+<span>      location <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html">is.null</a></span><span class="op">(</span><span class="va">parsed</span><span class="op">$</span><span class="va">location</span><span class="op">)</span>, <span class="cn">NA</span>, <span class="va">parsed</span><span class="op">$</span><span class="va">location</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>  </span>
+<span>  <span class="va">author_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/do.call.html">do.call</a></span><span class="op">(</span><span class="va">rbind</span>, <span class="va">author_info_list</span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="va">author_info_loc</span> <span class="op">&lt;-</span> <span class="va">author_info</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">author_info</span><span class="op">$</span><span class="va">location</span><span class="op">)</span>, <span class="op">]</span></span>
+<span>  </span>
+<span>  <span class="va">author_loc</span> <span class="op">&lt;-</span> <span class="va">author_info_loc</span><span class="op">$</span><span class="va">location</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">author_loc</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">author_info_loc</span><span class="op">$</span><span class="va">author</span></span>
+<span>  </span>
+<span>  <span class="fu">ggmap</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ggmap/man/register_google.html">register_google</a></span><span class="op">(</span>key <span class="op">=</span> <span class="va">google_api_key</span><span class="op">)</span></span>
+<span>  <span class="va">loc_info</span> <span class="op">&lt;-</span> <span class="fu">ggmap</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ggmap/man/geocode.html">geocode</a></span><span class="op">(</span><span class="va">author_loc</span>,</span>
+<span>                             output <span class="op">=</span> <span class="st">'all'</span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="va">get_country</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">loc_results</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="kw">if</span><span class="op">(</span><span class="st">"results"</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">loc_results</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      <span class="kw">for</span><span class="op">(</span><span class="va">results</span> <span class="kw">in</span> <span class="va">loc_results</span><span class="op">$</span><span class="va">results</span><span class="op">)</span> <span class="op">{</span></span>
+<span>        <span class="va">address_info</span> <span class="op">&lt;-</span> <span class="va">results</span><span class="op">$</span><span class="va">address_components</span> <span class="op">|&gt;</span> </span>
+<span>          <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">unlist</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>          <span class="fu"><a href="https://rdrr.io/r/base/do.call.html">do.call</a></span><span class="op">(</span><span class="va">rbind</span>, args <span class="op">=</span> <span class="va">_</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>          <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>        <span class="va">country</span> <span class="op">&lt;-</span> <span class="va">address_info</span><span class="op">$</span><span class="va">long_name</span><span class="op">[</span><span class="va">address_info</span><span class="op">$</span><span class="va">types1</span> <span class="op">==</span> <span class="st">"country"</span><span class="op">]</span></span>
+<span>        <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">country</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="kw">next</span></span>
+<span>      <span class="op">}</span></span>
+<span>      <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">country</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="cn">NA</span><span class="op">)</span></span>
+<span>      <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">country</span><span class="op">)</span></span>
+<span>    <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
+<span>      <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="cn">NA</span><span class="op">)</span></span>
+<span>    <span class="op">}</span></span>
+<span>  <span class="op">}</span></span>
+<span>  </span>
+<span>  <span class="va">countries</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">loc_info</span>, <span class="va">get_country</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">countries</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">author_loc</span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="va">author_info</span><span class="op">$</span><span class="va">country</span> <span class="op">&lt;-</span> <span class="va">countries</span><span class="op">[</span><span class="va">author_info</span><span class="op">$</span><span class="va">author</span><span class="op">]</span></span>
+<span>  </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">saveRDS</a></span><span class="op">(</span><span class="va">author_info</span>, <span class="st">"data/author_info.rds"</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="va">repo_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span><span class="op">(</span><span class="va">repo_info</span>, <span class="va">author_info</span>, by.x <span class="op">=</span> <span class="st">"author_name"</span>,</span>
+<span>                   by.y <span class="op">=</span> <span class="st">"author"</span><span class="op">)</span></span>
+<span><span class="va">repo_info</span><span class="op">$</span><span class="va">country</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">repo_info</span><span class="op">$</span><span class="va">country</span><span class="op">)</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"undefined"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ul>
 <li>Number of authors: 263</li>
 <li>Number of countries: 24</li>
-</ul>
-</section>
-<section id="parse-tag-data" class="level2">
-<h2 class="anchored" data-anchor-id="parse-tag-data">Parse tag data</h2>
+</ul></section><section id="parse-tag-data" class="level2"><h2 class="anchored" data-anchor-id="parse-tag-data">Parse tag data</h2>
 <p>Here, we create <code>tag_df</code> that contains information for each tag by using the glittr.org API.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>parsed <span class="ot">&lt;-</span> <span class="fu">request</span>(<span class="st">"https://glittr.org/api/tags"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">req_perform</span>() <span class="sc">|&gt;</span> <span class="fu">resp_body_json</span>()</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>tag_dfs <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(parsed)) {</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  category <span class="ot">&lt;-</span> parsed[[i]]<span class="sc">$</span>category</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  name <span class="ot">&lt;-</span> <span class="fu">sapply</span>(parsed[[i]]<span class="sc">$</span>tags, <span class="cf">function</span>(x) x<span class="sc">$</span>name)</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  repositories <span class="ot">&lt;-</span> <span class="fu">sapply</span>(parsed[[i]]<span class="sc">$</span>tags, <span class="cf">function</span>(x) x<span class="sc">$</span>repositories)</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  tag_dfs[[category]] <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(name, category, repositories)</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>tag_df <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, tag_dfs) <span class="sc">|&gt;</span> <span class="fu">arrange</span>(repositories)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">parsed</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="st">"https://glittr.org/api/tags"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/req_perform.html">req_perform</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/resp_body_raw.html">resp_body_json</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">tag_dfs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq_along</a></span><span class="op">(</span><span class="va">parsed</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">category</span> <span class="op">&lt;-</span> <span class="va">parsed</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">category</span></span>
+<span>  <span class="va">name</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">parsed</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">tags</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="va">x</span><span class="op">$</span><span class="va">name</span><span class="op">)</span></span>
+<span>  <span class="va">repositories</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">parsed</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span><span class="op">$</span><span class="va">tags</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="va">x</span><span class="op">$</span><span class="va">repositories</span><span class="op">)</span></span>
+<span>  <span class="va">tag_dfs</span><span class="op">[[</span><span class="va">category</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">name</span>, <span class="va">category</span>, <span class="va">repositories</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="va">tag_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/do.call.html">do.call</a></span><span class="op">(</span><span class="va">rbind</span>, <span class="va">tag_dfs</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">repositories</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Number of tags/topics: 55</p>
-</section>
-<section id="number-of-repositories-by-category" class="level2">
-<h2 class="anchored" data-anchor-id="number-of-repositories-by-category">Number of repositories by category</h2>
+</section><section id="number-of-repositories-by-category" class="level2"><h2 class="anchored" data-anchor-id="number-of-repositories-by-category">Number of repositories by category</h2>
 <p>This is figure 2A in the manuscript.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>cat_count_plot <span class="ot">&lt;-</span> <span class="fu">table</span>(<span class="at">category =</span> repo_info<span class="sc">$</span>main_category) <span class="sc">|&gt;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">|&gt;</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(category, Freq), <span class="at">y =</span> Freq, <span class="at">fill =</span> category)) <span class="sc">+</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> glittr_cols) <span class="sc">+</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Categories"</span>) <span class="sc">+</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Number of repositories"</span>)</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(cat_count_plot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cat_count_plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span>category <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">main_category</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">category</span>, <span class="va">Freq</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">Freq</span>, fill <span class="op">=</span> <span class="va">category</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="va">glittr_cols</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Categories"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span>,</span>
+<span>        axis.title.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Number of repositories"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">cat_count_plot</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-categories" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-categories-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-categories-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="index_files/figure-html/fig-categories-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-categories-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Number of repositories per category
-</figcaption>
-</figure>
+</figcaption></figure>
 </div>
 </div>
 </div>
 <p>And a table with the actual numbers</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>category_count <span class="ot">&lt;-</span> <span class="fu">table</span>(<span class="at">category =</span> repo_info<span class="sc">$</span>main_category) <span class="sc">|&gt;</span> <span class="fu">as.data.frame</span>()</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(category_count)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">category_count</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span>category <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">main_category</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">category_count</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-categories" class="cell quarto-float anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-categories-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-categories-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Number of repositories per category
-</figcaption>
-<div aria-describedby="tbl-categories-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption><div aria-describedby="tbl-categories-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <table class="do-not-create-environment cell table table-sm table-striped small">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;">category</th>
 <th style="text-align: right;">Freq</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Scripting and languages</td>
@@ -497,102 +453,91 @@ Table&nbsp;1: Number of repositories per category
 </figure>
 </div>
 </div>
-</section>
-<section id="number-of-contributors-per-repository-separated-by-category" class="level2">
-<h2 class="anchored" data-anchor-id="number-of-contributors-per-repository-separated-by-category">Number of contributors per repository separated by category</h2>
+</section><section id="number-of-contributors-per-repository-separated-by-category" class="level2"><h2 class="anchored" data-anchor-id="number-of-contributors-per-repository-separated-by-category">Number of contributors per repository separated by category</h2>
 <p>This is figure 2B in the manuscript.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>repo_info_gh<span class="sc">$</span>main_category <span class="ot">&lt;-</span> <span class="fu">factor</span>(repo_info_gh<span class="sc">$</span>main_category,</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">levels =</span> <span class="fu">names</span>(cat_table))</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>contributors_plot <span class="ot">&lt;-</span> repo_info_gh <span class="sc">|&gt;</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> main_category, <span class="at">y =</span> contributors, <span class="at">fill =</span> main_category)) <span class="sc">+</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">scale =</span> <span class="st">"width"</span>) <span class="sc">+</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">col =</span> <span class="st">"darkgrey"</span>) <span class="sc">+</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Contributors"</span>) <span class="sc">+</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Number of contributors"</span>) <span class="sc">+</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_sqrt</span>() <span class="sc">+</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> glittr_cols) <span class="sc">+</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">5</span>, <span class="at">r =</span> <span class="dv">10</span>, <span class="at">b =</span> <span class="dv">5</span>, <span class="at">l =</span> <span class="dv">10</span>))</span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(contributors_plot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">repo_info_gh</span><span class="op">$</span><span class="va">main_category</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">repo_info_gh</span><span class="op">$</span><span class="va">main_category</span>,</span>
+<span>                                     levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">cat_table</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">contributors_plot</span> <span class="op">&lt;-</span> <span class="va">repo_info_gh</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">main_category</span>, y <span class="op">=</span> <span class="va">contributors</span>, fill <span class="op">=</span> <span class="va">main_category</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_violin.html">geom_violin</a></span><span class="op">(</span>scale <span class="op">=</span> <span class="st">"width"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">0.1</span>, col <span class="op">=</span> <span class="st">"darkgrey"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Contributors"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Number of contributors"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_sqrt</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="va">glittr_cols</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span>,</span>
+<span>        axis.title.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>        plot.margin <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">margin</a></span><span class="op">(</span>t <span class="op">=</span> <span class="fl">5</span>, r <span class="op">=</span> <span class="fl">10</span>, b <span class="op">=</span> <span class="fl">5</span>, l <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">contributors_plot</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-contributors" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-contributors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-contributors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="index_files/figure-html/fig-contributors-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-contributors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Number of contributors per repository separated by category
-</figcaption>
-</figure>
+</figcaption></figure>
 </div>
 </div>
 </div>
 <p>And some statistics of contributors.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>nna_contr <span class="ot">&lt;-</span> repo_info_gh<span class="sc">$</span>contributors</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>param1 <span class="ot">&lt;-</span> <span class="fu">sum</span>(nna_contr <span class="sc">&gt;</span> <span class="dv">10</span>)<span class="sc">/</span><span class="fu">length</span>(nna_contr)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>param2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(nna_contr <span class="sc">&gt;</span> <span class="dv">1</span>)<span class="sc">/</span><span class="fu">length</span>(nna_contr)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>param3 <span class="ot">&lt;-</span> <span class="fu">sum</span>(nna_contr <span class="sc">&lt;=</span> <span class="dv">5</span>)<span class="sc">/</span><span class="fu">length</span>(nna_contr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">nna_contr</span> <span class="op">&lt;-</span> <span class="va">repo_info_gh</span><span class="op">$</span><span class="va">contributors</span></span>
+<span><span class="va">param1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">nna_contr</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">nna_contr</span><span class="op">)</span></span>
+<span><span class="va">param2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">nna_contr</span> <span class="op">&gt;</span> <span class="fl">1</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">nna_contr</span><span class="op">)</span></span>
+<span><span class="va">param3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">nna_contr</span> <span class="op">&lt;=</span> <span class="fl">5</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">nna_contr</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>More than 10 contributors: 25.6%</li>
 <li>More than 1 contributor: 78.8%</li>
 <li>Between 1 and 5 contributors: 59.9%</li>
-</ul>
-</section>
-<section id="number-of-repositories-per-tag" class="level2">
-<h2 class="anchored" data-anchor-id="number-of-repositories-per-tag">Number of repositories per tag</h2>
+</ul></section><section id="number-of-repositories-per-tag" class="level2"><h2 class="anchored" data-anchor-id="number-of-repositories-per-tag">Number of repositories per tag</h2>
 <p>This is figure 2C in the manuscript.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>tag_freq_plot <span class="ot">&lt;-</span> tag_df <span class="sc">|&gt;</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(repositories <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">|&gt;</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(name, repositories),</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> repositories, <span class="at">fill =</span> category)) <span class="sc">+</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> glittr_cols) <span class="sc">+</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Tags with &gt; 10 repositories"</span>) <span class="sc">+</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Number of repositories"</span>) <span class="sc">+</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">2</span>, <span class="at">y =</span> <span class="dv">150</span>,</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">paste</span>(<span class="st">"Total number of tags: "</span>,</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">nrow</span>(tag_df)),</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>           <span class="at">color=</span><span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>())</span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(tag_freq_plot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tag_freq_plot</span> <span class="op">&lt;-</span> <span class="va">tag_df</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">repositories</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">name</span>, <span class="va">repositories</span><span class="op">)</span>,</span>
+<span>             y <span class="op">=</span> <span class="va">repositories</span>, fill <span class="op">=</span> <span class="va">category</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="va">glittr_cols</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Tags with &gt; 10 repositories"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Number of repositories"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span>geom <span class="op">=</span> <span class="st">"text"</span>, x <span class="op">=</span> <span class="fl">2</span>, y <span class="op">=</span> <span class="fl">150</span>,</span>
+<span>           label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Total number of tags: "</span>,</span>
+<span>                         <span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">tag_df</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>           color<span class="op">=</span><span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span>,</span>
+<span>        axis.title.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">tag_freq_plot</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-tags" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-tags-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-tags-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="index_files/figure-html/fig-tags-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tags-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: Number of repostories per tag, colored by category.
-</figcaption>
-</figure>
+</figcaption></figure>
 </div>
 </div>
 </div>
 <p>And a table with the actual numbers.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>tag_df <span class="sc">|&gt;</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(repositories <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">|&gt;</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(repositories)) <span class="sc">|&gt;</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tag_df</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">repositories</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">repositories</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>row.names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-tags" class="cell quarto-float anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tags-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tags-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;2: Number of repositories per tag
-</figcaption>
-<div aria-describedby="tbl-tags-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption><div aria-describedby="tbl-tags-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
@@ -600,13 +545,11 @@ Table&nbsp;2: Number of repositories per tag
 <col style="width: 47%">
 <col style="width: 17%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;">name</th>
 <th style="text-align: left;">category</th>
 <th style="text-align: right;">repositories</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">R</td>
@@ -745,74 +688,66 @@ Table&nbsp;2: Number of repositories per tag
 </figure>
 </div>
 </div>
-</section>
-<section id="number-of-repositories-by-author" class="level2">
-<h2 class="anchored" data-anchor-id="number-of-repositories-by-author">Number of repositories by author</h2>
+</section><section id="number-of-repositories-by-author" class="level2"><h2 class="anchored" data-anchor-id="number-of-repositories-by-author">Number of repositories by author</h2>
 <p>This is figure 2D in the manuscript.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>author_freq <span class="ot">&lt;-</span> <span class="fu">table</span>(<span class="at">author_name =</span> repo_info<span class="sc">$</span>author_name, </span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">main_category =</span> repo_info<span class="sc">$</span>main_category) <span class="sc">|&gt;</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>author_freq<span class="sc">$</span>main_category <span class="ot">&lt;-</span> <span class="fu">factor</span>(author_freq<span class="sc">$</span>main_category,</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">levels =</span> <span class="fu">names</span>(cat_table))</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>repos_per_author <span class="ot">&lt;-</span> <span class="fu">table</span>(repo_info<span class="sc">$</span>author_name)</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>lf_authors <span class="ot">&lt;-</span> <span class="fu">names</span>(repos_per_author)[repos_per_author <span class="sc">&lt;</span> <span class="dv">5</span>]</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>author_freq_plot <span class="ot">&lt;-</span> author_freq <span class="sc">|&gt;</span></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>author_name <span class="sc">%in%</span> lf_authors) <span class="sc">|&gt;</span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Freq) <span class="sc">|&gt;</span></span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(author_name, Freq), <span class="at">y =</span> Freq, <span class="at">fill =</span> main_category)) <span class="sc">+</span></span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Author or organization"</span>) <span class="sc">+</span></span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Number of repositories"</span>) <span class="sc">+</span></span>
-<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> glittr_cols) <span class="sc">+</span></span>
-<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">2</span>, <span class="at">y =</span> <span class="dv">30</span>,</span>
-<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">paste</span>(<span class="st">"Authors with &lt; 5 repos: "</span>,</span>
-<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">length</span>(lf_authors)),</span>
-<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>           <span class="at">color=</span><span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
-<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>())</span>
-<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(author_freq_plot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">author_freq</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span>author_name <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">author_name</span>, </span>
+<span>                     main_category <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">main_category</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">author_freq</span><span class="op">$</span><span class="va">main_category</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">author_freq</span><span class="op">$</span><span class="va">main_category</span>,</span>
+<span>                                     levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">cat_table</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">repos_per_author</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">repo_info</span><span class="op">$</span><span class="va">author_name</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">lf_authors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">repos_per_author</span><span class="op">)</span><span class="op">[</span><span class="va">repos_per_author</span> <span class="op">&lt;</span> <span class="fl">5</span><span class="op">]</span></span>
+<span></span>
+<span><span class="va">author_freq_plot</span> <span class="op">&lt;-</span> <span class="va">author_freq</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">author_name</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">lf_authors</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">Freq</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">author_name</span>, <span class="va">Freq</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">Freq</span>, fill <span class="op">=</span> <span class="va">main_category</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Author or organization"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Number of repositories"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="va">glittr_cols</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span>geom <span class="op">=</span> <span class="st">"text"</span>, x <span class="op">=</span> <span class="fl">2</span>, y <span class="op">=</span> <span class="fl">30</span>,</span>
+<span>           label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Authors with &lt; 5 repos: "</span>,</span>
+<span>                         <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">lf_authors</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>           color<span class="op">=</span><span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span>,</span>
+<span>        axis.title.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">author_freq_plot</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-author" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-author-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-author-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="index_files/figure-html/fig-author-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-author-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4: Number of repositories per author colored by category
-</figcaption>
-</figure>
+</figcaption></figure>
 </div>
 </div>
 </div>
 <p>And a table with the actual numbers.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(repo_info<span class="sc">$</span>author_name) <span class="sc">|&gt;</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">|&gt;</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Freq <span class="sc">&gt;=</span> <span class="dv">5</span>) <span class="sc">|&gt;</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Freq)) <span class="sc">|&gt;</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">repo_info</span><span class="op">$</span><span class="va">author_name</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Freq</span> <span class="op">&gt;=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">Freq</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-author" class="cell quarto-float anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-author-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-author-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;3: Number of repositories per author
-</figcaption>
-<div aria-describedby="tbl-author-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption><div aria-describedby="tbl-author-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <table class="do-not-create-environment cell table table-sm table-striped small">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;">Var1</th>
 <th style="text-align: right;">Freq</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">carpentries-incubator</td>
@@ -905,66 +840,58 @@ Table&nbsp;3: Number of repositories per author
 </figure>
 </div>
 </div>
-</section>
-<section id="number-of-repositories-per-license" class="level2">
-<h2 class="anchored" data-anchor-id="number-of-repositories-per-license">Number of repositories per license</h2>
+</section><section id="number-of-repositories-per-license" class="level2"><h2 class="anchored" data-anchor-id="number-of-repositories-per-license">Number of repositories per license</h2>
 <p>This is figure 2E in the manuscript.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>lic_freq_data <span class="ot">&lt;-</span> <span class="fu">table</span>(<span class="at">license =</span> repo_info<span class="sc">$</span>license,</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">main_category =</span> repo_info<span class="sc">$</span>main_category) <span class="sc">|&gt;</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>lic_freq_data<span class="sc">$</span>main_category <span class="ot">&lt;-</span> <span class="fu">factor</span>(lic_freq_data<span class="sc">$</span>main_category,</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">levels =</span> <span class="fu">names</span>(cat_table))</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>lic_freq_plot <span class="ot">&lt;-</span> lic_freq_data <span class="sc">|&gt;</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(license, Freq), <span class="at">y =</span> Freq, <span class="at">fill =</span> main_category)) <span class="sc">+</span></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> glittr_cols) <span class="sc">+</span></span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"License type"</span>) <span class="sc">+</span></span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Number of repositories"</span>) <span class="sc">+</span></span>
-<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
-<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>())</span>
-<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(lic_freq_plot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">lic_freq_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span>license <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">license</span>,</span>
+<span>                       main_category <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">main_category</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">lic_freq_data</span><span class="op">$</span><span class="va">main_category</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">lic_freq_data</span><span class="op">$</span><span class="va">main_category</span>,</span>
+<span>                                     levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">cat_table</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">lic_freq_plot</span> <span class="op">&lt;-</span> <span class="va">lic_freq_data</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">license</span>, <span class="va">Freq</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">Freq</span>, fill <span class="op">=</span> <span class="va">main_category</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="va">glittr_cols</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"License type"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Number of repositories"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span>,</span>
+<span>        axis.title.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">lic_freq_plot</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-license" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-license-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-license-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="index_files/figure-html/fig-license-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-license-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5: Number of repositories per license
-</figcaption>
-</figure>
+</figcaption></figure>
 </div>
 </div>
 </div>
 <p>And a table with the actual numbers.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>repo_info<span class="sc">$</span>license <span class="sc">|&gt;</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">table</span>() <span class="sc">|&gt;</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">|&gt;</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">perc =</span> <span class="fu">round</span>(Freq<span class="sc">/</span><span class="fu">nrow</span>(repo_info)<span class="sc">*</span><span class="dv">100</span>, <span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Freq)) <span class="sc">|&gt;</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">repo_info</span><span class="op">$</span><span class="va">license</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>perc <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">Freq</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">repo_info</span><span class="op">)</span><span class="op">*</span><span class="fl">100</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">Freq</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-license" class="cell quarto-float anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-license-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-license-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;4: Number of repositories per license
-</figcaption>
-<div aria-describedby="tbl-license-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption><div aria-describedby="tbl-license-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <table class="do-not-create-environment cell table table-sm table-striped small">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;">Var1</th>
 <th style="text-align: right;">Freq</th>
 <th style="text-align: right;">perc</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">other</td>
@@ -1038,69 +965,61 @@ Table&nbsp;4: Number of repositories per license
 </figure>
 </div>
 </div>
-</section>
-<section id="number-of-repositories-per-country" class="level2">
-<h2 class="anchored" data-anchor-id="number-of-repositories-per-country">Number of repositories per country</h2>
+</section><section id="number-of-repositories-per-country" class="level2"><h2 class="anchored" data-anchor-id="number-of-repositories-per-country">Number of repositories per country</h2>
 <p>This is figure 2F in the mansucript.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>country_freq <span class="ot">&lt;-</span> <span class="fu">table</span>(<span class="at">country =</span> repo_info<span class="sc">$</span>country, </span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">main_category =</span> repo_info<span class="sc">$</span>main_category) <span class="sc">|&gt;</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>country_freq<span class="sc">$</span>main_category <span class="ot">&lt;-</span> <span class="fu">factor</span>(country_freq<span class="sc">$</span>main_category,</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">levels =</span> <span class="fu">names</span>(cat_table))</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>country_freq_plot <span class="ot">&lt;-</span> country_freq <span class="sc">|&gt;</span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">!=</span> <span class="st">"undefined"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(country, Freq), <span class="at">y =</span> Freq, <span class="at">fill =</span> main_category)) <span class="sc">+</span></span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Country"</span>) <span class="sc">+</span></span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Number of repositories"</span>) <span class="sc">+</span></span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> glittr_cols) <span class="sc">+</span></span>
-<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">2</span>, <span class="at">y =</span> <span class="dv">70</span>,</span>
-<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">paste</span>(<span class="st">"Repos with undefined country: "</span>,</span>
-<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">sum</span>(repo_info<span class="sc">$</span>country <span class="sc">==</span> <span class="st">"undefined"</span>)),</span>
-<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>           <span class="at">color=</span><span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
-<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>())</span>
-<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(country_freq_plot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">country_freq</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span>country <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">country</span>, </span>
+<span>                      main_category <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">main_category</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">country_freq</span><span class="op">$</span><span class="va">main_category</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">country_freq</span><span class="op">$</span><span class="va">main_category</span>,</span>
+<span>                                     levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">cat_table</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">country_freq_plot</span> <span class="op">&lt;-</span> <span class="va">country_freq</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">country</span> <span class="op">!=</span> <span class="st">"undefined"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">country</span>, <span class="va">Freq</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">Freq</span>, fill <span class="op">=</span> <span class="va">main_category</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Country"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Number of repositories"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="va">glittr_cols</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span>geom <span class="op">=</span> <span class="st">"text"</span>, x <span class="op">=</span> <span class="fl">2</span>, y <span class="op">=</span> <span class="fl">70</span>,</span>
+<span>           label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Repos with undefined country: "</span>,</span>
+<span>                         <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">repo_info</span><span class="op">$</span><span class="va">country</span> <span class="op">==</span> <span class="st">"undefined"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>           color<span class="op">=</span><span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span>,</span>
+<span>        axis.title.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">country_freq_plot</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-country" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-country-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-country-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="index_files/figure-html/fig-country-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-country-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6: Number of repositories per country colored by category
-</figcaption>
-</figure>
+</figcaption></figure>
 </div>
 </div>
 </div>
 <p>And a table with the actual numbers.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>repo_info<span class="sc">$</span>country <span class="sc">|&gt;</span> </span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">table</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Freq)) <span class="sc">|&gt;</span> </span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">repo_info</span><span class="op">$</span><span class="va">country</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">Freq</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-country" class="cell quarto-float anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-country-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-country-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;5: Number of repositories per country
-</figcaption>
-<div aria-describedby="tbl-country-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+</figcaption><div aria-describedby="tbl-country-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <table class="do-not-create-environment cell table table-sm table-striped small">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th style="text-align: left;">Var1</th>
 <th style="text-align: right;">Freq</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">undefined</td>
@@ -1205,18 +1124,16 @@ Table&nbsp;5: Number of repositories per country
 </figure>
 </div>
 </div>
-</section>
-<section id="summary-plot" class="level2">
-<h2 class="anchored" data-anchor-id="summary-plot">Summary plot</h2>
+</section><section id="summary-plot" class="level2"><h2 class="anchored" data-anchor-id="summary-plot">Summary plot</h2>
 <p>A pdf that containing figure 2 in the manuscript.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="st">"grid_plot_fig1.pdf"</span>, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">10</span>)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(cat_count_plot, contributors_plot, </span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>          tag_freq_plot, author_freq_plot,  </span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>          lic_freq_plot, country_freq_plot,</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">labels =</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>],</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">rel_heights =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>))</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/grDevices/pdf.html">pdf</a></span><span class="op">(</span><span class="st">"grid_plot_fig1.pdf"</span>, width <span class="op">=</span> <span class="fl">10</span>, height <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://wilkelab.org/cowplot/reference/plot_grid.html">plot_grid</a></span><span class="op">(</span><span class="va">cat_count_plot</span>, <span class="va">contributors_plot</span>, </span>
+<span>          <span class="va">tag_freq_plot</span>, <span class="va">author_freq_plot</span>,  </span>
+<span>          <span class="va">lic_freq_plot</span>, <span class="va">country_freq_plot</span>,</span>
+<span>          ncol <span class="op">=</span> <span class="fl">2</span>, labels <span class="op">=</span> <span class="va">LETTERS</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span><span class="op">]</span>,</span>
+<span>          rel_heights <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">3</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/grDevices/dev.html">dev.off</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>png 
   2 </code></pre>
@@ -1224,10 +1141,7 @@ Table&nbsp;5: Number of repositories per country
 </div>
 
 
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1637,7 +1551,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-
 
 
 
