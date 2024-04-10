@@ -88,6 +88,6 @@
     "href": "index.html#summary-plot",
     "title": "Glittr stats",
     "section": "Summary plot",
-    "text": "Summary plot\nA pdf that containing figure 2 in the manuscript.\n\npdf(\"grid_plot_fig1.pdf\", width = 10, height = 10)\nplot_grid(cat_count_plot, contributors_plot, \n          tag_freq_plot, author_freq_plot,  \n          lic_freq_plot, country_freq_plot,\n          ncol = 2, labels = LETTERS[1:6],\n          rel_heights = c(2,3,3))\ndev.off()\n\npng \n  2"
+    "text": "Summary plot\nFull figure 2 of the manuscript.\n\np &lt;- plot_grid(cat_count_plot, contributors_plot, \n          tag_freq_plot, author_freq_plot,  \n          lic_freq_plot, country_freq_plot,\n          ncol = 2, labels = LETTERS[1:6],\n          rel_heights = c(2,3,3))\n\nggsave(\"grid_plot_fig2.pdf\", width = 10, height = 10)\nggsave(\"grid_plot_fig2.eps\", width = 10, height = 10)"
   }
 ]
