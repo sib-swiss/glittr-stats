@@ -15,10 +15,14 @@ website:
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme: 
+      - default
+      - custom.scss
     toc: true
-    
+    code-link: true
+    header-includes: |
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+      
 execute:
   freeze: auto
 

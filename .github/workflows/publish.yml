@@ -6,7 +6,7 @@ on:
     branches: main
     paths: 
       - index.qmd
-      - styles.css
+      - custom.scss
       - renv.lock
       - _quarto.yml
   # every week on sunday
