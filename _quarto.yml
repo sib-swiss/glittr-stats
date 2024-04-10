@@ -4,9 +4,14 @@ project:
 website:
   title: "Glittr.org statistics"
   navbar:
+    background: "#8338ec"
     left:
       - href: index.qmd
-        text: Stats
+        text: Home
+    right:
+      - icon: github
+        href: https://github.com/sib-swiss/glittr-stats/
+        aria-label: GitHub
 
 format:
   html:
