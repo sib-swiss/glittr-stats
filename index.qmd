@@ -513,16 +513,17 @@ repo_info$country |>
 
 ## Summary plot
 
-A pdf that containing figure 2 in the manuscript. 
+Full figure 2 of the manuscript. 
 
 ```{r}
-pdf("grid_plot_fig1.pdf", width = 10, height = 10)
-plot_grid(cat_count_plot, contributors_plot, 
+p <- plot_grid(cat_count_plot, contributors_plot, 
           tag_freq_plot, author_freq_plot,  
           lic_freq_plot, country_freq_plot,
           ncol = 2, labels = LETTERS[1:6],
           rel_heights = c(2,3,3))
-dev.off()
+
+ggsave("grid_plot_fig2.pdf", width = 10, height = 10)
+ggsave("grid_plot_fig2.eps", width = 10, height = 10)
 ```
 
 
