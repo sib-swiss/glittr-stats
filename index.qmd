@@ -4,9 +4,11 @@ format:
   html
 ---
 
+In this report you can find some general statistics about [Glittr.org](glittr.org). The plots and statistics created are amongst others used in the manuscript. Since Glittr.org is an ongoing project these statistics are updated weekly. 
+
 ## Set up the environment
 
-Loading required packages.
+This is required if you run this notebook locally. Loading required packages.
 
 ```{r}
 #| output: false
@@ -19,7 +21,7 @@ library(downlit)
 library(xml2)
 ```
 
-Create a file named `.env` and add your GitHub PAT (variable named `PAT` ) and google api key (named `GOOGLE_API_KEY`) in there, e.g.:
+To run locally, create a file named `.env` and add your GitHub PAT (variable named `PAT` ) and google api key (named `GOOGLE_API_KEY`) in there, e.g.:
 
 ```{bash, eval=FALSE}
 # this is an example, store it as .env:
