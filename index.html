@@ -178,7 +178,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>In this report you can find some general statistics about <a href="glittr.org">Glittr.org</a>. The plots and statistics created are amongst others used in the manuscript. Since Glittr.org is an ongoing project these statistics are updated weekly.</p>
+</header><p>In this report you can find some general statistics about <a href="https://glittr.org">Glittr.org</a>. The plots and statistics created are amongst others used in the manuscript. Since <a href="https://glittr.org">Glittr.org</a> is an ongoing project these statistics are updated weekly.</p>
 <section id="set-up-the-environment" class="level2"><h2 class="anchored" data-anchor-id="set-up-the-environment">Set up the environment</h2>
 <p>This is required if you run this notebook locally. Loading required packages.</p>
 <div class="cell">
@@ -196,16 +196,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PAT</span><span class="op">=</span><span class="st">"ghp_aRSRESCTZII20Lklser3H"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">GOOGLE_API_KEY</span><span class="op">=</span><span class="st">"AjKSLE5SklxuRsxwPP8s0"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Now source this file to get the keys as objects:</p>
+<p>Now use your UNIX terminal to source this file to get the keys as objects:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Get environment variables as R objects:</p>
+<p>In R, get environment variables as objects:</p>
 <div class="cell">
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"PAT"</span><span class="op">)</span></span>
 <span><span class="va">google_api_key</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"GOOGLE_API_KEY"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Setting colors. These are the same colors as on glittr.org.</p>
+<p>Setting colors. These correspond to the category colours on glittr.org.</p>
 <div class="cell">
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">glittr_cols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
 <span>  <span class="st">"Scripting and languages"</span> <span class="op">=</span>             <span class="st">"#3a86ff"</span>,</span>
@@ -220,7 +220,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># get all repositories content as nested list</span></span>
 <span><span class="va">parsed</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="st">"https://glittr.org/api/repositories"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/req_perform.html">req_perform</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/resp_body_raw.html">resp_body_json</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/req_perform.html">req_perform</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/resp_body_raw.html">resp_body_json</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># extract relevant items as dataframe</span></span>
 <span><span class="va">repo_info_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">parsed</span><span class="op">$</span><span class="va">data</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
@@ -325,7 +326,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>        Authorization <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Bearer"</span>, <span class="va">pat</span><span class="op">)</span>,</span>
 <span>        `X-GitHub-Api-Version` <span class="op">=</span> <span class="st">"2022-11-28"</span>,</span>
 <span>      <span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>      <span class="fu"><a href="https://httr2.r-lib.org/reference/req_perform.html">req_perform</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/resp_body_raw.html">resp_body_json</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>      <span class="fu"><a href="https://httr2.r-lib.org/reference/req_perform.html">req_perform</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>      <span class="fu"><a href="https://httr2.r-lib.org/reference/resp_body_raw.html">resp_body_json</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    </span>
 <span>    <span class="va">author_info_list</span><span class="op">[[</span><span class="va">author</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span></span>
 <span>      author <span class="op">=</span> <span class="va">parsed</span><span class="op">$</span><span class="va">login</span>,</span>
 <span>      type <span class="op">=</span> <span class="va">parsed</span><span class="op">$</span><span class="va">type</span>,</span>
@@ -382,7 +385,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Here, we create <code>tag_df</code> that contains information for each tag by using the glittr.org API.</p>
 <div class="cell">
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">parsed</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="st">"https://glittr.org/api/tags"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/req_perform.html">req_perform</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/resp_body_raw.html">resp_body_json</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/req_perform.html">req_perform</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/resp_body_raw.html">resp_body_json</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">tag_dfs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq_along</a></span><span class="op">(</span><span class="va">parsed</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
