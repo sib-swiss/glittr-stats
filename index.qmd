@@ -4,7 +4,7 @@ format:
   html
 ---
 
-In this report you can find some general statistics about [Glittr.org](glittr.org). The plots and statistics created are amongst others used in the manuscript. Since Glittr.org is an ongoing project these statistics are updated weekly. 
+In this report you can find some general statistics about [Glittr.org](https://glittr.org). The plots and statistics created are amongst others used in the manuscript. Since [Glittr.org](https://glittr.org) is an ongoing project these statistics are updated weekly. 
 
 ## Set up the environment
 
@@ -29,20 +29,20 @@ export PAT="ghp_aRSRESCTZII20Lklser3H"
 export GOOGLE_API_KEY="AjKSLE5SklxuRsxwPP8s0"
 ```
 
-Now source this file to get the keys as objects:
+Now use your UNIX terminal to source this file to get the keys as objects:
 
 ```{bash, eval=FALSE}
 source .env
 ```
 
-Get environment variables as R objects:
+In R, get environment variables as objects:
 
 ```{r}
 pat <- Sys.getenv("PAT")
 google_api_key <- Sys.getenv("GOOGLE_API_KEY")
 ```
 
-Setting colors. These are the same colors as on glittr.org. 
+Setting colors. These correspond to the category colours on glittr.org. 
 
 ```{r}
 glittr_cols <- c(
@@ -63,7 +63,8 @@ Using the glittr.org REST API to get repository metadata, among which the starga
 
 # get all repositories content as nested list
 parsed <- request("https://glittr.org/api/repositories") |>
-  req_perform() |> resp_body_json()
+  req_perform() |>
+  resp_body_json()
 
 # extract relevant items as dataframe
 repo_info_list <- lapply(parsed$data, function(x) data.frame(
@@ -180,7 +181,9 @@ if(!identical(gh_authors, author_info_authors)) {
         Authorization = paste("Bearer", pat),
         `X-GitHub-Api-Version` = "2022-11-28",
       ) |>
-      req_perform() |> resp_body_json()
+      req_perform() |>
+      resp_body_json()
+    
     author_info_list[[author]] <- data.frame(
       author = parsed$login,
       type = parsed$type,
@@ -239,7 +242,8 @@ Here, we create `tag_df` that contains information for each tag by using the gli
 
 ```{r}
 parsed <- request("https://glittr.org/api/tags") |>
-  req_perform() |> resp_body_json()
+  req_perform() |>
+  resp_body_json()
 
 tag_dfs <- list()
 for(i in seq_along(parsed)) {
