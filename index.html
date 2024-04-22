@@ -249,7 +249,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="va">cat_table</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span><span class="va">cat_table</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Number of repositories: 568</p>
+<p>Number of repositories: 572</p>
 </section><section id="get-contributors-info" class="level2"><h2 class="anchored" data-anchor-id="get-contributors-info">Get contributors info</h2>
 <p>Using the GitHub REST API to get the number of contributors for each repository on glittr.org. This takes a few minutes, so if the contributors haven’t changed, it will use a cached version.</p>
 <div class="cell">
@@ -379,8 +379,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <ul>
-<li>Number of authors: 263</li>
-<li>Number of countries: 24</li>
+<li>Number of authors: 266</li>
+<li>Number of countries: 25</li>
 </ul></section><section id="parse-tag-data" class="level2"><h2 class="anchored" data-anchor-id="parse-tag-data">Parse tag data</h2>
 <p>Here, we create <code>tag_df</code> that contains information for each tag by using the glittr.org API.</p>
 <div class="cell">
@@ -443,11 +443,11 @@ Table&nbsp;1: Number of repositories per category
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Scripting and languages</td>
-<td style="text-align: right;">314</td>
+<td style="text-align: right;">317</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Computational methods and pipelines</td>
-<td style="text-align: right;">54</td>
+<td style="text-align: right;">55</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Omics analysis</td>
@@ -512,9 +512,9 @@ Figure&nbsp;2: Number of contributors per repository separated by category
 <span><span class="va">param3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">nna_contr</span> <span class="op">&lt;=</span> <span class="fl">5</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">nna_contr</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li>More than 10 contributors: 25.6%</li>
+<li>More than 10 contributors: 25.4%</li>
 <li>More than 1 contributor: 78.8%</li>
-<li>Between 1 and 5 contributors: 59.9%</li>
+<li>Between 1 and 5 contributors: 60%</li>
 </ul></section><section id="number-of-repositories-per-tag" class="level2"><h2 class="anchored" data-anchor-id="number-of-repositories-per-tag">Number of repositories per tag</h2>
 <p>This is figure 2C in the manuscript.</p>
 <div class="cell">
@@ -573,7 +573,7 @@ Table&nbsp;2: Number of repositories per tag
 <tr class="odd">
 <td style="text-align: left;">R</td>
 <td style="text-align: left;">Scripting and languages</td>
-<td style="text-align: right;">230</td>
+<td style="text-align: right;">233</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Python</td>
@@ -593,7 +593,7 @@ Table&nbsp;2: Number of repositories per tag
 <tr class="odd">
 <td style="text-align: left;">Statistics</td>
 <td style="text-align: left;">Statistics and machine learning</td>
-<td style="text-align: right;">54</td>
+<td style="text-align: right;">56</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Next generation sequencing</td>
@@ -613,7 +613,7 @@ Table&nbsp;2: Number of repositories per tag
 <tr class="odd">
 <td style="text-align: left;">Genomics</td>
 <td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">37</td>
+<td style="text-align: right;">38</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Unix/Linux</td>
@@ -633,7 +633,7 @@ Table&nbsp;2: Number of repositories per tag
 <tr class="odd">
 <td style="text-align: left;">Reproducibility</td>
 <td style="text-align: left;">Reproducibility and data management</td>
-<td style="text-align: right;">29</td>
+<td style="text-align: right;">30</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">FAIR data</td>
@@ -663,12 +663,12 @@ Table&nbsp;2: Number of repositories per tag
 <tr class="odd">
 <td style="text-align: left;">Containerization</td>
 <td style="text-align: left;">Computational methods and pipelines</td>
-<td style="text-align: right;">18</td>
+<td style="text-align: right;">19</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Workflows</td>
 <td style="text-align: left;">Computational methods and pipelines</td>
-<td style="text-align: right;">17</td>
+<td style="text-align: right;">18</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Shiny</td>
@@ -915,17 +915,17 @@ Table&nbsp;4: Number of repositories per license
 <tr class="odd">
 <td style="text-align: left;">other</td>
 <td style="text-align: right;">211</td>
-<td style="text-align: right;">37.3</td>
+<td style="text-align: right;">37.0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">none</td>
-<td style="text-align: right;">172</td>
+<td style="text-align: right;">173</td>
 <td style="text-align: right;">30.4</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">mit</td>
-<td style="text-align: right;">59</td>
-<td style="text-align: right;">10.4</td>
+<td style="text-align: right;">62</td>
+<td style="text-align: right;">10.9</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">cc-by-sa-4.0</td>
@@ -940,7 +940,7 @@ Table&nbsp;4: Number of repositories per license
 <tr class="even">
 <td style="text-align: left;">cc-by-4.0</td>
 <td style="text-align: right;">23</td>
-<td style="text-align: right;">4.1</td>
+<td style="text-align: right;">4.0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">cc0-1.0</td>
@@ -1042,19 +1042,19 @@ Table&nbsp;5: Number of repositories per country
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">undefined</td>
-<td style="text-align: right;">244</td>
+<td style="text-align: right;">243</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">United States</td>
-<td style="text-align: right;">133</td>
+<td style="text-align: right;">134</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Switzerland</td>
+<td style="text-align: left;">Canada</td>
 <td style="text-align: right;">27</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Canada</td>
-<td style="text-align: right;">26</td>
+<td style="text-align: left;">Switzerland</td>
+<td style="text-align: right;">27</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Sweden</td>
@@ -1101,38 +1101,42 @@ Table&nbsp;5: Number of repositories per country
 <td style="text-align: right;">3</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">Norway</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">Bulgaria</td>
 <td style="text-align: right;">2</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Ireland</td>
 <td style="text-align: right;">2</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Argentina</td>
 <td style="text-align: right;">1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">China</td>
 <td style="text-align: right;">1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Finland</td>
 <td style="text-align: right;">1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">India</td>
 <td style="text-align: right;">1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Luxembourg</td>
 <td style="text-align: right;">1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Poland</td>
 <td style="text-align: right;">1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Ukraine</td>
 <td style="text-align: right;">1</td>
 </tr>
