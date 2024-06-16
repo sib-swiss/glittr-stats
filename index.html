@@ -249,7 +249,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="va">cat_table</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span><span class="va">cat_table</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Number of repositories: 587</p>
+<p>Number of repositories: 591</p>
 </section><section id="get-contributors-info" class="level2"><h2 class="anchored" data-anchor-id="get-contributors-info">Get contributors info</h2>
 <p>Using the GitHub REST API to get the number of contributors for each repository on glittr.org. This takes a few minutes, so if the contributors haven’t changed, it will use a cached version.</p>
 <div class="cell">
@@ -379,7 +379,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <ul>
-<li>Number of authors: 280</li>
+<li>Number of authors: 282</li>
 <li>Number of countries: 25</li>
 </ul></section><section id="parse-tag-data" class="level2"><h2 class="anchored" data-anchor-id="parse-tag-data">Parse tag data</h2>
 <p>Here, we create <code>tag_df</code> that contains information for each tag by using the glittr.org API.</p>
@@ -443,7 +443,7 @@ Table&nbsp;1: Number of repositories per category
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Scripting and languages</td>
-<td style="text-align: right;">328</td>
+<td style="text-align: right;">330</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Computational methods and pipelines</td>
@@ -451,7 +451,7 @@ Table&nbsp;1: Number of repositories per category
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">86</td>
+<td style="text-align: right;">88</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Reproducibility and data management</td>
@@ -512,9 +512,9 @@ Figure&nbsp;2: Number of contributors per repository separated by category
 <span><span class="va">param3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">nna_contr</span> <span class="op">&lt;=</span> <span class="fl">5</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">nna_contr</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li>More than 10 contributors: 26.3%</li>
-<li>More than 1 contributor: 79.5%</li>
-<li>Between 1 and 5 contributors: 59.3%</li>
+<li>More than 10 contributors: 26.1%</li>
+<li>More than 1 contributor: 79.6%</li>
+<li>Between 1 and 5 contributors: 59.4%</li>
 </ul></section><section id="number-of-repositories-per-tag" class="level2"><h2 class="anchored" data-anchor-id="number-of-repositories-per-tag">Number of repositories per tag</h2>
 <p>This is figure 2C in the manuscript.</p>
 <div class="cell">
@@ -573,7 +573,7 @@ Table&nbsp;2: Number of repositories per tag
 <tr class="odd">
 <td style="text-align: left;">R</td>
 <td style="text-align: left;">Scripting and languages</td>
-<td style="text-align: right;">239</td>
+<td style="text-align: right;">241</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Python</td>
@@ -588,7 +588,7 @@ Table&nbsp;2: Number of repositories per tag
 <tr class="even">
 <td style="text-align: left;">RNA-seq</td>
 <td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">65</td>
+<td style="text-align: right;">66</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Statistics</td>
@@ -596,14 +596,14 @@ Table&nbsp;2: Number of repositories per tag
 <td style="text-align: right;">59</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">Next generation sequencing</td>
+<td style="text-align: left;">Omics analysis</td>
+<td style="text-align: right;">51</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">Data science</td>
 <td style="text-align: left;">Statistics and machine learning</td>
 <td style="text-align: right;">49</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Next generation sequencing</td>
-<td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">48</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Machine learning</td>
@@ -613,12 +613,12 @@ Table&nbsp;2: Number of repositories per tag
 <tr class="odd">
 <td style="text-align: left;">Genomics</td>
 <td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">42</td>
+<td style="text-align: right;">43</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Single-cell sequencing</td>
 <td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">36</td>
+<td style="text-align: right;">37</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Unix/Linux</td>
@@ -671,14 +671,14 @@ Table&nbsp;2: Number of repositories per tag
 <td style="text-align: right;">18</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">Metagenomics</td>
+<td style="text-align: left;">Omics analysis</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Shiny</td>
 <td style="text-align: left;">Scripting and languages</td>
 <td style="text-align: right;">16</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Metagenomics</td>
-<td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">15</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Julia</td>
@@ -797,11 +797,11 @@ Table&nbsp;3: Number of repositories per author
 <td style="text-align: right;">16</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">bioinformatics-core-shared-training</td>
-<td style="text-align: right;">12</td>
+<td style="text-align: left;">bioinformaticsdotca</td>
+<td style="text-align: right;">14</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">bioinformaticsdotca</td>
+<td style="text-align: left;">bioinformatics-core-shared-training</td>
 <td style="text-align: right;">12</td>
 </tr>
 <tr class="even">
@@ -915,17 +915,17 @@ Table&nbsp;4: Number of repositories per license
 <tr class="odd">
 <td style="text-align: left;">other</td>
 <td style="text-align: right;">214</td>
-<td style="text-align: right;">36.6</td>
+<td style="text-align: right;">36.3</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">none</td>
-<td style="text-align: right;">178</td>
-<td style="text-align: right;">30.4</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">30.6</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">mit</td>
-<td style="text-align: right;">63</td>
-<td style="text-align: right;">10.8</td>
+<td style="text-align: right;">65</td>
+<td style="text-align: right;">11.0</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">cc-by-sa-4.0</td>
@@ -950,7 +950,7 @@ Table&nbsp;4: Number of repositories per license
 <tr class="even">
 <td style="text-align: left;">apache-2.0</td>
 <td style="text-align: right;">12</td>
-<td style="text-align: right;">2.1</td>
+<td style="text-align: right;">2.0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">bsd-3-clause</td>
@@ -1042,15 +1042,15 @@ Table&nbsp;5: Number of repositories per country
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">undefined</td>
-<td style="text-align: right;">248</td>
+<td style="text-align: right;">249</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">United States</td>
-<td style="text-align: right;">137</td>
+<td style="text-align: right;">138</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Canada</td>
-<td style="text-align: right;">29</td>
+<td style="text-align: right;">31</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Switzerland</td>
