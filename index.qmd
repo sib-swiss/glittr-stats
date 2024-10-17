@@ -264,7 +264,11 @@ Number of tags/topics: `r nrow(tag_df)`
 
 ## Parse outlink data
 
+Here, we use the matomo API to retrieve outlinks to repositories. In this way, we can have an idea which repositories are popular on glittr.org and how often people click on a link. It is summarized over a year (from today). 
+
 ```{r}
+#| code-fold: true
+
 url <- "https://matomo.sib.swiss/?module=API"
 
 # Create and send the request
@@ -342,8 +346,15 @@ visits_by_entry <- merge(visits_by_entry, repo_info,
                          by.x = "associated_entry",
                          by.y = "repo") |>
   arrange(desc(total_visits))
+
+visits_by_namespace <- visits_by_entry |>
+  select(total_visits, author_name) |>
+  group_by(author_name) |>
+  summarise(total_visits = sum(total_visits)) |>
+  arrange(desc(total_visits))
 ```
 
+The number of outlink visits in the last year was: `r sum(visits_by_entry$total_visits)`. In total `r nrow(visits_by_entry)` repositories were found using Glittr.org. The most popular repo was `r visits_by_entry$associated_entry[1]` with `r visits_by_entry$total_visits[1]` outlinks. The most popular namespace was `r visits_by_namespace$author_name[1]` with `r visits_by_namespace$total_visits[1]` outlinks.
 
 ## Number of repositories by category
 
@@ -623,6 +634,25 @@ visits_by_entry |>
         axis.title.y = element_blank())
 ```
 
+```{r}
+#| label: tbl-visits-entry
+#| tbl-cap: Number visits per repository
+
+visits_by_entry |>
+  select(associated_entry, total_visits) |>
+  rename(repository = associated_entry) |>
+  slice(1:30) |>
+  knitr::kable()
+```
+
+```{r}
+#| label: tbl-visits-namespace
+#| tbl-cap: Number visits per namespace
+
+visits_by_namespace |>
+  slice(1:30) |>
+  knitr::kable()
+```
 
 ## Summary plot
 
