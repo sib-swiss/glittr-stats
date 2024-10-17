@@ -406,8 +406,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Number of tags/topics: 59</p>
 </section><section id="parse-outlink-data" class="level2"><h2 class="anchored" data-anchor-id="parse-outlink-data">Parse outlink data</h2>
+<p>Here, we use the matomo API to retrieve outlinks to repositories. In this way, we can have an idea which repositories are popular on glittr.org and how often people click on a link. It is summarized over a year (from today).</p>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://matomo.sib.swiss/?module=API"</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://matomo.sib.swiss/?module=API"</span></span>
 <span></span>
 <span><span class="co"># Create and send the request</span></span>
 <span><span class="va">response</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="va">url</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -483,8 +484,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="va">visits_by_entry</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span><span class="op">(</span><span class="va">visits_by_entry</span>, <span class="va">repo_info</span>,</span>
 <span>                         by.x <span class="op">=</span> <span class="st">"associated_entry"</span>,</span>
 <span>                         by.y <span class="op">=</span> <span class="st">"repo"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">total_visits</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">visits_by_namespace</span> <span class="op">&lt;-</span> <span class="va">visits_by_entry</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">total_visits</span>, <span class="va">author_name</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">author_name</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>total_visits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">total_visits</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">total_visits</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
+<p>The number of outlink visits in the last year was: 2200. In total 250 repositories were found using Glittr.org. The most popular repo was TheAlgorithms/Python with 181 outlinks. The most popular namespace was TheAlgorithms with 181 outlinks.</p>
 </section><section id="number-of-repositories-by-category" class="level2"><h2 class="anchored" data-anchor-id="number-of-repositories-by-category">Number of repositories by category</h2>
 <p>This is figure 2A in the manuscript.</p>
 <div class="cell">
@@ -1294,10 +1303,296 @@ Figure&nbsp;7: Top 30 of most visited repos from Glittr.org in the past year
 </div>
 </div>
 </div>
+<div class="cell">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">visits_by_entry</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">associated_entry</span>, <span class="va">total_visits</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>repository <span class="op">=</span> <span class="va">associated_entry</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">30</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-visits-entry" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-visits-entry-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6: Number visits per repository
+</figcaption><div aria-describedby="tbl-visits-entry-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<thead><tr class="header">
+<th style="text-align: left;">repository</th>
+<th style="text-align: right;">total_visits</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">TheAlgorithms/Python</td>
+<td style="text-align: right;">181</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">jakevdp/PythonDataScienceHandbook</td>
+<td style="text-align: right;">88</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ISUgenomics/bioinformatics-workbook</td>
+<td style="text-align: right;">69</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">realpython/python-guide</td>
+<td style="text-align: right;">69</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">cxli233/FriendsDontLetFriends</td>
+<td style="text-align: right;">64</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">galaxyproject/training-material</td>
+<td style="text-align: right;">59</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">lexfridman/mit-deep-learning</td>
+<td style="text-align: right;">58</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">theislab/single-cell-tutorial</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">zhiwehu/Python-programming-exercises</td>
+<td style="text-align: right;">48</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mlabonne/llm-course</td>
+<td style="text-align: right;">47</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">hadley/r4ds</td>
+<td style="text-align: right;">39</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">hbctraining/Training-modules</td>
+<td style="text-align: right;">39</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">trekhleb/learn-python</td>
+<td style="text-align: right;">37</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DataTalksClub/data-engineering-zoomcamp</td>
+<td style="text-align: right;">36</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">bobbyiliev/introduction-to-bash-scripting</td>
+<td style="text-align: right;">34</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">jeroenjanssens/data-science-at-the-command-line</td>
+<td style="text-align: right;">34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">instillai/TensorFlow-Course</td>
+<td style="text-align: right;">33</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sib-swiss/single-cell-training</td>
+<td style="text-align: right;">32</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">google/comprehensive-rust</td>
+<td style="text-align: right;">31</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Yorko/mlcourse.ai</td>
+<td style="text-align: right;">31</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rmcelreath/stat_rethinking_2022</td>
+<td style="text-align: right;">27</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">clauswilke/dataviz</td>
+<td style="text-align: right;">26</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">hbctraining/scRNA-seq_online</td>
+<td style="text-align: right;">26</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">harvardinformatics/learning-bioinformatics-at-home</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Functional-Genomics-Lab/Applied-Genomics</td>
+<td style="text-align: right;">21</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">genome/bfx-workshop</td>
+<td style="text-align: right;">21</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rstudio/bookdown</td>
+<td style="text-align: right;">21</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">joaoventura/full-speed-python</td>
+<td style="text-align: right;">19</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sib-swiss/NGS-variants-training</td>
+<td style="text-align: right;">19</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">hadley/ggplot2-book</td>
+<td style="text-align: right;">18</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">visits_by_namespace</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">30</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-visits-namespace" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-visits-namespace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7: Number visits per namespace
+</figcaption><div aria-describedby="tbl-visits-namespace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<thead><tr class="header">
+<th style="text-align: left;">author_name</th>
+<th style="text-align: right;">total_visits</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">TheAlgorithms</td>
+<td style="text-align: right;">181</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sib-swiss</td>
+<td style="text-align: right;">178</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">jakevdp</td>
+<td style="text-align: right;">93</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">hadley</td>
+<td style="text-align: right;">78</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NBISweden</td>
+<td style="text-align: right;">76</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">hbctraining</td>
+<td style="text-align: right;">75</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ISUgenomics</td>
+<td style="text-align: right;">69</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">realpython</td>
+<td style="text-align: right;">69</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">cxli233</td>
+<td style="text-align: right;">64</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">theislab</td>
+<td style="text-align: right;">60</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">galaxyproject</td>
+<td style="text-align: right;">59</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">lexfridman</td>
+<td style="text-align: right;">58</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">carpentries-incubator</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">zhiwehu</td>
+<td style="text-align: right;">48</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">mlabonne</td>
+<td style="text-align: right;">47</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">trekhleb</td>
+<td style="text-align: right;">37</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DataTalksClub</td>
+<td style="text-align: right;">36</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">bobbyiliev</td>
+<td style="text-align: right;">34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">jeroenjanssens</td>
+<td style="text-align: right;">34</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">instillai</td>
+<td style="text-align: right;">33</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rmcelreath</td>
+<td style="text-align: right;">33</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Yorko</td>
+<td style="text-align: right;">31</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">google</td>
+<td style="text-align: right;">31</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rstudio</td>
+<td style="text-align: right;">29</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">clauswilke</td>
+<td style="text-align: right;">26</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">AllenDowney</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">harvardinformatics</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Functional-Genomics-Lab</td>
+<td style="text-align: right;">21</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">genome</td>
+<td style="text-align: right;">21</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fastai</td>
+<td style="text-align: right;">19</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
 </section><section id="summary-plot" class="level2"><h2 class="anchored" data-anchor-id="summary-plot">Summary plot</h2>
 <p>Full figure 2 of the manuscript.</p>
 <div class="cell">
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://wilkelab.org/cowplot/reference/plot_grid.html">plot_grid</a></span><span class="op">(</span><span class="va">cat_count_plot</span>, <span class="va">contributors_plot</span>, </span>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://wilkelab.org/cowplot/reference/plot_grid.html">plot_grid</a></span><span class="op">(</span><span class="va">cat_count_plot</span>, <span class="va">contributors_plot</span>, </span>
 <span>          <span class="va">tag_freq_plot</span>, <span class="va">author_freq_plot</span>,  </span>
 <span>          <span class="va">lic_freq_plot</span>, <span class="va">country_freq_plot</span>,</span>
 <span>          ncol <span class="op">=</span> <span class="fl">2</span>, labels <span class="op">=</span> <span class="va">LETTERS</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span><span class="op">]</span>,</span>
