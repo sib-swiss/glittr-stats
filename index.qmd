@@ -40,6 +40,7 @@ In R, get environment variables as objects:
 ```{r}
 pat <- Sys.getenv("PAT")
 google_api_key <- Sys.getenv("GOOGLE_API_KEY")
+matomo_api_key <- Sys.getenv("MATOMO_API_KEY")
 ```
 
 Setting colors. These correspond to the category colours on glittr.org. 
@@ -75,7 +76,10 @@ repo_info_list <- lapply(parsed$data, function(x) data.frame(
   url = x$url,
   license = ifelse(is.null(x$license), "none", x$license),
   main_tag = x$tags[[1]]$name,
-  main_category = x$tags[[1]]$category
+  main_category = x$tags[[1]]$category,
+  website = x$website,
+  author_profile = x$author$profile,
+  author_website = x$author$website
 ))
 
 repo_info <- do.call(rbind, repo_info_list)
@@ -257,6 +261,89 @@ tag_df <- do.call(rbind, tag_dfs) |> arrange(repositories)
 ```
 
 Number of tags/topics: `r nrow(tag_df)`
+
+## Parse outlink data
+
+```{r}
+url <- "https://matomo.sib.swiss/?module=API"
+
+# Create and send the request
+response <- request(url) |>
+  req_body_form(
+    method = "Actions.getOutlinks",
+    idSite = 217,
+    format = "json",
+    date = "today",
+    period = "year",
+    expanded = 1,
+    filter_limit = -1,
+    token_auth = matomo_api_key
+  ) |>
+  req_perform() |>
+  resp_body_json()
+
+## Get outlinks metadata in a dataframe
+outlinks_list <- list()
+for(domain in response) {
+  label <- domain$label
+  url_info <- lapply(domain$subtable, function(x) {
+    data.frame(
+      url = ifelse(is.null(x$url),NA , x$url),
+      nb_visits = ifelse(is.null(x$nb_visits),NA , x$nb_visits),
+      domain = label
+    )
+  })
+  outlinks_list[[domain$label]] <- do.call(rbind, url_info)
+}
+
+outlinks_df <- do.call(rbind, outlinks_list)
+row.names(outlinks_df) <- NULL
+
+# function to clean urls for matching
+clean_url <- function(url) {
+  trimws(url) |> gsub("/$", "", x = _) |> tolower()
+}
+
+# function to match outlink data with repo and website url per entry
+match_url <- function(outlinks_df, repo_info, column = "repo_url") {
+  url_clean <- clean_url(outlinks_df$url)
+  column_clean <- clean_url(repo_info[[column]])
+  outlinks_df[[paste0("is_", column)]] <- url_clean %in% column_clean
+  outlinks_df[[paste0("ass_repo_", column)]] <- repo_info$repo[match(url_clean,
+                                                                    column_clean)]
+  return(outlinks_df)
+}
+
+# apply the match url function on urls associated with repo entry
+for(column in c("url", "website", "author_profile", "author_website")) {
+  outlinks_df <- match_url(outlinks_df, repo_info, column = column)
+}
+
+# filter for only repo url and website (ignore author info)
+# check whether associations match
+outlinks_df$associated_entry <- outlinks_df |>
+  select(ass_repo_url, ass_repo_website) |>
+  apply(1, function(x) {
+    x <- x[!is.na(x)] |> unique()
+    
+    if(length(x) == 1) return(x[1]) 
+    if(length(x == 0) == 0) return(NA)
+    if(length(x == 2)) return("do not correspond")
+  })
+
+# create a list of outlink visits by entry
+visits_by_entry <- outlinks_df |>
+  select(url, nb_visits, associated_entry) |>
+  filter(!is.na(associated_entry)) |>
+  group_by(associated_entry) |>
+  summarise(total_visits = sum(nb_visits)) 
+
+visits_by_entry <- merge(visits_by_entry, repo_info,
+                         by.x = "associated_entry",
+                         by.y = "repo") |>
+  arrange(desc(total_visits))
+```
+
 
 ## Number of repositories by category
 
@@ -514,6 +601,26 @@ repo_info$country |>
   as.data.frame() |> 
   arrange(desc(Freq)) |> 
   knitr::kable()
+```
+
+## Number of outlinks by repo
+
+```{r}
+#| label: fig-outlinks
+#| fig-cap: Top 30 of most visited repos from Glittr.org in the past year
+
+visits_by_entry |>
+  slice(1:30) |>
+  ggplot(aes(x = reorder(associated_entry, total_visits),
+             y = total_visits, fill = main_category)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  scale_fill_manual(values = glittr_cols) +
+  ggtitle("Top 30 of most outlinked repos") +
+  ylab("Number of outlinks") +
+  theme_classic() +
+  theme(legend.position = "none",
+        axis.title.y = element_blank())
 ```
 
 

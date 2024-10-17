@@ -3,6 +3,7 @@
 .RData
 .Ruserdata
 .env
+.env.R
 .DS_Store
 data/
 glittr_stats_files/

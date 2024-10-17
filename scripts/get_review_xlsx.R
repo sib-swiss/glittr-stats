@@ -1,5 +1,6 @@
 library(httr2)
 library(writexl)
+library(dplyr)
 
 parsed <- request("https://glittr.org/api/repositories") |>
   req_perform() |>
