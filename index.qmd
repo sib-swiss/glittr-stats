@@ -62,13 +62,28 @@ Using the glittr.org REST API to get repository metadata, among which the starga
 ```{r}
 #| code-fold: true
 
-# get all repositories content as nested list
-parsed <- request("https://glittr.org/api/repositories") |>
-  req_perform() |>
-  resp_body_json()
+# while loop to loop over all pages
+page_list <- list()
+page <- 1
+has_more_pages <- TRUE
+
+while (has_more_pages) {
+  # Create and send the request with pagination
+  response <- request("https://glittr.org/api/repositories") |>
+    req_url_query(`page[size]` = 100, `page[number]` = page) |>
+    req_perform() |>
+    resp_body_json()
+  
+  # Append the data to the list
+  page_list <- append(page_list, response$data)
+  
+  # Check if there are more pages (this logic depends on the API's response structure)
+  has_more_pages <- length(response$data) > 0  # Adjust this condition based on your API's pagination logic
+  page <- page + 1
+}
 
 # extract relevant items as dataframe
-repo_info_list <- lapply(parsed$data, function(x) data.frame(
+repo_info_list <- lapply(page_list, function(x) data.frame(
   repo = x$name,
   author_name = x$author$name,
   stargazers = x$stargazers,
@@ -352,9 +367,25 @@ visits_by_namespace <- visits_by_entry |>
   group_by(author_name) |>
   summarise(total_visits = sum(total_visits)) |>
   arrange(desc(total_visits))
+
+# visits by tag
+visits_by_main_tag <- visits_by_entry |>
+  select(total_visits, main_tag) |>
+  group_by(main_tag) |>
+  summarise(total_visits = sum(total_visits))
+
+# add main category information for plotting
+visits_by_main_tag <- merge(visits_by_main_tag, tag_df,
+                            by.x = "main_tag",
+                            by.y = "name") |>
+  mutate(visits_per_repo = total_visits/repositories) |>
+  arrange(desc(visits_per_repo))
 ```
 
-The number of outlink visits in the last year was: `r sum(visits_by_entry$total_visits)`. In total `r nrow(visits_by_entry)` repositories were found using Glittr.org. The most popular repo was `r visits_by_entry$associated_entry[1]` with `r visits_by_entry$total_visits[1]` outlinks. The most popular namespace was `r visits_by_namespace$author_name[1]` with `r visits_by_namespace$total_visits[1]` outlinks.
+- The number of outlink visits in the last year: `r sum(visits_by_entry$total_visits)`
+- Number of repositories found using Glittr.org: `r nrow(visits_by_entry)` 
+- Most popular repo was `r visits_by_entry$associated_entry[1]` with `r visits_by_entry$total_visits[1]` outlinks. 
+- Most popular namespace was `r visits_by_namespace$author_name[1]` with `r visits_by_namespace$total_visits[1]` outlinks.
 
 ## Number of repositories by category
 
@@ -616,6 +647,8 @@ repo_info$country |>
 
 ## Number of outlinks by repo
 
+Here, we use the site data from matomo in order to investigate what visitors of Glittr.org have clicked on. This gives us an idea about which repositories and topics are popular among users. In @fig-outlinks we see that `r visits_by_entry$associated_entry[1]` was the most popular repository with `r visits_by_entry$total_visits[1]` clicks. 
+
 ```{r}
 #| label: fig-outlinks
 #| fig-cap: Top 30 of most visited repos from Glittr.org in the past year
@@ -644,6 +677,58 @@ visits_by_entry |>
   slice(1:30) |>
   knitr::kable()
 ```
+
+It becomes more interesting when we aggregate the data per main tag (@fig-outlinks-tag). This gives us an idea of topic which people are looking for when visiting glittr.org. The most popular topic is `r visits_by_main_tag$main_tag[which.max(visits_by_main_tag$total_visits)]` with `r max(visits_by_main_tag$total_visits)` outlinks. 
+
+```{r}
+#| label: fig-outlinks-tag
+#| fig-cap: Top 30 of most popular main tags from Glittr.org in the past year
+
+visits_by_main_tag |>
+  slice(1:30) |>
+  ggplot(aes(x = reorder(main_tag, total_visits),
+             y = total_visits, fill = category)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  scale_fill_manual(values = glittr_cols) +
+  ggtitle("Top 30 of most outlinked main tags") +
+  ylab("Number of outlinks") +
+  theme_classic() +
+  theme(legend.position = "none",
+        axis.title.y = element_blank())
+```
+
+When we normalize the visits by number of repositories per tag (@fig-outlinks-tag-repo), we can get an idea where training materials might be lacking. A high number here show repositories that are quite unique in what they teach, but are still popular. Here, we see that there are `r visits_by_main_tag$repositories[1]` repositires with the main tag `r visits_by_main_tag$main_tag[1]` with an average of `r round(visits_by_main_tag$visits_per_repo[1], 1)` outlinks.   
+
+```{r}
+#| label: fig-outlinks-tag-repo
+#| fig-cap: Top 30 of most popular main tags normalized per repo from Glittr.org in the past year
+
+visits_by_main_tag |>
+  arrange(desc(visits_per_repo)) |>
+  slice(1:30) |>
+  ggplot(aes(x = reorder(main_tag, visits_per_repo),
+             y = visits_per_repo, fill = category)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  scale_fill_manual(values = glittr_cols) +
+  ggtitle("Top 30 of most outlinked main tags normalized by repo number") +
+  ylab("Number of outlinks per tag/number of repositories having tag") +
+  theme_classic() +
+  theme(legend.position = "none",
+        axis.title.y = element_blank())
+```
+
+```{r}
+#| label: tbl-outlinks-tag
+#| tbl-cap: Number visits per tag
+
+visits_by_main_tag |>
+  slice(1:30) |>
+  knitr::kable()
+```
+
+We can also check popularity by namespace, i.e. author (@tbl-visits-namespace). 
 
 ```{r}
 #| label: tbl-visits-namespace
