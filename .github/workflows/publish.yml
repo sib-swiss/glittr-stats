@@ -27,11 +27,20 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+      
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Get R version from renv.lock
+        id: get-r-version
+        run: |
+          R_VERSION=$(jq -r '.R.Version' renv.lock)
+          echo "R_VERSION=$R_VERSION" >> $GITHUB_ENV
         
       - name: Install R
         uses: r-lib/actions/setup-r@v2
         with:
-          r-version: '4.4.1'
+          r-version: ${{ env.R_VERSION }}
           
       - name: Install system dependencies
         shell: bash {0}
