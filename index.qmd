@@ -270,14 +270,16 @@ Here, we use the matomo API to retrieve outlinks to repositories. In this way, w
 
 url <- "https://matomo.sib.swiss/?module=API"
 
+oneyearago <- format(Sys.Date() - 365, "%Y-%m-%d")
+
 # Create and send the request
 response <- request(url) |>
   req_body_form(
     method = "Actions.getOutlinks",
     idSite = 217,
     format = "json",
-    date = "today",
-    period = "year",
+    date = paste(oneyearago, "today", sep = ","),
+    period = "range",
     expanded = 1,
     filter_limit = -1,
     token_auth = matomo_api_key
