@@ -29,7 +29,6 @@ repo_info_list <- lapply(parsed$data, function(x) {
     main_tag = x$tags[[1]]$name,
     other_tags = other_tags,
     in_review_by = "",
-    reviewed_by = "",
     main_tag_corrected = "",
     other_tags_corrected = "",
     other_remarks = "",
@@ -47,6 +46,12 @@ repo_info <- repo_info |>
   # Arrange the data.frame based on the frequency in descending order
   arrange(desc(freq), main_tag) |>
   select(-freq)
+
+# reviewed <- readxl::read_excel("reviewed.xlsx")
+# 
+# repo_info <- repo_info[!repo_info$repo %in% reviewed$repo, ]
+# 
+# repo_info <- rbind(repo_info, reviewed)
 
 writexl::write_xlsx(repo_info, "review_format.xlsx")
 

@@ -10,3 +10,5 @@ glittr_stats_files/
 _freeze/
 /.quarto/
 _site/
+index_files/
+*.xlsx

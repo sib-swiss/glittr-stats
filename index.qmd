@@ -62,28 +62,12 @@ Using the glittr.org REST API to get repository metadata, among which the starga
 ```{r}
 #| code-fold: true
 
-# while loop to loop over all pages
-page_list <- list()
-page <- 1
-has_more_pages <- TRUE
-
-while (has_more_pages) {
-  # Create and send the request with pagination
-  response <- request("https://glittr.org/api/repositories") |>
-    req_url_query(`page[size]` = 100, `page[number]` = page) |>
-    req_perform() |>
-    resp_body_json()
-  
-  # Append the data to the list
-  page_list <- append(page_list, response$data)
-  
-  # Check if there are more pages (this logic depends on the API's response structure)
-  has_more_pages <- length(response$data) > 0  # Adjust this condition based on your API's pagination logic
-  page <- page + 1
-}
+response <- request("https://glittr.org/api/repositories") |>
+  req_perform() |>
+  resp_body_json()
 
 # extract relevant items as dataframe
-repo_info_list <- lapply(page_list, function(x) data.frame(
+repo_info_list <- lapply(response$data, function(x) data.frame(
   repo = x$name,
   author_name = x$author$name,
   stargazers = x$stargazers,
