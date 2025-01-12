@@ -508,8 +508,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <ul>
-<li>The number of outlink visits in the last year: 3426</li>
-<li>Number of repositories found using Glittr.org: 278</li>
+<li>The number of outlink visits in the last year: 3434</li>
+<li>Number of repositories found using Glittr.org: 279</li>
 <li>Most popular repo was TheAlgorithms/Python with 378 outlinks.</li>
 <li>Most popular namespace was TheAlgorithms with 378 outlinks.</li>
 </ul></section><section id="number-of-repositories-by-category" class="level2"><h2 class="anchored" data-anchor-id="number-of-repositories-by-category">Number of repositories by category</h2>
@@ -1365,7 +1365,7 @@ Table&nbsp;6: Number visits per repository
 </tr>
 <tr class="even">
 <td style="text-align: left;">mlabonne/llm-course</td>
-<td style="text-align: right;">96</td>
+<td style="text-align: right;">97</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">cxli233/FriendsDontLetFriends</td>
@@ -1393,7 +1393,7 @@ Table&nbsp;6: Number visits per repository
 </tr>
 <tr class="odd">
 <td style="text-align: left;">hadley/r4ds</td>
-<td style="text-align: right;">58</td>
+<td style="text-align: right;">60</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">trekhleb/learn-python</td>
@@ -1409,7 +1409,7 @@ Table&nbsp;6: Number visits per repository
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Yorko/mlcourse.ai</td>
-<td style="text-align: right;">47</td>
+<td style="text-align: right;">48</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">DataTalksClub/data-engineering-zoomcamp</td>
@@ -1470,7 +1470,7 @@ Table&nbsp;6: Number visits per repository
 </figure>
 </div>
 </div>
-<p>It becomes more interesting when we aggregate the data per main tag (<a href="#fig-outlinks-tag" class="quarto-xref">Figure&nbsp;8</a>). This gives us an idea of topic which people are looking for when visiting glittr.org. The most popular topic is Python with 879 outlinks.</p>
+<p>It becomes more interesting when we aggregate the data per main tag (<a href="#fig-outlinks-tag" class="quarto-xref">Figure&nbsp;8</a>). This gives us an idea of topic which people are looking for when visiting glittr.org. The most popular topic is Python with 877 outlinks.</p>
 <div class="cell">
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">visits_by_main_tag</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">30</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -1562,24 +1562,24 @@ Table&nbsp;7: Number visits per tag
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Artificial intelligence</td>
-<td style="text-align: right;">117</td>
+<td style="text-align: right;">118</td>
 <td style="text-align: left;">Statistics and machine learning</td>
 <td style="text-align: right;">6</td>
-<td style="text-align: right;">19.5000000</td>
+<td style="text-align: right;">19.6666667</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">General</td>
-<td style="text-align: right;">322</td>
+<td style="text-align: right;">324</td>
 <td style="text-align: left;">Others</td>
 <td style="text-align: right;">34</td>
-<td style="text-align: right;">9.4705882</td>
+<td style="text-align: right;">9.5294118</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Python</td>
-<td style="text-align: right;">879</td>
+<td style="text-align: right;">877</td>
 <td style="text-align: left;">Scripting and languages</td>
 <td style="text-align: right;">103</td>
-<td style="text-align: right;">8.5339806</td>
+<td style="text-align: right;">8.5145631</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Multiomics</td>
@@ -1604,10 +1604,10 @@ Table&nbsp;7: Number visits per tag
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Machine learning</td>
-<td style="text-align: right;">268</td>
+<td style="text-align: right;">269</td>
 <td style="text-align: left;">Statistics and machine learning</td>
 <td style="text-align: right;">55</td>
-<td style="text-align: right;">4.8727273</td>
+<td style="text-align: right;">4.8909091</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Single-cell sequencing</td>
@@ -1653,51 +1653,65 @@ Table&nbsp;7: Number visits per tag
 </tr>
 <tr class="even">
 <td style="text-align: left;">Long read sequencing</td>
-<td style="text-align: right;">18</td>
+<td style="text-align: right;">19</td>
 <td style="text-align: left;">Omics analysis</td>
 <td style="text-align: right;">9</td>
-<td style="text-align: right;">2.0000000</td>
+<td style="text-align: right;">2.1111111</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">MATLAB/Octave</td>
+<td style="text-align: left;">C/C++</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: left;">Scripting and languages</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">2.0000000</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">MATLAB/Octave</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Scripting and languages</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2.0000000</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">Quarto</td>
 <td style="text-align: right;">23</td>
 <td style="text-align: left;">Scripting and languages</td>
 <td style="text-align: right;">12</td>
 <td style="text-align: right;">1.9166667</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Epigenetics</td>
 <td style="text-align: right;">16</td>
 <td style="text-align: left;">Omics analysis</td>
 <td style="text-align: right;">10</td>
 <td style="text-align: right;">1.6000000</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Cloud computing</td>
 <td style="text-align: right;">15</td>
 <td style="text-align: left;">Computational methods and pipelines</td>
 <td style="text-align: right;">10</td>
 <td style="text-align: right;">1.5000000</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Statistics</td>
 <td style="text-align: right;">98</td>
 <td style="text-align: left;">Statistics and machine learning</td>
 <td style="text-align: right;">67</td>
 <td style="text-align: right;">1.4626866</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Containerization</td>
 <td style="text-align: right;">28</td>
 <td style="text-align: left;">Computational methods and pipelines</td>
 <td style="text-align: right;">20</td>
+<td style="text-align: right;">1.4000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">High performance computing</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">Computational methods and pipelines</td>
+<td style="text-align: right;">10</td>
 <td style="text-align: right;">1.4000000</td>
 </tr>
 <tr class="odd">
@@ -1708,53 +1722,39 @@ Table&nbsp;7: Number visits per tag
 <td style="text-align: right;">1.3333333</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">High performance computing</td>
-<td style="text-align: right;">13</td>
-<td style="text-align: left;">Computational methods and pipelines</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">1.3000000</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">Data science</td>
 <td style="text-align: right;">64</td>
 <td style="text-align: left;">Statistics and machine learning</td>
 <td style="text-align: right;">59</td>
 <td style="text-align: right;">1.0847458</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Next generation sequencing</td>
 <td style="text-align: right;">63</td>
 <td style="text-align: left;">Omics analysis</td>
 <td style="text-align: right;">64</td>
 <td style="text-align: right;">0.9843750</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Transcriptomics</td>
 <td style="text-align: right;">80</td>
 <td style="text-align: left;">Omics analysis</td>
 <td style="text-align: right;">90</td>
 <td style="text-align: right;">0.8888889</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Metagenomics</td>
 <td style="text-align: right;">14</td>
 <td style="text-align: left;">Omics analysis</td>
 <td style="text-align: right;">17</td>
 <td style="text-align: right;">0.8235294</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Variant analysis</td>
 <td style="text-align: right;">26</td>
 <td style="text-align: left;">Omics analysis</td>
 <td style="text-align: right;">32</td>
 <td style="text-align: right;">0.8125000</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">R</td>
-<td style="text-align: right;">197</td>
-<td style="text-align: left;">Scripting and languages</td>
-<td style="text-align: right;">267</td>
-<td style="text-align: right;">0.7378277</td>
 </tr>
 </tbody>
 </table>
@@ -1785,7 +1785,7 @@ Table&nbsp;8: Number visits per namespace
 </tr>
 <tr class="even">
 <td style="text-align: left;">sib-swiss</td>
-<td style="text-align: right;">210</td>
+<td style="text-align: right;">211</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">jakevdp</td>
@@ -1793,7 +1793,7 @@ Table&nbsp;8: Number visits per namespace
 </tr>
 <tr class="even">
 <td style="text-align: left;">hadley</td>
-<td style="text-align: right;">124</td>
+<td style="text-align: right;">126</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">hbctraining</td>
@@ -1816,12 +1816,12 @@ Table&nbsp;8: Number visits per namespace
 <td style="text-align: right;">100</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">theislab</td>
+<td style="text-align: left;">mlabonne</td>
 <td style="text-align: right;">97</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">mlabonne</td>
-<td style="text-align: right;">96</td>
+<td style="text-align: left;">theislab</td>
+<td style="text-align: right;">97</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">cxli233</td>
@@ -1852,12 +1852,12 @@ Table&nbsp;8: Number visits per namespace
 <td style="text-align: right;">50</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">jeroenjanssens</td>
+<td style="text-align: left;">Yorko</td>
 <td style="text-align: right;">48</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Yorko</td>
-<td style="text-align: right;">47</td>
+<td style="text-align: left;">jeroenjanssens</td>
+<td style="text-align: right;">48</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">DataTalksClub</td>
