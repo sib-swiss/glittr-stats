@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Glittr stats – Glittr.org statistics</title>
 <style>
@@ -64,14 +64,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./assets/icon/icon-stroke.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-5082c1b048a9243e4e9bba654cb201bf.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-c10b30eb894da51f146a98bd36b89e1d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7c65ce9d615da6022aa2cd019608d398.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-b19bf2ff0823aa71a439f16d19d1f206.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -104,6 +105,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Glittr.org statistics</span>
     </a>
@@ -142,7 +145,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./assets/logo/logo-with-domain.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none"></a>
+      <img src="./assets/logo/logo-with-domain.svg" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none"><img src="./assets/logo/logo-with-domain.svg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none"></a>
       </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -186,44 +189,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="set-up-the-environment" class="level2"><h2 class="anchored" data-anchor-id="set-up-the-environment">Set up the environment</h2>
 <p>This is required if you run this notebook locally. Loading required packages.</p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://httr2.r-lib.org">httr2</a></span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://httr2.r-lib.org">httr2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/YuLab-SMU/ggbreak">ggbreak</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://wilkelab.org/cowplot/">cowplot</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://downlit.r-lib.org/">downlit</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://xml2.r-lib.org/">xml2</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://xml2.r-lib.org/">xml2</a></span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>To run locally, create a file named <code>.env</code> and add your GitHub PAT (variable named <code>PAT</code> ) and google api key (named <code>GOOGLE_API_KEY</code>) in there, e.g.:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this is an example, store it as .env:</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this is an example, store it as .env:</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PAT</span><span class="op">=</span><span class="st">"ghp_aRSRESCTZII20Lklser3H"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">GOOGLE_API_KEY</span><span class="op">=</span><span class="st">"AjKSLE5SklxuRsxwPP8s0"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">GOOGLE_API_KEY</span><span class="op">=</span><span class="st">"AjKSLE5SklxuRsxwPP8s0"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now use your UNIX terminal to source this file to get the keys as objects:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .env</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .env</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>In R, get environment variables as objects:</p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"PAT"</span><span class="op">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"PAT"</span><span class="op">)</span></span>
 <span><span class="va">google_api_key</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"GOOGLE_API_KEY"</span><span class="op">)</span></span>
-<span><span class="va">matomo_api_key</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"MATOMO_API_KEY"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">matomo_api_key</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"MATOMO_API_KEY"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Setting colors. These correspond to the category colours on glittr.org.</p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">glittr_cols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">glittr_cols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span></span>
 <span>  <span class="st">"Scripting and languages"</span> <span class="op">=</span>             <span class="st">"#3a86ff"</span>,</span>
 <span>  <span class="st">"Computational methods and pipelines"</span> <span class="op">=</span> <span class="st">"#fb5607"</span>,</span>
 <span>  <span class="st">"Omics analysis"</span> <span class="op">=</span>                      <span class="st">"#ff006e"</span>,</span>
 <span>  <span class="st">"Reproducibility and data management"</span> <span class="op">=</span> <span class="st">"#ffbe0b"</span>,</span>
 <span>  <span class="st">"Statistics and machine learning"</span> <span class="op">=</span>     <span class="st">"#8338ec"</span>,</span>
-<span>  <span class="st">"Others"</span> <span class="op">=</span>                              <span class="st">"#000000"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="st">"Others"</span> <span class="op">=</span>                              <span class="st">"#000000"</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section><section id="parse-repository-data" class="level2"><h2 class="anchored" data-anchor-id="parse-repository-data">Parse repository data</h2>
 <p>Using the glittr.org REST API to get repository metadata, among which the stargazers, recency, category, license and tags.</p>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">response</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="st">"https://glittr.org/api/repositories"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">response</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="st">"https://glittr.org/api/repositories"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/req_perform.html">req_perform</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/resp_body_raw.html">resp_body_json</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
@@ -253,14 +256,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span></span>
 <span><span class="co"># category table to keep order the same in the plots</span></span>
 <span><span class="va">cat_table</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span>category <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">main_category</span><span class="op">)</span></span>
-<span><span class="va">cat_table</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span><span class="va">cat_table</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">cat_table</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span><span class="va">cat_table</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<p>Number of repositories: 702</p>
+<p>Number of repositories: 703</p>
 </section><section id="get-contributors-info" class="level2"><h2 class="anchored" data-anchor-id="get-contributors-info">Get contributors info</h2>
 <p>Using the GitHub REST API to get the number of contributors for each repository on glittr.org. This takes a few minutes, so if the contributors haven’t changed, it will use a cached version.</p>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># take long time to run, so try to use cache results if no repos have been </span></span>
+<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># take long time to run, so try to use cache results if no repos have been </span></span>
 <span><span class="co"># added in the meantime</span></span>
 <span></span>
 <span><span class="co"># check if data/n_contributors.rds exists</span></span>
@@ -303,13 +306,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">saveRDS</a></span><span class="op">(</span><span class="va">n_contributors</span>, <span class="st">"data/n_contributors.rds"</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span></span>
-<span><span class="va">repo_info_gh</span><span class="op">$</span><span class="va">contributors</span> <span class="op">&lt;-</span> <span class="va">n_contributors</span><span class="op">[</span><span class="va">repo_info_gh</span><span class="op">$</span><span class="va">repo</span><span class="op">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">repo_info_gh</span><span class="op">$</span><span class="va">contributors</span> <span class="op">&lt;-</span> <span class="va">n_contributors</span><span class="op">[</span><span class="va">repo_info_gh</span><span class="op">$</span><span class="va">repo</span><span class="op">]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section><section id="get-country-information" class="level2"><h2 class="anchored" data-anchor-id="get-country-information">Get country information</h2>
 <p>Here we get country information for all authors and organizations. It uses the free text specified at ‘location’. Since this can be anything, we use the google REST API to translate that into country.</p>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># check whether author info exists for caching</span></span>
+<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># check whether author info exists for caching</span></span>
 <span><span class="kw">if</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/files.html">file.exists</a></span><span class="op">(</span><span class="st">"data/author_info.rds"</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="va">author_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html">readRDS</a></span><span class="op">(</span><span class="st">"data/author_info.rds"</span><span class="op">)</span></span>
 <span>  <span class="va">author_info_authors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">author_info</span><span class="op">$</span><span class="va">author</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -382,16 +385,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span></span>
 <span><span class="va">repo_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span><span class="op">(</span><span class="va">repo_info</span>, <span class="va">author_info</span>, by.x <span class="op">=</span> <span class="st">"author_name"</span>,</span>
 <span>                   by.y <span class="op">=</span> <span class="st">"author"</span><span class="op">)</span></span>
-<span><span class="va">repo_info</span><span class="op">$</span><span class="va">country</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">repo_info</span><span class="op">$</span><span class="va">country</span><span class="op">)</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"undefined"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">repo_info</span><span class="op">$</span><span class="va">country</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">repo_info</span><span class="op">$</span><span class="va">country</span><span class="op">)</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="st">"undefined"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <ul>
-<li>Number of authors: 331</li>
+<li>Number of authors: 332</li>
 <li>Number of countries: 27</li>
 </ul></section><section id="parse-tag-data" class="level2"><h2 class="anchored" data-anchor-id="parse-tag-data">Parse tag data</h2>
 <p>Here, we create <code>tag_df</code> that contains information for each tag by using the glittr.org API.</p>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">parsed</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="st">"https://glittr.org/api/tags"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">parsed</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://httr2.r-lib.org/reference/request.html">request</a></span><span class="op">(</span><span class="st">"https://glittr.org/api/tags"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/req_perform.html">req_perform</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://httr2.r-lib.org/reference/resp_body_raw.html">resp_body_json</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
@@ -403,13 +406,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>  <span class="va">tag_dfs</span><span class="op">[[</span><span class="va">category</span><span class="op">]</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">name</span>, <span class="va">category</span>, <span class="va">repositories</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span></span>
-<span><span class="va">tag_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/do.call.html">do.call</a></span><span class="op">(</span><span class="va">rbind</span>, <span class="va">tag_dfs</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">repositories</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">tag_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/do.call.html">do.call</a></span><span class="op">(</span><span class="va">rbind</span>, <span class="va">tag_dfs</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">repositories</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Number of tags/topics: 62</p>
 </section><section id="parse-outlink-data" class="level2"><h2 class="anchored" data-anchor-id="parse-outlink-data">Parse outlink data</h2>
 <p>Here, we use the matomo API to retrieve outlinks to repositories. In this way, we can have an idea which repositories are popular on glittr.org and how often people click on a link. It is summarized over a year (from today).</p>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://matomo.sib.swiss/?module=API"</span></span>
+<details class="code-fold"><summary>Code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">url</span> <span class="op">&lt;-</span> <span class="st">"https://matomo.sib.swiss/?module=API"</span></span>
 <span></span>
 <span><span class="va">oneyearago</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date</a></span><span class="op">(</span><span class="op">)</span> <span class="op">-</span> <span class="fl">365</span>, <span class="st">"%Y-%m-%d"</span><span class="op">)</span></span>
 <span></span>
@@ -506,18 +509,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>                            by.x <span class="op">=</span> <span class="st">"main_tag"</span>,</span>
 <span>                            by.y <span class="op">=</span> <span class="st">"name"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>visits_per_repo <span class="op">=</span> <span class="va">total_visits</span><span class="op">/</span><span class="va">repositories</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">visits_per_repo</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">visits_per_repo</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <ul>
-<li>The number of outlink visits in the last year: 3204</li>
-<li>Number of repositories found using Glittr.org: 270</li>
-<li>Most popular repo was TheAlgorithms/Python with 394 outlinks.</li>
-<li>Most popular namespace was TheAlgorithms with 394 outlinks.</li>
+<li>The number of outlink visits in the last year: 3162</li>
+<li>Number of repositories found using Glittr.org: 267</li>
+<li>Most popular repo was TheAlgorithms/Python with 392 outlinks.</li>
+<li>Most popular namespace was TheAlgorithms with 392 outlinks.</li>
 </ul></section><section id="number-of-repositories-by-category" class="level2"><h2 class="anchored" data-anchor-id="number-of-repositories-by-category">Number of repositories by category</h2>
 <p>This is figure 2A in the manuscript.</p>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cat_count_plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span>category <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">main_category</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cat_count_plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span>category <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">main_category</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">category</span>, <span class="va">Freq</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">Freq</span>, fill <span class="op">=</span> <span class="va">category</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span> <span class="op">+</span></span>
@@ -529,7 +532,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>        axis.title.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Number of repositories"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">cat_count_plot</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">cat_count_plot</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="fig-categories" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-categories-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -543,8 +546,8 @@ Figure&nbsp;1: Number of repositories per category
 </div>
 <p>And a table with the actual numbers</p>
 <div class="cell">
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">category_count</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span>category <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">main_category</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">category_count</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">category_count</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span>category <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">main_category</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">category_count</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="tbl-categories" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-categories-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Number of repositories per category
@@ -570,7 +573,7 @@ Table&nbsp;1: Number of repositories per category
 </tr>
 <tr class="even">
 <td style="text-align: left;">Reproducibility and data management</td>
-<td style="text-align: right;">49</td>
+<td style="text-align: right;">50</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Statistics and machine learning</td>
@@ -590,7 +593,7 @@ Table&nbsp;1: Number of repositories per category
 </section><section id="number-of-contributors-per-repository-separated-by-category" class="level2"><h2 class="anchored" data-anchor-id="number-of-contributors-per-repository-separated-by-category">Number of contributors per repository separated by category</h2>
 <p>This is figure 2B in the manuscript.</p>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">repo_info_gh</span><span class="op">$</span><span class="va">main_category</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">repo_info_gh</span><span class="op">$</span><span class="va">main_category</span>,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">repo_info_gh</span><span class="op">$</span><span class="va">main_category</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">repo_info_gh</span><span class="op">$</span><span class="va">main_category</span>,</span>
 <span>                                     levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">cat_table</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">contributors_plot</span> <span class="op">&lt;-</span> <span class="va">repo_info_gh</span> <span class="op">|&gt;</span></span>
@@ -607,7 +610,7 @@ Table&nbsp;1: Number of repositories per category
 <span>        axis.title.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>        plot.margin <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">margin</a></span><span class="op">(</span>t <span class="op">=</span> <span class="fl">5</span>, r <span class="op">=</span> <span class="fl">10</span>, b <span class="op">=</span> <span class="fl">5</span>, l <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">contributors_plot</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">contributors_plot</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="fig-contributors" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-contributors-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -621,19 +624,19 @@ Figure&nbsp;2: Number of contributors per repository separated by category
 </div>
 <p>And some statistics of contributors.</p>
 <div class="cell">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">nna_contr</span> <span class="op">&lt;-</span> <span class="va">repo_info_gh</span><span class="op">$</span><span class="va">contributors</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">nna_contr</span> <span class="op">&lt;-</span> <span class="va">repo_info_gh</span><span class="op">$</span><span class="va">contributors</span></span>
 <span><span class="va">param1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">nna_contr</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">nna_contr</span><span class="op">)</span></span>
 <span><span class="va">param2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">nna_contr</span> <span class="op">&gt;</span> <span class="fl">1</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">nna_contr</span><span class="op">)</span></span>
-<span><span class="va">param3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">nna_contr</span> <span class="op">&lt;=</span> <span class="fl">5</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">nna_contr</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">param3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">nna_contr</span> <span class="op">&lt;=</span> <span class="fl">5</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">nna_contr</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>More than 10 contributors: 24.7%</li>
-<li>More than 1 contributor: 79.3%</li>
-<li>Between 1 and 5 contributors: 60.4%</li>
+<li>More than 1 contributor: 79.2%</li>
+<li>Between 1 and 5 contributors: 60.5%</li>
 </ul></section><section id="number-of-repositories-per-tag" class="level2"><h2 class="anchored" data-anchor-id="number-of-repositories-per-tag">Number of repositories per tag</h2>
 <p>This is figure 2C in the manuscript.</p>
 <div class="cell">
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tag_freq_plot</span> <span class="op">&lt;-</span> <span class="va">tag_df</span> <span class="op">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tag_freq_plot</span> <span class="op">&lt;-</span> <span class="va">tag_df</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">repositories</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">name</span>, <span class="va">repositories</span><span class="op">)</span>,</span>
 <span>             y <span class="op">=</span> <span class="va">repositories</span>, fill <span class="op">=</span> <span class="va">category</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -650,7 +653,7 @@ Figure&nbsp;2: Number of contributors per repository separated by category
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span>,</span>
 <span>        axis.title.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">tag_freq_plot</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">tag_freq_plot</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="fig-tags" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-tags-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -664,10 +667,10 @@ Figure&nbsp;3: Number of repostories per tag, colored by category.
 </div>
 <p>And a table with the actual numbers.</p>
 <div class="cell">
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tag_df</span> <span class="op">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">tag_df</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">repositories</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">repositories</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>row.names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span>row.names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="tbl-tags" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tags-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;2: Number of repositories per tag
@@ -823,7 +826,7 @@ Table&nbsp;2: Number of repositories per tag
 <tr class="even">
 <td style="text-align: left;">Artificial intelligence</td>
 <td style="text-align: left;">Statistics and machine learning</td>
-<td style="text-align: right;">13</td>
+<td style="text-align: right;">14</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Quarto</td>
@@ -855,7 +858,7 @@ Table&nbsp;2: Number of repositories per tag
 </section><section id="number-of-repositories-by-author" class="level2"><h2 class="anchored" data-anchor-id="number-of-repositories-by-author">Number of repositories by author</h2>
 <p>This is figure 2D in the manuscript.</p>
 <div class="cell">
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">author_freq</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span>author_name <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">author_name</span>, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">author_freq</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span>author_name <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">author_name</span>, </span>
 <span>                     main_category <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">main_category</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
@@ -883,7 +886,7 @@ Table&nbsp;2: Number of repositories per tag
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span>,</span>
 <span>        axis.title.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">author_freq_plot</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">author_freq_plot</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="fig-author" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-author-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -897,11 +900,11 @@ Figure&nbsp;4: Number of repositories per author colored by category
 </div>
 <p>And a table with the actual numbers.</p>
 <div class="cell">
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">repo_info</span><span class="op">$</span><span class="va">author_name</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">repo_info</span><span class="op">$</span><span class="va">author_name</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Freq</span> <span class="op">&gt;=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">Freq</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="tbl-author" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-author-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;3: Number of repositories per author
@@ -1027,7 +1030,7 @@ Table&nbsp;3: Number of repositories per author
 </section><section id="number-of-repositories-per-license" class="level2"><h2 class="anchored" data-anchor-id="number-of-repositories-per-license">Number of repositories per license</h2>
 <p>This is figure 2E in the manuscript.</p>
 <div class="cell">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">lic_freq_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span>license <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">license</span>,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">lic_freq_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span>license <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">license</span>,</span>
 <span>                       main_category <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">main_category</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
@@ -1045,7 +1048,7 @@ Table&nbsp;3: Number of repositories per author
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span>,</span>
 <span>        axis.title.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">lic_freq_plot</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">lic_freq_plot</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="fig-license" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-license-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1059,12 +1062,12 @@ Figure&nbsp;5: Number of repositories per license
 </div>
 <p>And a table with the actual numbers.</p>
 <div class="cell">
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">repo_info</span><span class="op">$</span><span class="va">license</span> <span class="op">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">repo_info</span><span class="op">$</span><span class="va">license</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>perc <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">Freq</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">repo_info</span><span class="op">)</span><span class="op">*</span><span class="fl">100</span>, <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">Freq</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="tbl-license" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-license-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;4: Number of repositories per license
@@ -1079,13 +1082,13 @@ Table&nbsp;4: Number of repositories per license
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">other</td>
-<td style="text-align: right;">233</td>
-<td style="text-align: right;">33.3</td>
+<td style="text-align: right;">234</td>
+<td style="text-align: right;">33.4</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">none</td>
 <td style="text-align: right;">202</td>
-<td style="text-align: right;">28.9</td>
+<td style="text-align: right;">28.8</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">mit</td>
@@ -1152,7 +1155,7 @@ Table&nbsp;4: Number of repositories per license
 </section><section id="number-of-repositories-per-country" class="level2"><h2 class="anchored" data-anchor-id="number-of-repositories-per-country">Number of repositories per country</h2>
 <p>This is figure 2F in the mansucript.</p>
 <div class="cell">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">country_freq</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span>country <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">country</span>, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">country_freq</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span>country <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">country</span>, </span>
 <span>                      main_category <span class="op">=</span> <span class="va">repo_info</span><span class="op">$</span><span class="va">main_category</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
@@ -1175,7 +1178,7 @@ Table&nbsp;4: Number of repositories per license
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span>,</span>
 <span>        axis.title.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">country_freq_plot</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">country_freq_plot</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="fig-country" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-country-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1189,11 +1192,11 @@ Figure&nbsp;6: Number of repositories per country colored by category
 </div>
 <p>And a table with the actual numbers.</p>
 <div class="cell">
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">repo_info</span><span class="op">$</span><span class="va">country</span> <span class="op">|&gt;</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">repo_info</span><span class="op">$</span><span class="va">country</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">Freq</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="tbl-country" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-country-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;5: Number of repositories per country
@@ -1207,7 +1210,7 @@ Table&nbsp;5: Number of repositories per country
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">undefined</td>
-<td style="text-align: right;">278</td>
+<td style="text-align: right;">276</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">United States</td>
@@ -1215,7 +1218,7 @@ Table&nbsp;5: Number of repositories per country
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Switzerland</td>
-<td style="text-align: right;">37</td>
+<td style="text-align: right;">38</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Canada</td>
@@ -1239,11 +1242,11 @@ Table&nbsp;5: Number of repositories per country
 </tr>
 <tr class="odd">
 <td style="text-align: left;">France</td>
-<td style="text-align: right;">12</td>
+<td style="text-align: right;">13</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Germany</td>
-<td style="text-align: right;">12</td>
+<td style="text-align: right;">13</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Netherlands</td>
@@ -1321,9 +1324,9 @@ Table&nbsp;5: Number of repositories per country
 </div>
 </div>
 </section><section id="number-of-outlinks-by-repo" class="level2"><h2 class="anchored" data-anchor-id="number-of-outlinks-by-repo">Number of outlinks by repo</h2>
-<p>Here, we use the site data from matomo in order to investigate what visitors of Glittr.org have clicked on. This gives us an idea about which repositories and topics are popular among users. In <a href="#fig-outlinks" class="quarto-xref">Figure&nbsp;7</a> we see that TheAlgorithms/Python was the most popular repository with 394 clicks.</p>
+<p>Here, we use the site data from matomo in order to investigate what visitors of Glittr.org have clicked on. This gives us an idea about which repositories and topics are popular among users. In <a href="#fig-outlinks" class="quarto-xref">Figure&nbsp;7</a> we see that TheAlgorithms/Python was the most popular repository with 392 clicks.</p>
 <div class="cell">
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">visits_by_entry</span> <span class="op">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">visits_by_entry</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">30</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">associated_entry</span>, <span class="va">total_visits</span><span class="op">)</span>,</span>
 <span>             y <span class="op">=</span> <span class="va">total_visits</span>, fill <span class="op">=</span> <span class="va">main_category</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -1334,7 +1337,7 @@ Table&nbsp;5: Number of repositories per country
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Number of outlinks"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span>,</span>
-<span>        axis.title.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>        axis.title.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="fig-outlinks" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-outlinks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1347,11 +1350,11 @@ Figure&nbsp;7: Top 30 of most visited repos from Glittr.org in the past year
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">visits_by_entry</span> <span class="op">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">visits_by_entry</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">associated_entry</span>, <span class="va">total_visits</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>repository <span class="op">=</span> <span class="va">associated_entry</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">30</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="tbl-visits-entry" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-visits-entry-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;6: Number visits per repository
@@ -1365,103 +1368,103 @@ Table&nbsp;6: Number visits per repository
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">TheAlgorithms/Python</td>
-<td style="text-align: right;">394</td>
+<td style="text-align: right;">392</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">jakevdp/PythonDataScienceHandbook</td>
-<td style="text-align: right;">126</td>
+<td style="text-align: right;">127</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">mlabonne/llm-course</td>
-<td style="text-align: right;">123</td>
+<td style="text-align: right;">121</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">galaxyproject/training-material</td>
-<td style="text-align: right;">113</td>
+<td style="text-align: right;">109</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">ISUgenomics/bioinformatics-workbook</td>
-<td style="text-align: right;">93</td>
+<td style="text-align: right;">92</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">theislab/single-cell-tutorial</td>
-<td style="text-align: right;">86</td>
+<td style="text-align: right;">83</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">realpython/python-guide</td>
-<td style="text-align: right;">84</td>
+<td style="text-align: right;">82</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">cxli233/FriendsDontLetFriends</td>
-<td style="text-align: right;">66</td>
+<td style="text-align: right;">65</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">gladstone-institutes/Bioinformatics-Workshops</td>
-<td style="text-align: right;">58</td>
+<td style="text-align: right;">59</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">pachterlab/BI-BE-CS-183-2023</td>
-<td style="text-align: right;">55</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">lexfridman/mit-deep-learning</td>
-<td style="text-align: right;">53</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">zhiwehu/Python-programming-exercises</td>
-<td style="text-align: right;">53</td>
+<td style="text-align: right;">56</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">bobbyiliev/introduction-to-bash-scripting</td>
-<td style="text-align: right;">52</td>
+<td style="text-align: right;">53</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">lexfridman/mit-deep-learning</td>
+<td style="text-align: right;">53</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">zhiwehu/Python-programming-exercises</td>
+<td style="text-align: right;">53</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">hbctraining/Training-modules</td>
-<td style="text-align: right;">47</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">genome/bfx-workshop</td>
-<td style="text-align: right;">44</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">griffithlab/rnabio.org</td>
-<td style="text-align: right;">43</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">rust-lang/rustlings</td>
-<td style="text-align: right;">43</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">trekhleb/learn-python</td>
-<td style="text-align: right;">43</td>
+<td style="text-align: right;">48</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">sib-swiss/single-cell-training</td>
+<td style="text-align: right;">44</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">genome/bfx-workshop</td>
+<td style="text-align: right;">43</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">griffithlab/rnabio.org</td>
 <td style="text-align: right;">42</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">jeroenjanssens/data-science-at-the-command-line</td>
+<td style="text-align: left;">trekhleb/learn-python</td>
+<td style="text-align: right;">42</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">rust-lang/rustlings</td>
 <td style="text-align: right;">41</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">hbctraining/Intro-to-scRNAseq</td>
+<td style="text-align: right;">39</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">instillai/TensorFlow-Course</td>
-<td style="text-align: right;">38</td>
+<td style="text-align: right;">37</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Yorko/mlcourse.ai</td>
+<td style="text-align: left;">jeroenjanssens/data-science-at-the-command-line</td>
 <td style="text-align: right;">37</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">Yorko/mlcourse.ai</td>
+<td style="text-align: right;">37</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">hadley/ggplot2-book</td>
 <td style="text-align: right;">36</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">hadley/r4ds</td>
-<td style="text-align: right;">36</td>
-</tr>
 <tr class="odd">
-<td style="text-align: left;">hbctraining/Intro-to-scRNAseq</td>
-<td style="text-align: right;">36</td>
+<td style="text-align: left;">hadley/r4ds</td>
+<td style="text-align: right;">35</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">DataTalksClub/data-engineering-zoomcamp</td>
@@ -1469,19 +1472,19 @@ Table&nbsp;6: Number visits per repository
 </tr>
 <tr class="odd">
 <td style="text-align: left;">harvardinformatics/learning-bioinformatics-at-home</td>
-<td style="text-align: right;">31</td>
+<td style="text-align: right;">30</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">theislab/single-cell-best-practices</td>
-<td style="text-align: right;">29</td>
+<td style="text-align: right;">30</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">cmdcolin/awesome-genome-visualization</td>
-<td style="text-align: right;">27</td>
+<td style="text-align: right;">26</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">google/comprehensive-rust</td>
-<td style="text-align: right;">27</td>
+<td style="text-align: right;">26</td>
 </tr>
 </tbody>
 </table>
@@ -1490,9 +1493,9 @@ Table&nbsp;6: Number visits per repository
 </figure>
 </div>
 </div>
-<p>It becomes more interesting when we aggregate the data per main tag (<a href="#fig-outlinks-tag" class="quarto-xref">Figure&nbsp;8</a>). This gives us an idea of topic which people are looking for when visiting glittr.org. The most popular topic is Python with 777 outlinks.</p>
+<p>It becomes more interesting when we aggregate the data per main tag (<a href="#fig-outlinks-tag" class="quarto-xref">Figure&nbsp;8</a>). This gives us an idea of topic which people are looking for when visiting glittr.org. The most popular topic is Python with 772 outlinks.</p>
 <div class="cell">
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">visits_by_main_tag</span> <span class="op">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">visits_by_main_tag</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">30</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">main_tag</span>, <span class="va">total_visits</span><span class="op">)</span>,</span>
 <span>             y <span class="op">=</span> <span class="va">total_visits</span>, fill <span class="op">=</span> <span class="va">category</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -1503,7 +1506,7 @@ Table&nbsp;6: Number visits per repository
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Number of outlinks"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span>,</span>
-<span>        axis.title.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>        axis.title.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="fig-outlinks-tag" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-outlinks-tag-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1515,9 +1518,9 @@ Figure&nbsp;8: Top 30 of most popular main tags from Glittr.org in the past year
 </div>
 </div>
 </div>
-<p>When we normalize the visits by number of repositories per tag (<a href="#fig-outlinks-tag-repo" class="quarto-xref">Figure&nbsp;9</a>), we can get an idea where training materials might be lacking. A high number here show repositories that are quite unique in what they teach, but are still popular. Here, we see that there are 3 repositires with the main tag Galaxy with an average of 37.7 outlinks.</p>
+<p>When we normalize the visits by number of repositories per tag (<a href="#fig-outlinks-tag-repo" class="quarto-xref">Figure&nbsp;9</a>), we can get an idea where training materials might be lacking. A high number here show repositories that are quite unique in what they teach, but are still popular. Here, we see that there are 3 repositires with the main tag Galaxy with an average of 36.3 outlinks.</p>
 <div class="cell">
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">visits_by_main_tag</span> <span class="op">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">visits_by_main_tag</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">visits_per_repo</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">30</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html">reorder</a></span><span class="op">(</span><span class="va">main_tag</span>, <span class="va">visits_per_repo</span><span class="op">)</span>,</span>
@@ -1529,7 +1532,7 @@ Figure&nbsp;8: Top 30 of most popular main tags from Glittr.org in the past year
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Number of outlinks per tag/number of repositories having tag"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span>,</span>
-<span>        axis.title.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>        axis.title.y <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="fig-outlinks-tag-repo" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-outlinks-tag-repo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1542,9 +1545,9 @@ Figure&nbsp;9: Top 30 of most popular main tags normalized per repo from Glittr.
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">visits_by_main_tag</span> <span class="op">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">visits_by_main_tag</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">30</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="tbl-outlinks-tag" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-outlinks-tag-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;7: Number visits per tag
@@ -1568,45 +1571,45 @@ Table&nbsp;7: Number visits per tag
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Galaxy</td>
-<td style="text-align: right;">113</td>
+<td style="text-align: right;">109</td>
 <td style="text-align: left;">Computational methods and pipelines</td>
 <td style="text-align: right;">3</td>
-<td style="text-align: right;">37.6666667</td>
+<td style="text-align: right;">36.3333333</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Rust</td>
-<td style="text-align: right;">70</td>
+<td style="text-align: right;">67</td>
 <td style="text-align: left;">Scripting and languages</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">35.0000000</td>
+<td style="text-align: right;">33.5000000</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Artificial intelligence</td>
-<td style="text-align: right;">151</td>
-<td style="text-align: left;">Statistics and machine learning</td>
-<td style="text-align: right;">13</td>
-<td style="text-align: right;">11.6153846</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">General</td>
-<td style="text-align: right;">383</td>
+<td style="text-align: right;">380</td>
 <td style="text-align: left;">Others</td>
 <td style="text-align: right;">35</td>
-<td style="text-align: right;">10.9428571</td>
+<td style="text-align: right;">10.8571429</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Artificial intelligence</td>
+<td style="text-align: right;">148</td>
+<td style="text-align: left;">Statistics and machine learning</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">10.5714286</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Python</td>
-<td style="text-align: right;">777</td>
+<td style="text-align: right;">772</td>
 <td style="text-align: left;">Scripting and languages</td>
 <td style="text-align: right;">108</td>
-<td style="text-align: right;">7.1944444</td>
+<td style="text-align: right;">7.1481481</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Protein structure</td>
-<td style="text-align: right;">13</td>
+<td style="text-align: right;">14</td>
 <td style="text-align: left;">Omics analysis</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">6.5000000</td>
+<td style="text-align: right;">7.0000000</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Single-cell sequencing</td>
@@ -1624,17 +1627,17 @@ Table&nbsp;7: Number visits per tag
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Data visualization</td>
-<td style="text-align: right;">150</td>
+<td style="text-align: right;">147</td>
 <td style="text-align: left;">Scripting and languages</td>
 <td style="text-align: right;">41</td>
-<td style="text-align: right;">3.6585366</td>
+<td style="text-align: right;">3.5853659</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Workflows</td>
-<td style="text-align: right;">81</td>
+<td style="text-align: right;">79</td>
 <td style="text-align: left;">Computational methods and pipelines</td>
 <td style="text-align: right;">24</td>
-<td style="text-align: right;">3.3750000</td>
+<td style="text-align: right;">3.2916667</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Proteomics</td>
@@ -1644,67 +1647,67 @@ Table&nbsp;7: Number visits per tag
 <td style="text-align: right;">3.2500000</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Spatial transcriptomics</td>
-<td style="text-align: right;">48</td>
-<td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">3.2000000</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">Machine learning</td>
-<td style="text-align: right;">178</td>
+<td style="text-align: right;">174</td>
 <td style="text-align: left;">Statistics and machine learning</td>
 <td style="text-align: right;">59</td>
-<td style="text-align: right;">3.0169492</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Multiomics</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">3.0000000</td>
+<td style="text-align: right;">2.9491525</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Unix/Linux</td>
-<td style="text-align: right;">116</td>
+<td style="text-align: right;">113</td>
 <td style="text-align: left;">Scripting and languages</td>
 <td style="text-align: right;">39</td>
-<td style="text-align: right;">2.9743590</td>
+<td style="text-align: right;">2.8974359</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">Multiomics</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">Omics analysis</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2.8000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Spatial transcriptomics</td>
+<td style="text-align: right;">39</td>
+<td style="text-align: left;">Omics analysis</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">2.6000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Epigenetics</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">Omics analysis</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">2.0000000</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">GNU Make</td>
 <td style="text-align: right;">6</td>
 <td style="text-align: left;">Scripting and languages</td>
 <td style="text-align: right;">3</td>
 <td style="text-align: right;">2.0000000</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">Metagenomics</td>
-<td style="text-align: right;">34</td>
-<td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">17</td>
-<td style="text-align: right;">2.0000000</td>
-</tr>
 <tr class="even">
 <td style="text-align: left;">Genomics</td>
-<td style="text-align: right;">114</td>
+<td style="text-align: right;">113</td>
 <td style="text-align: left;">Omics analysis</td>
 <td style="text-align: right;">58</td>
-<td style="text-align: right;">1.9655172</td>
+<td style="text-align: right;">1.9482759</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Transcriptomics</td>
-<td style="text-align: right;">135</td>
+<td style="text-align: left;">Metagenomics</td>
+<td style="text-align: right;">33</td>
 <td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">92</td>
-<td style="text-align: right;">1.4673913</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">1.9411765</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Epigenetics</td>
-<td style="text-align: right;">13</td>
+<td style="text-align: left;">Transcriptomics</td>
+<td style="text-align: right;">142</td>
 <td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">1.3000000</td>
+<td style="text-align: right;">92</td>
+<td style="text-align: right;">1.5434783</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Statistics</td>
@@ -1721,60 +1724,60 @@ Table&nbsp;7: Number visits per tag
 <td style="text-align: right;">1.0833333</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">Genome assembly</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">Omics analysis</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">1.0000000</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Java</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: left;">Scripting and languages</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">1.0000000</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">LaTeX</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">Scripting and languages</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1.0000000</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">MATLAB/Octave</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">Scripting and languages</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1.0000000</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Variant analysis</td>
-<td style="text-align: right;">32</td>
-<td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">32</td>
-<td style="text-align: right;">1.0000000</td>
-</tr>
 <tr class="odd">
-<td style="text-align: left;">Genome assembly</td>
-<td style="text-align: right;">7</td>
+<td style="text-align: left;">Variant analysis</td>
+<td style="text-align: right;">31</td>
 <td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">0.8750000</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">0.9687500</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Next generation sequencing</td>
-<td style="text-align: right;">54</td>
+<td style="text-align: right;">57</td>
 <td style="text-align: left;">Omics analysis</td>
 <td style="text-align: right;">65</td>
-<td style="text-align: right;">0.8307692</td>
+<td style="text-align: right;">0.8769231</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Data science</td>
-<td style="text-align: right;">46</td>
-<td style="text-align: left;">Statistics and machine learning</td>
-<td style="text-align: right;">60</td>
-<td style="text-align: right;">0.7666667</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">Containerization</td>
 <td style="text-align: right;">16</td>
 <td style="text-align: left;">Computational methods and pipelines</td>
 <td style="text-align: right;">21</td>
 <td style="text-align: right;">0.7619048</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Data science</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: left;">Statistics and machine learning</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">0.7500000</td>
 </tr>
 </tbody>
 </table>
@@ -1785,9 +1788,9 @@ Table&nbsp;7: Number visits per tag
 </div>
 <p>We can also check popularity by namespace, i.e.&nbsp;author (<a href="#tbl-visits-namespace" class="quarto-xref">Table&nbsp;8</a>).</p>
 <div class="cell">
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">visits_by_namespace</span> <span class="op">|&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">visits_by_namespace</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">30</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div id="tbl-visits-namespace" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-visits-namespace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;8: Number visits per namespace
@@ -1801,123 +1804,123 @@ Table&nbsp;8: Number visits per namespace
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">TheAlgorithms</td>
-<td style="text-align: right;">394</td>
+<td style="text-align: right;">392</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">sib-swiss</td>
-<td style="text-align: right;">161</td>
+<td style="text-align: right;">155</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">jakevdp</td>
-<td style="text-align: right;">126</td>
+<td style="text-align: right;">127</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">mlabonne</td>
-<td style="text-align: right;">123</td>
+<td style="text-align: left;">hbctraining</td>
+<td style="text-align: right;">121</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">hbctraining</td>
-<td style="text-align: right;">117</td>
+<td style="text-align: left;">mlabonne</td>
+<td style="text-align: right;">121</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">theislab</td>
-<td style="text-align: right;">115</td>
+<td style="text-align: right;">113</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">galaxyproject</td>
-<td style="text-align: right;">113</td>
+<td style="text-align: right;">109</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">hadley</td>
-<td style="text-align: right;">96</td>
+<td style="text-align: left;">ISUgenomics</td>
+<td style="text-align: right;">92</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">ISUgenomics</td>
-<td style="text-align: right;">93</td>
+<td style="text-align: left;">hadley</td>
+<td style="text-align: right;">88</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NBISweden</td>
-<td style="text-align: right;">88</td>
+<td style="text-align: right;">87</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">realpython</td>
-<td style="text-align: right;">84</td>
+<td style="text-align: right;">82</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">cxli233</td>
-<td style="text-align: right;">66</td>
+<td style="text-align: right;">65</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">carpentries-incubator</td>
-<td style="text-align: right;">65</td>
+<td style="text-align: right;">64</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">griffithlab</td>
+<td style="text-align: left;">gladstone-institutes</td>
 <td style="text-align: right;">59</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">gladstone-institutes</td>
-<td style="text-align: right;">58</td>
+<td style="text-align: left;">griffithlab</td>
+<td style="text-align: right;">57</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">pachterlab</td>
-<td style="text-align: right;">55</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">lexfridman</td>
-<td style="text-align: right;">53</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">zhiwehu</td>
-<td style="text-align: right;">53</td>
+<td style="text-align: right;">56</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">bobbyiliev</td>
-<td style="text-align: right;">52</td>
+<td style="text-align: right;">53</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">lexfridman</td>
+<td style="text-align: right;">53</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">zhiwehu</td>
+<td style="text-align: right;">53</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">genome</td>
-<td style="text-align: right;">44</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">rust-lang</td>
 <td style="text-align: right;">43</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">trekhleb</td>
-<td style="text-align: right;">43</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">jeroenjanssens</td>
-<td style="text-align: right;">41</td>
+<td style="text-align: right;">42</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">instillai</td>
-<td style="text-align: right;">38</td>
+<td style="text-align: left;">rust-lang</td>
+<td style="text-align: right;">41</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Yorko</td>
 <td style="text-align: right;">37</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">DataTalksClub</td>
-<td style="text-align: right;">34</td>
+<td style="text-align: left;">instillai</td>
+<td style="text-align: right;">37</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">harvardinformatics</td>
-<td style="text-align: right;">31</td>
+<td style="text-align: left;">jeroenjanssens</td>
+<td style="text-align: right;">37</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">bioinformatics-core-shared-training</td>
-<td style="text-align: right;">29</td>
+<td style="text-align: right;">35</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DataTalksClub</td>
+<td style="text-align: right;">34</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">harvardinformatics</td>
+<td style="text-align: right;">30</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">carpentries-lab</td>
-<td style="text-align: right;">27</td>
+<td style="text-align: right;">26</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">cmdcolin</td>
-<td style="text-align: right;">27</td>
+<td style="text-align: right;">26</td>
 </tr>
 </tbody>
 </table>
@@ -1929,14 +1932,14 @@ Table&nbsp;8: Number visits per namespace
 </section><section id="summary-plot" class="level2"><h2 class="anchored" data-anchor-id="summary-plot">Summary plot</h2>
 <p>Full figure 2 of the manuscript.</p>
 <div class="cell">
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://wilkelab.org/cowplot/reference/plot_grid.html">plot_grid</a></span><span class="op">(</span><span class="va">cat_count_plot</span>, <span class="va">contributors_plot</span>, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://wilkelab.org/cowplot/reference/plot_grid.html">plot_grid</a></span><span class="op">(</span><span class="va">cat_count_plot</span>, <span class="va">contributors_plot</span>, </span>
 <span>          <span class="va">tag_freq_plot</span>, <span class="va">author_freq_plot</span>,  </span>
 <span>          <span class="va">lic_freq_plot</span>, <span class="va">country_freq_plot</span>,</span>
 <span>          ncol <span class="op">=</span> <span class="fl">2</span>, labels <span class="op">=</span> <span class="va">LETTERS</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">6</span><span class="op">]</span>,</span>
 <span>          rel_heights <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">3</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="st">"grid_plot_fig2.pdf"</span>, width <span class="op">=</span> <span class="fl">10</span>, height <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="st">"grid_plot_fig2.eps"</span>, width <span class="op">=</span> <span class="fl">10</span>, height <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="st">"grid_plot_fig2.eps"</span>, width <span class="op">=</span> <span class="fl">10</span>, height <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 
@@ -1991,13 +1994,14 @@ Table&nbsp;8: Number visits per namespace
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
