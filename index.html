@@ -257,7 +257,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="va">cat_table</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span><span class="va">cat_table</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<p>Number of repositories: 718</p>
+<p>Number of repositories: 740</p>
 </section><section id="get-contributors-info" class="level2"><h2 class="anchored" data-anchor-id="get-contributors-info">Get contributors info</h2>
 <p>Using the GitHub REST API to get the number of contributors for each repository on glittr.org. This takes a few minutes, so if the contributors haven’t changed, it will use a cached version.</p>
 <div class="cell">
@@ -387,7 +387,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <ul>
-<li>Number of authors: 333</li>
+<li>Number of authors: 341</li>
 <li>Number of countries: 28</li>
 </ul></section><section id="parse-tag-data" class="level2"><h2 class="anchored" data-anchor-id="parse-tag-data">Parse tag data</h2>
 <p>Here, we create <code>tag_df</code> that contains information for each tag by using the glittr.org API.</p>
@@ -511,10 +511,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <ul>
-<li>The number of outlink visits in the last year: 2881</li>
-<li>Number of repositories found using Glittr.org: 249</li>
-<li>Most popular repo was TheAlgorithms/Python with 344 outlinks.</li>
-<li>Most popular namespace was TheAlgorithms with 344 outlinks.</li>
+<li>The number of outlink visits in the last year: 2507</li>
+<li>Number of repositories found using Glittr.org: 243</li>
+<li>Most popular repo was TheAlgorithms/Python with 269 outlinks.</li>
+<li>Most popular namespace was TheAlgorithms with 269 outlinks.</li>
 </ul></section><section id="number-of-repositories-by-category" class="level2"><h2 class="anchored" data-anchor-id="number-of-repositories-by-category">Number of repositories by category</h2>
 <p>This is figure 2A in the manuscript.</p>
 <div class="cell">
@@ -559,15 +559,15 @@ Table&nbsp;1: Number of repositories per category
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Scripting and languages</td>
-<td style="text-align: right;">316</td>
+<td style="text-align: right;">330</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Computational methods and pipelines</td>
-<td style="text-align: right;">53</td>
+<td style="text-align: right;">55</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">168</td>
+<td style="text-align: right;">173</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Reproducibility and data management</td>
@@ -575,7 +575,7 @@ Table&nbsp;1: Number of repositories per category
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Statistics and machine learning</td>
-<td style="text-align: right;">99</td>
+<td style="text-align: right;">100</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Others</td>
@@ -628,9 +628,9 @@ Figure&nbsp;2: Number of contributors per repository separated by category
 <span><span class="va">param3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">nna_contr</span> <span class="op">&lt;=</span> <span class="fl">5</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">nna_contr</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li>More than 10 contributors: 24.4%</li>
-<li>More than 1 contributor: 78.8%</li>
-<li>Between 1 and 5 contributors: 60.6%</li>
+<li>More than 10 contributors: 24.7%</li>
+<li>More than 1 contributor: 79.3%</li>
+<li>Between 1 and 5 contributors: 60.3%</li>
 </ul></section><section id="number-of-repositories-per-tag" class="level2"><h2 class="anchored" data-anchor-id="number-of-repositories-per-tag">Number of repositories per tag</h2>
 <p>This is figure 2C in the manuscript.</p>
 <div class="cell">
@@ -689,37 +689,37 @@ Table&nbsp;2: Number of repositories per tag
 <tr class="odd">
 <td style="text-align: left;">R</td>
 <td style="text-align: left;">Scripting and languages</td>
-<td style="text-align: right;">276</td>
+<td style="text-align: right;">277</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Python</td>
 <td style="text-align: left;">Scripting and languages</td>
-<td style="text-align: right;">113</td>
+<td style="text-align: right;">114</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Transcriptomics</td>
 <td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">93</td>
+<td style="text-align: right;">94</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">RNA-seq</td>
 <td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">87</td>
+<td style="text-align: right;">88</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">Next generation sequencing</td>
+<td style="text-align: left;">Omics analysis</td>
+<td style="text-align: right;">71</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Statistics</td>
 <td style="text-align: left;">Statistics and machine learning</td>
 <td style="text-align: right;">67</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Next generation sequencing</td>
-<td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">65</td>
-</tr>
 <tr class="odd">
 <td style="text-align: left;">Data science</td>
 <td style="text-align: left;">Statistics and machine learning</td>
-<td style="text-align: right;">60</td>
+<td style="text-align: right;">61</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Machine learning</td>
@@ -742,19 +742,29 @@ Table&nbsp;2: Number of repositories per tag
 <td style="text-align: right;">47</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">Version control</td>
+<td style="text-align: left;">Scripting and languages</td>
+<td style="text-align: right;">46</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unix/Linux</td>
+<td style="text-align: left;">Scripting and languages</td>
+<td style="text-align: right;">44</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Reproducibility</td>
 <td style="text-align: left;">Reproducibility and data management</td>
 <td style="text-align: right;">44</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Unix/Linux</td>
-<td style="text-align: left;">Scripting and languages</td>
-<td style="text-align: right;">42</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">Data visualization</td>
 <td style="text-align: left;">Scripting and languages</td>
-<td style="text-align: right;">42</td>
+<td style="text-align: right;">43</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Variant analysis</td>
+<td style="text-align: left;">Omics analysis</td>
+<td style="text-align: right;">35</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">General</td>
@@ -765,16 +775,6 @@ Table&nbsp;2: Number of repositories per tag
 <td style="text-align: left;">FAIR data</td>
 <td style="text-align: left;">Reproducibility and data management</td>
 <td style="text-align: right;">34</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Version control</td>
-<td style="text-align: left;">Scripting and languages</td>
-<td style="text-align: right;">33</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Variant analysis</td>
-<td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">32</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Workflows</td>
@@ -792,7 +792,17 @@ Table&nbsp;2: Number of repositories per tag
 <td style="text-align: right;">20</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">Nextflow</td>
+<td style="text-align: left;">Computational methods and pipelines</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">Metagenomics</td>
+<td style="text-align: left;">Omics analysis</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Spatial transcriptomics</td>
 <td style="text-align: left;">Omics analysis</td>
 <td style="text-align: right;">17</td>
 </tr>
@@ -802,17 +812,7 @@ Table&nbsp;2: Number of repositories per tag
 <td style="text-align: right;">16</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Nextflow</td>
-<td style="text-align: left;">Computational methods and pipelines</td>
-<td style="text-align: right;">16</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">ChIP-seq</td>
-<td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">16</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Spatial transcriptomics</td>
 <td style="text-align: left;">Omics analysis</td>
 <td style="text-align: right;">16</td>
 </tr>
@@ -832,19 +832,29 @@ Table&nbsp;2: Number of repositories per tag
 <td style="text-align: right;">13</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">ATAC-seq</td>
-<td style="text-align: left;">Omics analysis</td>
+<td style="text-align: left;">High performance computing</td>
+<td style="text-align: left;">Computational methods and pipelines</td>
 <td style="text-align: right;">13</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">High performance computing</td>
-<td style="text-align: left;">Computational methods and pipelines</td>
-<td style="text-align: right;">12</td>
+<td style="text-align: left;">ATAC-seq</td>
+<td style="text-align: left;">Omics analysis</td>
+<td style="text-align: right;">13</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Image analysis</td>
 <td style="text-align: left;">Computational methods and pipelines</td>
 <td style="text-align: right;">12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Microbiology</td>
+<td style="text-align: left;">Omics analysis</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Genome assembly</td>
+<td style="text-align: left;">Omics analysis</td>
+<td style="text-align: right;">11</td>
 </tr>
 </tbody>
 </table>
@@ -916,11 +926,11 @@ Table&nbsp;3: Number of repositories per author
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">carpentries-incubator</td>
-<td style="text-align: right;">48</td>
+<td style="text-align: right;">51</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">sib-swiss</td>
-<td style="text-align: right;">35</td>
+<td style="text-align: right;">36</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">NBISweden</td>
@@ -975,54 +985,58 @@ Table&nbsp;3: Number of repositories per author
 <td style="text-align: right;">8</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">ELIXIREstonia</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">RockefellerUniversity</td>
 <td style="text-align: right;">7</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">semacu</td>
 <td style="text-align: right;">7</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">biocorecrg</td>
 <td style="text-align: right;">6</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">ELIXIREstonia</td>
+<tr class="even">
+<td style="text-align: left;">BU-ISCIII</td>
 <td style="text-align: right;">6</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">JuliaAcademy</td>
 <td style="text-align: right;">6</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">swcarpentry</td>
 <td style="text-align: right;">6</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">cambiotraining</td>
 <td style="text-align: right;">5</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">carpentries-lab</td>
 <td style="text-align: right;">5</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">elixir-europe-training</td>
 <td style="text-align: right;">5</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">hadley</td>
 <td style="text-align: right;">5</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">jhudsl</td>
 <td style="text-align: right;">5</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">MolSSI-Education</td>
 <td style="text-align: right;">5</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">vib-tcp</td>
 <td style="text-align: right;">5</td>
 </tr>
@@ -1088,48 +1102,48 @@ Table&nbsp;4: Number of repositories per license
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">other</td>
-<td style="text-align: right;">240</td>
+<td style="text-align: right;">247</td>
 <td style="text-align: right;">33.5</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">none</td>
-<td style="text-align: right;">204</td>
-<td style="text-align: right;">28.5</td>
+<td style="text-align: right;">208</td>
+<td style="text-align: right;">28.2</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">mit</td>
-<td style="text-align: right;">85</td>
-<td style="text-align: right;">11.9</td>
+<td style="text-align: right;">86</td>
+<td style="text-align: right;">11.7</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">cc-by-4.0</td>
-<td style="text-align: right;">54</td>
-<td style="text-align: right;">7.5</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">8.1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">cc-by-sa-4.0</td>
 <td style="text-align: right;">49</td>
-<td style="text-align: right;">6.8</td>
+<td style="text-align: right;">6.6</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">gpl-3.0</td>
-<td style="text-align: right;">27</td>
-<td style="text-align: right;">3.8</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">4.1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">cc0-1.0</td>
 <td style="text-align: right;">26</td>
-<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">3.5</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">bsd-3-clause</td>
-<td style="text-align: right;">13</td>
-<td style="text-align: right;">1.8</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">1.9</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">apache-2.0</td>
 <td style="text-align: right;">12</td>
-<td style="text-align: right;">1.7</td>
+<td style="text-align: right;">1.6</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">agpl-3.0</td>
@@ -1216,7 +1230,7 @@ Table&nbsp;5: Number of repositories per country
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">undefined</td>
-<td style="text-align: right;">279</td>
+<td style="text-align: right;">296</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">United States</td>
@@ -1224,19 +1238,19 @@ Table&nbsp;5: Number of repositories per country
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Switzerland</td>
-<td style="text-align: right;">43</td>
+<td style="text-align: right;">44</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Canada</td>
 <td style="text-align: right;">32</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Sweden</td>
-<td style="text-align: right;">25</td>
+<td style="text-align: left;">United Kingdom</td>
+<td style="text-align: right;">27</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">United Kingdom</td>
-<td style="text-align: right;">24</td>
+<td style="text-align: left;">Sweden</td>
+<td style="text-align: right;">25</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Australia</td>
@@ -1247,11 +1261,11 @@ Table&nbsp;5: Number of repositories per country
 <td style="text-align: right;">15</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">France</td>
-<td style="text-align: right;">13</td>
+<td style="text-align: left;">Germany</td>
+<td style="text-align: right;">14</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Germany</td>
+<td style="text-align: left;">France</td>
 <td style="text-align: right;">13</td>
 </tr>
 <tr class="odd">
@@ -1334,7 +1348,7 @@ Table&nbsp;5: Number of repositories per country
 </div>
 </div>
 </section><section id="number-of-outlinks-by-repo" class="level2"><h2 class="anchored" data-anchor-id="number-of-outlinks-by-repo">Number of outlinks by repo</h2>
-<p>Here, we use the site data from matomo in order to investigate what visitors of Glittr.org have clicked on. This gives us an idea about which repositories and topics are popular among users. In <a href="#fig-outlinks" class="quarto-xref">Figure&nbsp;7</a> we see that TheAlgorithms/Python was the most popular repository with 344 clicks.</p>
+<p>Here, we use the site data from matomo in order to investigate what visitors of Glittr.org have clicked on. This gives us an idea about which repositories and topics are popular among users. In <a href="#fig-outlinks" class="quarto-xref">Figure&nbsp;7</a> we see that TheAlgorithms/Python was the most popular repository with 269 clicks.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">visits_by_entry</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">30</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -1378,123 +1392,123 @@ Table&nbsp;6: Number visits per repository
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">TheAlgorithms/Python</td>
-<td style="text-align: right;">344</td>
+<td style="text-align: right;">269</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">jakevdp/PythonDataScienceHandbook</td>
-<td style="text-align: right;">111</td>
+<td style="text-align: left;">mlabonne/llm-course</td>
+<td style="text-align: right;">88</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">mlabonne/llm-course</td>
-<td style="text-align: right;">103</td>
+<td style="text-align: left;">jakevdp/PythonDataScienceHandbook</td>
+<td style="text-align: right;">87</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">galaxyproject/training-material</td>
-<td style="text-align: right;">94</td>
+<td style="text-align: right;">78</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">ISUgenomics/bioinformatics-workbook</td>
-<td style="text-align: right;">78</td>
+<td style="text-align: right;">68</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">theislab/single-cell-tutorial</td>
-<td style="text-align: right;">74</td>
+<td style="text-align: right;">67</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">realpython/python-guide</td>
-<td style="text-align: right;">73</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">cxli233/FriendsDontLetFriends</td>
-<td style="text-align: right;">61</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">pachterlab/BI-BE-CS-183-2023</td>
-<td style="text-align: right;">57</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">gladstone-institutes/Bioinformatics-Workshops</td>
-<td style="text-align: right;">54</td>
+<td style="text-align: right;">53</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">realpython/python-guide</td>
+<td style="text-align: right;">51</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">bobbyiliev/introduction-to-bash-scripting</td>
+<td style="text-align: left;">cxli233/FriendsDontLetFriends</td>
 <td style="text-align: right;">48</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">zhiwehu/Python-programming-exercises</td>
+<td style="text-align: left;">pachterlab/BI-BE-CS-183-2023</td>
 <td style="text-align: right;">48</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">lexfridman/mit-deep-learning</td>
-<td style="text-align: right;">45</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">sib-swiss/single-cell-training</td>
-<td style="text-align: right;">45</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">hbctraining/Intro-to-scRNAseq</td>
 <td style="text-align: right;">43</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">hbctraining/Training-modules</td>
+<td style="text-align: left;">bobbyiliev/introduction-to-bash-scripting</td>
 <td style="text-align: right;">41</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">rust-lang/rustlings</td>
-<td style="text-align: right;">41</td>
+<td style="text-align: left;">hbctraining/Intro-to-scRNAseq</td>
+<td style="text-align: right;">40</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">zhiwehu/Python-programming-exercises</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">DataTalksClub/data-engineering-zoomcamp</td>
 <td style="text-align: right;">33</td>
 </tr>
+<tr class="even">
+<td style="text-align: left;">lexfridman/mit-deep-learning</td>
+<td style="text-align: right;">33</td>
+</tr>
 <tr class="odd">
-<td style="text-align: left;">hadley/r4ds</td>
+<td style="text-align: left;">rust-lang/rustlings</td>
 <td style="text-align: right;">33</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">griffithlab/rnabio.org</td>
+<td style="text-align: left;">hbctraining/Training-modules</td>
 <td style="text-align: right;">32</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">theislab/single-cell-best-practices</td>
-<td style="text-align: right;">32</td>
+<td style="text-align: left;">griffithlab/rnabio.org</td>
+<td style="text-align: right;">30</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">trekhleb/learn-python</td>
-<td style="text-align: right;">32</td>
+<td style="text-align: left;">theislab/single-cell-best-practices</td>
+<td style="text-align: right;">30</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">hadley/ggplot2-book</td>
-<td style="text-align: right;">31</td>
+<td style="text-align: right;">29</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Yorko/mlcourse.ai</td>
+<td style="text-align: left;">hadley/r4ds</td>
 <td style="text-align: right;">29</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">genome/bfx-workshop</td>
-<td style="text-align: right;">28</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">instillai/TensorFlow-Course</td>
-<td style="text-align: right;">28</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">jeroenjanssens/data-science-at-the-command-line</td>
+<td style="text-align: left;">trekhleb/learn-python</td>
 <td style="text-align: right;">27</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">harvardinformatics/learning-bioinformatics-at-home</td>
-<td style="text-align: right;">26</td>
+<td style="text-align: left;">genome/bfx-workshop</td>
+<td style="text-align: right;">25</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">google/comprehensive-rust</td>
+<td style="text-align: left;">Yorko/mlcourse.ai</td>
 <td style="text-align: right;">25</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">cmdcolin/awesome-genome-visualization</td>
-<td style="text-align: right;">24</td>
+<td style="text-align: left;">harvardinformatics/learning-bioinformatics-at-home</td>
+<td style="text-align: right;">23</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sib-swiss/spatial-transcriptomics-training</td>
+<td style="text-align: right;">23</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">instillai/TensorFlow-Course</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sib-swiss/NGS-variants-training</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">telatin/microbiome-bioinformatics</td>
+<td style="text-align: right;">22</td>
 </tr>
 </tbody>
 </table>
@@ -1503,7 +1517,7 @@ Table&nbsp;6: Number visits per repository
 </figure>
 </div>
 </div>
-<p>It becomes more interesting when we aggregate the data per main tag (<a href="#fig-outlinks-tag" class="quarto-xref">Figure&nbsp;8</a>). This gives us an idea of topic which people are looking for when visiting glittr.org. The most popular topic is Python with 710 outlinks.</p>
+<p>It becomes more interesting when we aggregate the data per main tag (<a href="#fig-outlinks-tag" class="quarto-xref">Figure&nbsp;8</a>). This gives us an idea of topic which people are looking for when visiting glittr.org. The most popular topic is Python with 554 outlinks.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">visits_by_main_tag</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">30</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -1528,7 +1542,7 @@ Figure&nbsp;8: Top 30 of most popular main tags from Glittr.org in the past year
 </div>
 </div>
 </div>
-<p>When we normalize the visits by number of repositories per tag (<a href="#fig-outlinks-tag-repo" class="quarto-xref">Figure&nbsp;9</a>), we can get an idea where training materials might be lacking. A high number here show repositories that are quite unique in what they teach, but are still popular. Here, we see that there are 2 repositires with the main tag Rust with an average of 33 outlinks.</p>
+<p>When we normalize the visits by number of repositories per tag (<a href="#fig-outlinks-tag-repo" class="quarto-xref">Figure&nbsp;9</a>), we can get an idea where training materials might be lacking. A high number here show repositories that are quite unique in what they teach, but are still popular. Here, we see that there are 2 repositires with the main tag Rust with an average of 27 outlinks.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">visits_by_main_tag</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">visits_per_repo</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -1581,213 +1595,213 @@ Table&nbsp;7: Number visits per tag
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Rust</td>
-<td style="text-align: right;">66</td>
+<td style="text-align: right;">54</td>
 <td style="text-align: left;">Scripting and languages</td>
 <td style="text-align: right;">2</td>
-<td style="text-align: right;">33.0000000</td>
+<td style="text-align: right;">27.0000000</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Galaxy</td>
-<td style="text-align: right;">94</td>
-<td style="text-align: left;">Computational methods and pipelines</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">31.3333333</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">Large language models</td>
-<td style="text-align: right;">118</td>
+<td style="text-align: right;">103</td>
 <td style="text-align: left;">Statistics and machine learning</td>
 <td style="text-align: right;">4</td>
-<td style="text-align: right;">29.5000000</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">General</td>
-<td style="text-align: right;">365</td>
-<td style="text-align: left;">Others</td>
-<td style="text-align: right;">35</td>
-<td style="text-align: right;">10.4285714</td>
+<td style="text-align: right;">25.7500000</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">Galaxy</td>
+<td style="text-align: right;">78</td>
+<td style="text-align: left;">Computational methods and pipelines</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">15.6000000</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C/C++</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">Scripting and languages</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">10.0000000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">General</td>
+<td style="text-align: right;">319</td>
+<td style="text-align: left;">Others</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">9.1142857</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Protein structure</td>
 <td style="text-align: right;">16</td>
 <td style="text-align: left;">Omics analysis</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">8.0000000</td>
 </tr>
+<tr class="odd">
+<td style="text-align: left;">Multiomics</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: left;">Omics analysis</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">5.2000000</td>
+</tr>
 <tr class="even">
 <td style="text-align: left;">Python</td>
-<td style="text-align: right;">710</td>
+<td style="text-align: right;">554</td>
 <td style="text-align: left;">Scripting and languages</td>
-<td style="text-align: right;">113</td>
-<td style="text-align: right;">6.2831858</td>
+<td style="text-align: right;">114</td>
+<td style="text-align: right;">4.8596491</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Single-cell sequencing</td>
-<td style="text-align: right;">263</td>
+<td style="text-align: right;">249</td>
 <td style="text-align: left;">Omics analysis</td>
 <td style="text-align: right;">55</td>
-<td style="text-align: right;">4.7818182</td>
+<td style="text-align: right;">4.5272727</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">GNU Make</td>
-<td style="text-align: right;">14</td>
+<td style="text-align: right;">12</td>
 <td style="text-align: left;">Scripting and languages</td>
 <td style="text-align: right;">3</td>
-<td style="text-align: right;">4.6666667</td>
+<td style="text-align: right;">4.0000000</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Spatial transcriptomics</td>
-<td style="text-align: right;">54</td>
+<td style="text-align: right;">56</td>
 <td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">3.3750000</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">3.2941176</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Proteomics</td>
-<td style="text-align: right;">26</td>
+<td style="text-align: right;">24</td>
 <td style="text-align: left;">Omics analysis</td>
 <td style="text-align: right;">8</td>
-<td style="text-align: right;">3.2500000</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Multiomics</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">5</td>
 <td style="text-align: right;">3.0000000</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Data visualization</td>
-<td style="text-align: right;">124</td>
-<td style="text-align: left;">Scripting and languages</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">2.9523810</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Unix/Linux</td>
-<td style="text-align: right;">115</td>
+<td style="text-align: right;">102</td>
 <td style="text-align: left;">Scripting and languages</td>
-<td style="text-align: right;">42</td>
-<td style="text-align: right;">2.7380952</td>
+<td style="text-align: right;">44</td>
+<td style="text-align: right;">2.3181818</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Workflows</td>
-<td style="text-align: right;">65</td>
-<td style="text-align: left;">Computational methods and pipelines</td>
-<td style="text-align: right;">24</td>
-<td style="text-align: right;">2.7083333</td>
+<td style="text-align: left;">Data visualization</td>
+<td style="text-align: right;">99</td>
+<td style="text-align: left;">Scripting and languages</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">2.3023256</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Machine learning</td>
-<td style="text-align: right;">139</td>
-<td style="text-align: left;">Statistics and machine learning</td>
-<td style="text-align: right;">60</td>
-<td style="text-align: right;">2.3166667</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">Metagenomics</td>
-<td style="text-align: right;">35</td>
+<td style="text-align: right;">37</td>
 <td style="text-align: left;">Omics analysis</td>
 <td style="text-align: right;">17</td>
-<td style="text-align: right;">2.0588235</td>
+<td style="text-align: right;">2.1764706</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Artificial intelligence</td>
 <td style="text-align: right;">28</td>
 <td style="text-align: left;">Statistics and machine learning</td>
 <td style="text-align: right;">14</td>
 <td style="text-align: right;">2.0000000</td>
 </tr>
+<tr class="odd">
+<td style="text-align: left;">LaTeX</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Scripting and languages</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2.0000000</td>
+</tr>
 <tr class="even">
-<td style="text-align: left;">Transcriptomics</td>
-<td style="text-align: right;">134</td>
-<td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">93</td>
-<td style="text-align: right;">1.4408602</td>
+<td style="text-align: left;">Machine learning</td>
+<td style="text-align: right;">106</td>
+<td style="text-align: left;">Statistics and machine learning</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">1.7666667</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Epigenetics</td>
-<td style="text-align: right;">13</td>
-<td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">1.3000000</td>
+<td style="text-align: left;">Workflows</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: left;">Computational methods and pipelines</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">1.5833333</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">Transcriptomics</td>
+<td style="text-align: right;">121</td>
+<td style="text-align: left;">Omics analysis</td>
+<td style="text-align: right;">94</td>
+<td style="text-align: right;">1.2872340</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">Genomics</td>
-<td style="text-align: right;">64</td>
+<td style="text-align: right;">63</td>
 <td style="text-align: left;">Omics analysis</td>
 <td style="text-align: right;">58</td>
-<td style="text-align: right;">1.1034483</td>
+<td style="text-align: right;">1.0862069</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Epigenetics</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">Omics analysis</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">1.0000000</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">High performance computing</td>
-<td style="text-align: right;">13</td>
-<td style="text-align: left;">Computational methods and pipelines</td>
 <td style="text-align: right;">12</td>
-<td style="text-align: right;">1.0833333</td>
+<td style="text-align: left;">Computational methods and pipelines</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">0.9230769</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Java</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">Scripting and languages</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">1.0000000</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">LaTeX</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">Scripting and languages</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1.0000000</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Variant analysis</td>
-<td style="text-align: right;">32</td>
-<td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">32</td>
-<td style="text-align: right;">1.0000000</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">Statistics</td>
-<td style="text-align: right;">64</td>
+<td style="text-align: right;">56</td>
 <td style="text-align: left;">Statistics and machine learning</td>
 <td style="text-align: right;">67</td>
-<td style="text-align: right;">0.9552239</td>
+<td style="text-align: right;">0.8358209</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Variant analysis</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: left;">Omics analysis</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">0.8285714</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Genome assembly</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: left;">Omics analysis</td>
+<td style="text-align: left;">Image analysis</td>
 <td style="text-align: right;">8</td>
-<td style="text-align: right;">0.8750000</td>
+<td style="text-align: left;">Computational methods and pipelines</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">0.6666667</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Next generation sequencing</td>
-<td style="text-align: right;">54</td>
+<td style="text-align: right;">47</td>
 <td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">65</td>
-<td style="text-align: right;">0.8307692</td>
+<td style="text-align: right;">71</td>
+<td style="text-align: right;">0.6619718</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Data science</td>
-<td style="text-align: right;">41</td>
+<td style="text-align: right;">39</td>
 <td style="text-align: left;">Statistics and machine learning</td>
-<td style="text-align: right;">60</td>
-<td style="text-align: right;">0.6833333</td>
+<td style="text-align: right;">61</td>
+<td style="text-align: right;">0.6393443</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Epidemiology</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">6</td>
+<td style="text-align: left;">Java</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Scripting and languages</td>
+<td style="text-align: right;">2</td>
 <td style="text-align: right;">0.5000000</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">RNA-seq</td>
-<td style="text-align: right;">42</td>
+<td style="text-align: right;">40</td>
 <td style="text-align: left;">Omics analysis</td>
-<td style="text-align: right;">87</td>
-<td style="text-align: right;">0.4827586</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: right;">0.4545455</td>
 </tr>
 </tbody>
 </table>
@@ -1814,123 +1828,123 @@ Table&nbsp;8: Number visits per namespace
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">TheAlgorithms</td>
-<td style="text-align: right;">344</td>
+<td style="text-align: right;">269</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">sib-swiss</td>
-<td style="text-align: right;">202</td>
+<td style="text-align: right;">198</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">hbctraining</td>
-<td style="text-align: right;">133</td>
+<td style="text-align: right;">108</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">theislab</td>
+<td style="text-align: right;">97</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">mlabonne</td>
+<td style="text-align: right;">88</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">jakevdp</td>
-<td style="text-align: right;">111</td>
+<td style="text-align: right;">87</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">theislab</td>
-<td style="text-align: right;">106</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">mlabonne</td>
-<td style="text-align: right;">103</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">galaxyproject</td>
-<td style="text-align: right;">94</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">NBISweden</td>
-<td style="text-align: right;">93</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">hadley</td>
-<td style="text-align: right;">79</td>
+<td style="text-align: right;">83</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">ISUgenomics</td>
+<td style="text-align: left;">galaxyproject</td>
 <td style="text-align: right;">78</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">realpython</td>
+<td style="text-align: left;">hadley</td>
 <td style="text-align: right;">73</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">cxli233</td>
-<td style="text-align: right;">61</td>
+<td style="text-align: left;">ISUgenomics</td>
+<td style="text-align: right;">68</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">pachterlab</td>
-<td style="text-align: right;">57</td>
+<td style="text-align: left;">gladstone-institutes</td>
+<td style="text-align: right;">53</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">gladstone-institutes</td>
-<td style="text-align: right;">54</td>
+<td style="text-align: left;">realpython</td>
+<td style="text-align: right;">51</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">cxli233</td>
+<td style="text-align: right;">48</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">pachterlab</td>
+<td style="text-align: right;">48</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">bobbyiliev</td>
-<td style="text-align: right;">48</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">zhiwehu</td>
-<td style="text-align: right;">48</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">griffithlab</td>
-<td style="text-align: right;">47</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">carpentries-incubator</td>
-<td style="text-align: right;">45</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">lexfridman</td>
-<td style="text-align: right;">45</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">rust-lang</td>
 <td style="text-align: right;">41</td>
 </tr>
+<tr class="even">
+<td style="text-align: left;">griffithlab</td>
+<td style="text-align: right;">40</td>
+</tr>
 <tr class="odd">
+<td style="text-align: left;">zhiwehu</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">DataTalksClub</td>
 <td style="text-align: right;">33</td>
 </tr>
+<tr class="odd">
+<td style="text-align: left;">lexfridman</td>
+<td style="text-align: right;">33</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rust-lang</td>
+<td style="text-align: right;">33</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">carpentries-incubator</td>
+<td style="text-align: right;">28</td>
+</tr>
 <tr class="even">
 <td style="text-align: left;">trekhleb</td>
-<td style="text-align: right;">32</td>
+<td style="text-align: right;">27</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Yorko</td>
-<td style="text-align: right;">29</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">genome</td>
-<td style="text-align: right;">28</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">instillai</td>
-<td style="text-align: right;">28</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">carpentries-lab</td>
-<td style="text-align: right;">27</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">jeroenjanssens</td>
-<td style="text-align: right;">27</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">harvardinformatics</td>
 <td style="text-align: right;">26</td>
 </tr>
+<tr class="even">
+<td style="text-align: left;">Yorko</td>
+<td style="text-align: right;">25</td>
+</tr>
 <tr class="odd">
-<td style="text-align: left;">google</td>
+<td style="text-align: left;">genome</td>
 <td style="text-align: right;">25</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">cmdcolin</td>
-<td style="text-align: right;">24</td>
+<td style="text-align: left;">harvardinformatics</td>
+<td style="text-align: right;">23</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">instillai</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">telatin</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">bioinformatics-core-shared-training</td>
+<td style="text-align: right;">21</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">google</td>
+<td style="text-align: right;">21</td>
 </tr>
 </tbody>
 </table>
