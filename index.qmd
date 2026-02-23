@@ -97,6 +97,156 @@ cat_table <- sort(cat_table)
 
 Number of repositories: `r nrow(repo_info)`
 
+## SIB courses not yet available on Glittr
+
+Extracting course material URLs from the Bioschemas/JSON-LD markup on the SIB training materials page, then comparing those URLs with repository URLs that are already on Glittr.
+
+```{r}
+#| code-fold: true
+
+sib_request <- request("https://www.sib.swiss/training/training-materials")
+
+sib_materials_page <- tryCatch(
+  sib_request |>
+    req_options(http_version = 2L) |>
+    req_perform() |>
+    resp_body_string(),
+  error = function(e) {
+    sib_request |>
+      req_options(http_version = 1L) |>
+      req_perform() |>
+      resp_body_string()
+  }
+)
+
+sib_doc <- read_html(sib_materials_page)
+ld_json_blocks <- xml_find_all(sib_doc, "//script[@type='application/ld+json']") |>
+  xml_text(trim = TRUE)
+
+is_course_node <- function(x) {
+  if(!is.list(x) || is.null(x$`@type`)) return(FALSE)
+  "Course" %in% as.character(x$`@type`)
+}
+
+collect_course_nodes <- function(x) {
+  out <- list()
+  if(is_course_node(x)) {
+    out <- c(out, list(x))
+  }
+  if(is.list(x)) {
+    for(el in x) {
+      out <- c(out, collect_course_nodes(el))
+    }
+  }
+  out
+}
+
+course_nodes <- list()
+for(block in ld_json_blocks) {
+  parsed <- tryCatch(
+    jsonlite::fromJSON(block, simplifyVector = FALSE),
+    error = function(e) NULL
+  )
+  if(!is.null(parsed)) {
+    course_nodes <- c(course_nodes, collect_course_nodes(parsed))
+  }
+}
+
+extract_course_materials <- function(course) {
+  instances <- course$hasCourseInstance
+  if(is.null(instances)) return(NULL)
+  if(!is.list(instances) || (!is.null(instances$`@type`))) {
+    instances <- list(instances)
+  }
+
+  rows <- lapply(instances, function(instance) {
+    data.frame(
+      course = ifelse(is.null(course$name), NA, course$name),
+      course_instance_url = ifelse(is.null(instance$url), NA, instance$url),
+      material_url = ifelse(is.null(instance$workFeatured$url), NA,
+                            instance$workFeatured$url),
+      stringsAsFactors = FALSE
+    )
+  })
+
+  do.call(rbind, rows)
+}
+
+course_materials <- lapply(course_nodes, extract_course_materials)
+course_materials <- course_materials[!sapply(course_materials, is.null)]
+course_materials <- do.call(rbind, course_materials)
+
+course_materials <- course_materials |>
+  mutate(
+    material_url = gsub("&amp;", "&", material_url, fixed = TRUE),
+    course_instance_url = gsub("&amp;", "&", course_instance_url, fixed = TRUE)
+  ) |>
+  distinct(course, material_url, .keep_all = TRUE)
+
+normalize_repo_url <- function(url) {
+  if(is.na(url) || !nzchar(url)) return(NA_character_)
+
+  x <- trimws(tolower(url))
+  x <- gsub("&amp;", "&", x, fixed = TRUE)
+  x <- sub("^https?://", "", x)
+  x <- sub("^www\\.", "", x)
+  x <- sub("\\?.*$", "", x)
+  x <- sub("#.*$", "", x)
+  x <- sub("/$", "", x)
+  x <- sub("\\.git$", "", x)
+
+  if(grepl("^[^/]+\\.github\\.io/", x)) {
+    parts <- strsplit(x, "/")[[1]]
+    org <- sub("\\.github\\.io$", "", parts[1])
+    repo <- if(length(parts) >= 2) parts[2] else NA_character_
+    if(!is.na(repo) && nzchar(repo)) {
+      x <- paste("github.com", org, repo, sep = "/")
+    }
+  }
+
+  if(grepl("^github\\.com/", x)) {
+    parts <- strsplit(x, "/")[[1]]
+    if(length(parts) >= 3) {
+      x <- paste(parts[1:3], collapse = "/")
+    }
+  }
+
+  if(grepl("^gitlab(\\.com|\\.sib\\.swiss)/", x)) {
+    x <- sub("/-/.+$", "", x)
+    parts <- strsplit(x, "/")[[1]]
+    if(length(parts) >= 3) {
+      x <- paste(parts[1:3], collapse = "/")
+    }
+  }
+
+  x
+}
+
+course_materials <- course_materials |>
+  mutate(material_key = sapply(material_url, normalize_repo_url))
+
+course_materials_repo_like <- course_materials |>
+  filter(grepl("^(github\\.com|gitlab\\.com)/", material_key))
+
+glittr_repo_keys <- unique(sapply(repo_info$url, normalize_repo_url))
+
+missing_courses_on_glittr <- course_materials_repo_like |>
+  filter(!(material_key %in% glittr_repo_keys)) |>
+  distinct(course, material_key) |>
+  arrange(course)
+```
+
+Number of SIB courses with repository-like materials not yet available on Glittr: `r nrow(missing_courses_on_glittr)`
+
+```{r}
+#| label: tbl-sib-courses-missing-on-glittr
+#| tbl-cap: SIB training courses with course-material repositories not yet available on Glittr
+
+missing_courses_on_glittr |>
+  rename(course_title = course) |>
+  knitr::kable(row.names = FALSE)
+```
+
 ## Get contributors info
 
 Using the GitHub REST API to get the number of contributors for each repository on glittr.org. This takes a few minutes, so if the contributors haven't changed, it will use a cached version. 
