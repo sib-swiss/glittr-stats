@@ -204,6 +204,15 @@ normalize_repo_url <- function(url) {
     }
   }
 
+  if(grepl("^[^/]+\\.gitlab\\.io/", x)) {
+    parts <- strsplit(x, "/")[[1]]
+    group <- sub("\\.gitlab\\.io$", "", parts[1])
+    repo <- if(length(parts) >= 2) parts[2] else NA_character_
+    if(!is.na(repo) && nzchar(repo)) {
+      x <- paste("gitlab.com", group, repo, sep = "/")
+    }
+  }
+
   if(grepl("^github\\.com/", x)) {
     parts <- strsplit(x, "/")[[1]]
     if(length(parts) >= 3) {
@@ -244,6 +253,110 @@ Number of SIB courses with repository-like materials not yet available on Glittr
 
 missing_courses_on_glittr |>
   rename(course_title = course) |>
+  knitr::kable(row.names = FALSE)
+```
+
+## TeSS materials not yet available on Glittr
+
+Using the TeSS API materials endpoint, extracting only resource links from GitHub/GitLab (including GitHub/GitLab Pages), and comparing those repositories with Glittr.
+
+```{r}
+#| code-fold: true
+
+tess_request <- request("https://tess.elixir-europe.org/materials") |>
+  req_headers(Accept = "application/vnd.api+json")
+
+fetch_tess_page <- function(page_number = 1, page_size = 200) {
+  req <- tess_request |>
+    req_url_query(page_number = page_number, page_size = page_size)
+
+  resp <- tryCatch(
+    req |>
+      req_options(http_version = 2L) |>
+      req_perform(),
+    error = function(e) {
+      req |>
+        req_options(http_version = 1L) |>
+        req_perform()
+    }
+  )
+
+  resp_body_json(resp, simplifyVector = FALSE)
+}
+
+tess_pages <- list()
+page_number <- 1
+repeat {
+  parsed <- fetch_tess_page(page_number = page_number, page_size = 200)
+  tess_pages[[length(tess_pages) + 1]] <- parsed
+
+  has_next <- !is.null(parsed$links$`next`)
+  if(!has_next || length(parsed$data) == 0) break
+  page_number <- page_number + 1
+}
+
+tess_materials <- do.call(c, lapply(tess_pages, function(x) x$data))
+
+extract_tess_resource_urls <- function(material) {
+  attrs <- material$attributes
+  if(is.null(attrs)) return(character(0))
+
+  urls <- c(
+    attrs$url,
+    attrs$doi
+  )
+
+  ext <- attrs[["external-resources"]]
+  if(is.list(ext) && length(ext) > 0) {
+    for(e in ext) {
+      if(is.list(e) && !is.null(e$url)) {
+        urls <- c(urls, e$url)
+      } else if(is.character(e)) {
+        urls <- c(urls, e)
+      }
+    }
+  }
+
+  urls <- urls[!is.na(urls) & nzchar(urls)]
+  unique(urls)
+}
+
+tess_resources <- lapply(tess_materials, function(material) {
+  attrs <- material$attributes
+  urls <- extract_tess_resource_urls(material)
+
+  if(length(urls) == 0) return(NULL)
+
+  data.frame(
+    material_title = ifelse(is.null(attrs$title), NA, attrs$title),
+    tess_material_url = ifelse(is.null(material$links$self), NA,
+                               paste0("https://tess.elixir-europe.org",
+                                      material$links$self)),
+    resource_url = urls,
+    stringsAsFactors = FALSE
+  )
+})
+
+tess_resources <- tess_resources[!sapply(tess_resources, is.null)]
+tess_resources <- do.call(rbind, tess_resources)
+
+tess_resources <- tess_resources |>
+  mutate(resource_key = sapply(resource_url, normalize_repo_url)) |>
+  filter(grepl("^(github\\.com|gitlab\\.com)/", resource_key))
+
+tess_missing_on_glittr <- tess_resources |>
+  filter(!(resource_key %in% glittr_repo_keys)) |>
+  distinct(resource_key)
+```
+
+Number of TeSS materials with GitHub/GitLab resources not yet available on Glittr: `r nrow(tess_missing_on_glittr)`
+
+```{r}
+#| label: tbl-tess-materials-missing-on-glittr
+#| tbl-cap: TeSS materials with GitHub/GitLab resources not yet available on Glittr
+
+tess_missing_on_glittr |>
+  rename(repository = resource_key) |>
   knitr::kable(row.names = FALSE)
 ```
 
