@@ -67,19 +67,24 @@ response <- request("https://glittr.org/api/repositories") |>
   resp_body_json()
 
 # extract relevant items as dataframe
-repo_info_list <- lapply(response$data, function(x) data.frame(
-  repo = x$name,
-  author_name = x$author$name,
-  stargazers = x$stargazers,
-  recency = x$days_since_last_push,
-  url = x$url,
-  license = ifelse(is.null(x$license), "none", x$license),
-  main_tag = x$tags[[1]]$name,
-  main_category = x$tags[[1]]$category,
-  website = x$website,
-  author_profile = x$author$profile,
-  author_website = x$author$website
-))
+repo_info_list <- lapply(response$data, function(x) {
+  if(is.null(x$author$name)) {
+    warning(sprintf("%s has no author specified", x$name))
+  } else {
+    data.frame(
+    repo = x$name,
+    author_name = x$author$name,
+    stargazers = x$stargazers,
+    recency = x$days_since_last_push,
+    url = x$url,
+    license = ifelse(is.null(x$license), "none", x$license),
+    main_tag = x$tags[[1]]$name,
+    main_category = x$tags[[1]]$category,
+    website = x$website,
+    author_profile = x$author$profile,
+    author_website = x$author$website)
+  }
+})
 
 repo_info <- do.call(rbind, repo_info_list)
 
