@@ -12,3 +12,4 @@ _freeze/
 _site/
 index_files/
 *.xlsx
+.Renviron
